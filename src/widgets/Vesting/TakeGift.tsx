@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { transparentize } from "polished";
 import { Button } from "../../components/Button";
 import { Text } from "../../components/Text";
-import GIFT from "./img/gift.png";
-import GIFT2 from "./img/gift2.png";
 import { Loader } from "../../components/Loader";
+import BG from "./img/widget.png";
 
 interface IProps {
   handleTakeGift: () => void;
@@ -16,8 +15,7 @@ interface IProps {
   };
   claimedGift: boolean;
   images?: {
-    gift: string;
-    gift2: string;
+    bg: string;
   };
   giftLoader?: boolean;
 }
@@ -25,10 +23,9 @@ interface IProps {
 const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
     <div style={{ position: "relative" }}>
-      <Card id="TakeGift">
+      <Card id="TakeGift" src={images?.bg || BG}>
         <StyledTitle>{texts.title}</StyledTitle>
-        <img alt="" src={images?.gift || GIFT} />
-        <StyledButton variant="white" onClick={handleTakeGift}>
+        <StyledButton variant="violet" onClick={handleTakeGift}>
           {texts.button}
         </StyledButton>
       </Card>
@@ -37,7 +34,6 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IP
         <Loader />
       </Claimed>
       <Claimed claimedGift={claimedGift}>
-        <img alt="" src={images?.gift2 || GIFT2} />
         <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
           {texts.claimed}
         </Text>
@@ -46,12 +42,15 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IP
   );
 };
 
-const Card = styled.div`
+const Card = styled.div<{ src?: string }>`
   position: relative;
   display: block;
-  padding: 18px 24px;
-  background: ${({ theme }) => theme.colors.success};
+  padding: 37px 24px;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
   border-radius: 20px;
+  height: 100%;
+  min-height: 250px;
   & img {
     display: block;
     margin: 0 auto 6px;
@@ -59,11 +58,12 @@ const Card = styled.div`
 `;
 
 const StyledTitle = styled(Text)`
-  margin-bottom: 7px;
+  margin-bottom: 33px;
+  text-align: center;
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.02em;
-  font-weight: 400;
+  font-weight: 700;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 24px;
   }

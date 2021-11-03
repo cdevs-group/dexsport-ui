@@ -23,7 +23,6 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   linkClaimTokens,
   disabledButtonClaimTokens,
   isLoadingButtonClaimTokens,
-  endIconButtonClaimTokens,
   disabledTopCards,
   disabledCardClaimTokens,
   giftLoader,
@@ -63,7 +62,6 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
           handleClaimTokens={handleClaimTokens}
           disabledButton={disabledButtonClaimTokens}
           isLoading={isLoadingButtonClaimTokens}
-          endIcon={endIconButtonClaimTokens}
           disabledCardClaimTokens={disabledCardClaimTokens}
         />
       )}
@@ -83,11 +81,8 @@ export default VestingWidget;
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 30px 20px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  ${({ theme }) => theme.mediaQueries.xl} {
+  grid-gap: 30px 20px; 
+  ${({ theme }) => theme.mediaQueries.lg} {
     grid-template-columns: repeat(4, 1fr);
   }
 `;

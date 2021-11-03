@@ -1,5 +1,6 @@
 import React from "react";
 import { space, background, layout } from "styled-system";
+import { transparentize } from "polished";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon } from "../Svg";
@@ -14,8 +15,8 @@ const StyledAlert = styled.div`
   z-index: 5;
   transition: 0.3s ease;
   padding: 15px 60px 25px 23px;
-  color: ${({ theme }) => theme.colors.text};
-  background: ${({ theme }) => theme.colors.bgOpacitY3};
+  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => transparentize(0.75, theme.colors.black)};
   overflow: hidden;
   border-radius: 12px;
   backdrop-filter: blur(10px);
@@ -38,25 +39,7 @@ const ButtonClose = styled(Button)`
   }
 `;
 
-const ButtonNext = styled(Button)`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  background: none;
-  color: ${({ theme }) => theme.colors.green};
-  font-size: 14px;
-  line-height: 18px;
-  cursor: pointer;
-  & svg {
-    transform: rotate(180deg);
-    margin-left: 10px;
-  }
-`;
-
-const AlertBlurCustom: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, onClick, propsWrapper }) => {
+const AlertBlurCustom: React.FC<AlertProps> = ({ handleClose, title, children, propsWrapper }) => {
   return (
     <StyledAlert {...propsWrapper}>
       <div>

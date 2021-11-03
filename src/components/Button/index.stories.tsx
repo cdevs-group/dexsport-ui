@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
 import Button from "./Button";
-import WinButton from "./WinButton";
-import { WINNER3 } from "../../constants/images";
 
 export default {
   title: "Components/Button",
@@ -24,7 +22,7 @@ export const Variants: React.FC = () => {
     <div>
       <BrowserRouter>
         <Row>
-          <Button width="170px" scale="md" variant="green">
+          <Button width="170px" scale="md" variant="violet">
             Button
           </Button>
           <Button width="170px" disabled scale="md" variant="green">
@@ -71,10 +69,7 @@ export const Variants: React.FC = () => {
           </Button>
           <Button width="130px" scale="sm" variant="load-color">
             Button
-          </Button>
-          <WinButton onClick={() => alert("click")} image={WINNER3}>
-            Leaderboard
-          </WinButton>
+          </Button>          
         </Row>
       </BrowserRouter>
     </div>

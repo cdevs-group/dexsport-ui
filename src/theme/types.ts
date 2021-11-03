@@ -40,6 +40,12 @@ export type Colors = {
   gradient: string;
   violet: string;
   background: string;
+  gradient2: string;
+  gradient3: string;
+  grey2: string;
+  grey3: string;
+  boxShadow4: string;
+  boxShadow5: string;
 };
 
 export type ZIndices = {

@@ -94,4 +94,9 @@ export const styleVariants = {
     boxShadow: "none",
     opacity: "1",
   },
+  [variants.VIOLET]: {
+    background: "linear-gradient(180deg, #3C43DF 0%, #4932CF 32.29%, #6112B0 100%)",
+    color: "#fff",
+    boxShadow: "none",
+  },
 };
