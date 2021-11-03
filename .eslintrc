@@ -1,0 +1,43 @@
+{
+ "extends": ["airbnb", "prettier", "prettier/react"],
+ "parser": "babel-eslint",
+ "env": {
+   "browser": true,
+   "node": true,
+   "jest/globals": true
+ },
+ "plugins": ["prettier", "jest"],
+ "settings": {
+   "import/resolver": {
+     "node": {
+       "paths": ["src"]
+     }
+   }
+ },
+ "rules": {
+   "prettier/prettier": "off",
+   "camelcase": "off",
+   "max-len": "off",
+   "no-unused-expressions": "warn",
+   "no-confusing-arrow": "off",
+   "no-underscore-dangle": "off",
+   "import/prefer-default-export": "off",
+   "no-use-before-define": "off",
+   "jsx-a11y/anchor-is-valid": "warn",
+   "react/no-unescaped-entities": "warn",
+   "import/no-extraneous-dependencies": "warn",
+   "import/no-cycle": "warn",
+   // React
+   "react/jsx-filename-extension": "off",
+   "react/no-array-index-key": "off",
+   "react/forbid-prop-types": "off",
+   "react/prefer-stateless-function": "off",
+   "jsx-a11y/click-events-have-key-events": "off",
+   "jsx-a11y/interactive-supports-focus": "off",
+   "react/jsx-props-no-spreading": "off",
+   "jsx-a11y/media-has-caption": "off",
+   "no-nested-ternary":"off",
+   "no-unused-vars":"off",
+   "spaced-comment": "off"
+ }
+}
