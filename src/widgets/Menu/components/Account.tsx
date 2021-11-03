@@ -152,7 +152,7 @@ const AccountBlock = styled(Text)`
     flex-direction: row;
     background: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.purple};
-    box-shadow: ${({ theme }) => theme.colors.boxShadow5};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {

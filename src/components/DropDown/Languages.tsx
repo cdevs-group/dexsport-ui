@@ -43,7 +43,7 @@ const Wrap = styled.div`
 const SelectList = styled.div`
   padding: 12px 0;
   background: ${({ theme }) => theme.colors.dark};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow5};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border: none;
   border-radius: 8px;
 `;

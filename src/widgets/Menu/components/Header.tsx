@@ -137,8 +137,8 @@ const HeaderWrap = styled.div`
   }
 `;
 const Content = styled.div`
-  background: ${({ theme }) => theme.colors.darkPurpleGradient};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+  background: ${({ theme }) => theme.colors.gradient2};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow3};
 `;
 const Line = styled.div`
   padding: 15px 15px 10px;
