@@ -11,8 +11,4 @@ export const links = [
     name: "Farm",
     url: "/2",
   },
-  {
-    name: "Profile",
-    url: "/3",
-  },
 ];

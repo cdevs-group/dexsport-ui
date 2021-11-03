@@ -74,6 +74,14 @@ interface Itransactions {
   profit: string;
   linkHref: string;
 }
+
+interface ITextDropdown {
+  connected: string;
+  balance: string;
+  disconnect: string;
+  addToken: string;
+  copied: string;
+}
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
@@ -92,7 +100,7 @@ export interface NavProps extends PanelProps {
   valuesNetworks?: string[];
   listNetwork?: BlockChainNetwork[];
   vesting?: boolean;
-  yayBalance?: string | number;
+  desuBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed?: (value: string) => void;
   handleAddToken?: () => void;
@@ -102,6 +110,7 @@ export interface NavProps extends PanelProps {
   minHeight?: string;
   buttonLogoutType?: Variant;
   linkExternalWalletModal?: string;
+  textDropdown: ITextDropdown;
 }
 
 export type BlockChainNetwork = {

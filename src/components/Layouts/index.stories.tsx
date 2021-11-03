@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BaseLayout } from ".";
-import { BG, } from "../../constants/images";
+import { BG } from "../../constants/images";
 import { Text } from "../Text";
 
 export default {

@@ -316,4 +316,3 @@ export const ScreenEdges: React.FC = () => {
     </div>
   );
 };
-

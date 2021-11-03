@@ -13,6 +13,10 @@ import BNB2 from "../../public/images/bnb.png";
 import PANGOLIN from "../../public/images/pangolin.png";
 import PANCAKE from "../../public/images/pancake.png";
 import BG from "../../public/images/bg.png";
+import AVATAR_HEADER from "../../public/images/avatar-logo.png";
+import LOGO_HEADER from "../../public/images/logo-header.png";
+import DEX_TOKEN from "../../public/images/dex-token.png";
+import AVATAR from "../../public/images/avatar.png";
 
 export {
   Metamask,
@@ -30,4 +34,8 @@ export {
   PANGOLIN,
   PANCAKE,
   BG,
+  AVATAR_HEADER,
+  LOGO_HEADER,
+  AVATAR,
+  DEX_TOKEN,
 };

@@ -42,42 +42,43 @@ const Wrap = styled.div`
 `;
 const SelectList = styled.div`
   padding: 12px 0;
-  background: ${({ theme }) => theme.colors.bgOpacity};
+  background: ${({ theme }) => theme.colors.dark};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow5};
   border: none;
-  border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  border-radius: 8px;
 `;
 const Select = styled.button`
   width: 100%;
   outline: none;
   margin-bottom: 7px;
   background: none;
-  border: none;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
   text-align: center;
+  font-weight: normal;
   letter-spacing: 0.08em;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
+  border: none;
   &:last-child {
     margin-bottom: 0;
   }
 `;
 const Button = styled.div<{ open: boolean }>`
   padding: 0;
-  background: ${({ theme, open }) => (open ? theme.colors.buttonBg2 : theme.colors.buttonBg)};
+  background: ${({ theme }) => theme.colors.white};
   border: none;
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
   width: 100%;
 `;
 
 const ButtonText = styled(Text)`
   padding: 13px 6px;
-  font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
   letter-spacing: 0.08em;
-  pointer-events: none; ;
+  pointer-events: none;
+  color: ${({ theme }) => theme.colors.purple};
+  font-weight: bold;
+  line-height: 14px;
 `;
