@@ -13,6 +13,14 @@ export default {
   argTypes: { isAuth: Boolean },
 };
 
+const textsDropdown = {
+  connected: "Connected",
+  balance: "Your balance",
+  disconnect: "Disconnect",
+  addToken: "Add token",
+  copied: "Copied",
+};
+
 export const HeaderDefault: React.FC = () => {
   const langs = [
     { locale: "en-US", language: "English", code: "en" },
@@ -37,14 +45,7 @@ export const HeaderDefault: React.FC = () => {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
-  const textsDropdown = {
-    connected: "Connected",
-    balance: "Your balance",
-    disconnect: "Disconnect",
-    addToken: "Add token",
-    copied: "Copied",
-  };
-
+  
   return (
     <BrowserRouter>
       <div style={{ marginTop: "50px" }}>
@@ -162,6 +163,7 @@ export const HeaderNetwork: React.FC = () => {
           linkLogo="/"
           valuesNetworks={["56", "43114"]}
           listNetwork={NETWORK_CHAIN}
+          textDropdown={textsDropdown}
         />
       </div>
     </BrowserRouter>
@@ -232,12 +234,13 @@ export const HeaderVesting: React.FC = () => {
           textsConnect={textsConnect}
           linkLogo="/"
           vesting
-          yayBalance="25000000"
+          desuBalance="25000000"
           // dataTransactions={dataTransactions}
           handleClaimed={(value) => console.log(value)}
           marginContent="0"
           minHeight="313px"
           buttonLogoutType="green"
+          textDropdown={textsDropdown}
         />
       </div>
     </BrowserRouter>
@@ -303,102 +306,12 @@ export const HeaderVestingNoTransactions: React.FC = () => {
           textsConnect={textsConnect}
           linkLogo="/"
           vesting
-          yayBalance="25000000"
+          desuBalance="25000000"
           dataTransactions={dataTransactions}
           handleClaimed={(value) => console.log(value)}
+          textDropdown={textsDropdown}
         />
       </div>
     </BrowserRouter>
-  );
-};
-
-export const HeaderBridge = () => {
-  const textsAccount = {
-    copy: "Copy",
-    title: "Your wallet",
-    button: "Logout",
-    view: "View on BscScan",
-    copied: "Copied",
-    yayBalance: "$YAY balance",
-    address: "Your address",
-    tabs: ["Wallet", "Transactions"],
-    recentTransactions: "Recent transactions",
-    claimed: "Claimed",
-    noRecentTransactions: "No recent transactions",
-  };
-  const langs = [
-    { locale: "en-US", language: "English", code: "en" },
-    { locale: "de-DE", language: "Deutsch", code: "de" },
-  ];
-  const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
-
-  const handleToggleNetwork = (val) => {
-    setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
-  };
-  const textsBridge = {
-    titleModal: "Your wallet",
-    title: "Your address",
-    network: "Network",
-    wallet: "Wallet",
-    newtworkName: "Binance Smart Chain",
-    walletName: "Metamask",
-    button: "Disconnect Wallet",
-    completeText: "Copied",
-    noRecentTransactions: "No recent transactions",
-    transactionTitle: "Recent transactions",
-    tabsList: ["Wallet", "Transactions"],
-  };
-
-  const transactionsList = [
-    {
-      number: "#001",
-      link: "BSC to Avalanche",
-      profit: "12,000,00 $YAY",
-      status: true,
-      linkHref: "hjsdbfjhgdshjgfh",
-    },
-  ];
-  const textsConnect = {
-    title: "Сonnect wallet",
-    link: "Learn how connect",
-  };
-
-  return (
-    <div>
-      <BrowserRouter>
-        <div style={{ marginTop: "50px" }}>
-          <Header
-            account="0xbdda50183d817c3289f895a4472eb475967dc980"
-            login={noop}
-            logout={noop}
-            isDark={false}
-            toggleTheme={noop}
-            langs={langs}
-            setLang={noop}
-            currentLang="EN"
-            links={links}
-            profile={{
-              profileLink: "/profile",
-              noProfileLink: "/no-profile",
-            }}
-            network={network}
-            handleToggleNetwork={handleToggleNetwork}
-            linkTextNetwork="Learn how connect"
-            linkHrefNetwork="http"
-            titleNetwork="Choose network"
-            textsAccount={textsAccount}
-            textsConnect={textsConnect}
-            linkLogo="/"
-            bridge
-            yayBalance="25000000"
-            handleClaimed={(value) => console.log(value)}
-            textsBridge={textsBridge}
-            transactionsList={transactionsList}
-            disclaimer
-            disclaimerText="Always make sure the URL is https://www.yay.games/ - Press to bookmark it to be safe. Telegram: https://t.me/yay_games"
-          />
-        </div>
-      </BrowserRouter>
-    </div>
   );
 };
