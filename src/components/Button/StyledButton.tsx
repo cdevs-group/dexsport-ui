@@ -22,7 +22,7 @@ const getDisabledStyles = ({ isLoading, theme, variant }: ThemedButtonProps) => 
     &.yay-button--disabled {
       box-shadow: none;
       opacity: ${opacity};
-      color: ${theme.colors.text};
+      color: ${theme.colors.white};
       cursor: not-allowed;
     }
   `;
@@ -60,16 +60,16 @@ const StyledButton = styled.button<BaseButtonProps>`
   &.withGreenBorder {
     display: flex;
     width: 100%;
-    border: 1.5px solid ${({ theme }) => theme.colors.greenText};
-    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
-    color: ${({ theme }) => theme.colors.greenText};
-    text-shadow: ${({ theme }) => theme.colors.boxShadow5};
+    border: 1.5px solid ${({ theme }) => theme.colors.success};
+    background: linear-gradient(180deg, rgba(132, 173, 128, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
+    color: ${({ theme }) => theme.colors.success};
+    text-shadow: ${({ theme }) => theme.colors.boxShadow};
   }
   &.withRedBorder {
     border: 1.5px solid #ff6161;
     background: none;
-    color: ${({ theme }) => theme.colors.greenText};
-    text-shadow: ${({ theme }) => theme.colors.boxShadow5};
+    color: ${({ theme }) => theme.colors.success};
+    text-shadow: ${({ theme }) => theme.colors.boxShadow};
   }
   &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {
     box-shadow: ${({ variant }) =>

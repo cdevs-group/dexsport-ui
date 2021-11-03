@@ -15,6 +15,8 @@ export const baseColors = {
   black: "#000000",
   grey: "#29303A",
   lightGrey: "#F3F3F3",
+  grey2: "#201E1E",
+  grey3: "#BCBCBC",
   violet: "#6112B0",
   boxShadow: "0px 0px 6px rgba(0, 0, 0, 0.11), 0px 0px 6px rgba(0, 0, 0, 0.11)",
   boxShadow2: "0px 0px 6px rgba(0, 0, 0, 0.11)",
@@ -26,6 +28,12 @@ export const baseColors = {
   purple: "#4932CF",
   darkPurpleGradient:
     "linear-gradient(90deg, rgba(60, 67, 223, .7) 0%, rgba(73, 50, 207, .7)  33.85%, rgba(97, 18, 176, .7) 100%)",
+  boxShadow4: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)",
+  boxShadow5: "0px 0px 20px rgba(97, 18, 176, 0.35)",
+  gradient: "linear-gradient(90deg, #3C43DF 0%, #4932CF 33.85%, #6112B0 100%)",
+  gradient2:
+    "linear-gradient(90deg, rgba(60, 67, 223, 0.5) 0%, rgba(73, 50, 207, 0.5) 33.85%, rgba(97, 18, 176, 0.5) 100%);",
+  gradient3: "linear-gradient(180deg, #3C43DF 0%, #4932CF 32.29%, #6112B0 100%)",
 };
 
 export const lightColors: Colors = {

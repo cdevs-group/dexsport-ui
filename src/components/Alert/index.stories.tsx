@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import Alert from "./Alert";
-import AlertBlur from "./AlertBlur";
 import AlertBlurCustom from "./AlertBlurCustom";
 
 import { Text } from "../Text";
@@ -60,26 +59,22 @@ export const WithHandler: React.FC = () => {
         </Alert>
       </Row>
       <Row>
-        <AlertBlur onClick={() => {}} handleClose={closeAlert} buttonText="Stake it" title="STEP 1">
-          <Text fontSize="14px" color="#8B8B8B">
-            You have{" "}
-            <Text fontSize="14px" as="span" color="green">
-              9.000 e.Yay
-            </Text>{" "}
-            in AVAX.
-            <br />
-            Do you want stake it?
-          </Text>
-        </AlertBlur>
+        <Alert
+          icon={<></>}
+          onClick={closeAlert}
+          variant="winning"
+          title="Winnings collected!"
+        >
+          Your prizes have been sent to your wallet
+        </Alert>
       </Row>
       <Row>
         <AlertBlurCustom onClick={() => {}} handleClose={closeAlert} buttonText="Stake it" title="STEP 1">
           <Text fontSize="14px" color="#8B8B8B">
             You have{" "}
             <Text fontSize="14px" as="span" color="green">
-              9.000 e.Yay
-            </Text>{" "}
-            in AVAX.
+              9.000
+            </Text>            
             <br />
             Do you want stake it?
           </Text>

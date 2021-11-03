@@ -36,34 +36,20 @@ const CardTimer = ({ data, canClaim, disabledTopCards }: IProps) => {
       <Wrapper canClaim={canClaim} disabledTopCards={!!disabledTopCards} id="CardTimer">
         <Inner className="card-inner">
           <CardFront canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
-            <Text
-              color="greyText"
-              fontSize="14px"
-              lineHeight="24px"
-              letterSpacing="-0.02em"
-              marginBottom="2px"
-              fontWeight="400"
-            >
-              {data.textBack}
-            </Text>
-            <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-              {data.textStage}
-            </Text>
-            <Progress />
+            <TextTop>{data.textBack}</TextTop>
+            <BlockBottom>
+              <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
+                {data.textStage}
+              </Text>
+              <Progress />
+            </BlockBottom>
           </CardFront>
           <CardBack canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
-            <Text
-              color="greyText"
-              fontSize="14px"
-              lineHeight="24px"
-              letterSpacing="-0.02em"
-              marginBottom="2px"
-              fontWeight="400"
-            >
-              {data.textFront}
-            </Text>
-            <TimerSimple time={data.timeSecond} texts={data.textsTime} />
-            <Progress />
+            <TextTop>{data.textFront}</TextTop>
+            <BlockBottom>
+              <TimerSimple time={data.timeSecond} texts={data.textsTime} />
+              <Progress />
+            </BlockBottom>
           </CardBack>
         </Inner>
       </Wrapper>
@@ -74,15 +60,15 @@ const CardTimer = ({ data, canClaim, disabledTopCards }: IProps) => {
 
 const CardFront = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   width: 100%;
-  padding: 18px 24px 10px;
   background: ${({ theme }) => theme.colors.dark};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow2};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 20px;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
   top: 0;
   transition: 0;
+  overflow: hidden;
   backface-visibility: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "" : "hidden")};
 `;
 
@@ -113,20 +99,32 @@ const Inner = styled.div`
   border-radius: 15px;
   box-sizing: border-box;
 `;
+const TextTop = styled(Text)`
+  padding: 6px 24px;
+  background: ${({ theme }) => theme.colors.gradient};
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+`;
+
+const BlockBottom = styled.div`
+  padding: 10px 24px;
+`;
 
 const ProgressTrack = styled.div`
   height: 2px;
   width: 100%;
   margin-top: 8px;
-  background: ${({ theme }) => transparentize(0.9, theme.colors.grey)};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  background: ${({ theme }) => transparentize(0.9, theme.colors.grey2)};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 6px;
 `;
 
 const ProgressBar = styled.div<{ progress: number }>`
   height: 100%;
   width: ${({ progress }) => `${progress}%`};
-  background: ${({ theme }) => theme.colors.success};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow5};
+  background: ${({ theme }) => theme.colors.gradient};
   border-radius: inherit;
 `;
 const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`

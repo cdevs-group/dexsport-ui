@@ -47,6 +47,12 @@ export type Colors = {
   purple: string;
   background: string;
   darkPurpleGradient: string;
+  gradient2: string;
+  gradient3: string;
+  grey2: string;
+  grey3: string;
+  boxShadow4: string;
+  boxShadow5: string;
 };
 
 export type ZIndices = {

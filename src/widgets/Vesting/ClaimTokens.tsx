@@ -21,7 +21,6 @@ interface IProps {
   };
   disabledButton?: boolean;
   isLoading?: boolean;
-  endIcon?: React.ReactNode | null;
   disabledCardClaimTokens?: boolean;
 }
 
@@ -31,7 +30,6 @@ const ClaimTokens = ({
   handleClaimTokens,
   disabledButton,
   isLoading,
-  endIcon,
   disabledCardClaimTokens,
 }: IProps) => {
   const [widthProgress, setWidthProgress] = useState(0);
@@ -47,11 +45,10 @@ const ClaimTokens = ({
         <Row>
           <StyledTitle>{texts.title}</StyledTitle>
           <StyledButton
-            variant="green"
+            variant="violet"
             onClick={handleClaimTokens}
             disabled={disabledButton}
-            isLoading={isLoading}
-            endIcon={endIcon}
+            spin={isLoading}
           >
             {texts.button}
           </StyledButton>
@@ -64,7 +61,7 @@ const ClaimTokens = ({
               </ProgressThumb>
               <TextHoverBlock widthProgress={widthProgress || 0}>
                 <StyledText>{texts.totalRaised}</StyledText>
-                <StyledText color="greyText3">{data.totalRaised}</StyledText>
+                <StyledText color="grey3">{data.totalRaised}</StyledText>
               </TextHoverBlock>
             </ProgressBar>
           </ProgressTrack>
@@ -75,7 +72,7 @@ const ClaimTokens = ({
               {texts.total} {data.total}
             </StyledText>
             {data.left && (
-              <StyledText color="greyText3">
+              <StyledText color="grey3">
                 {texts.left} {data.left}
               </StyledText>
             )}
@@ -87,7 +84,7 @@ const ClaimTokens = ({
   );
 };
 export const Wrap = styled.div`
-  ${({ theme }) => theme.mediaQueries.sm} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     grid-column: 1/4;
   }
 `;
@@ -115,10 +112,9 @@ export const Card = styled.div<{ disabledCard?: boolean }>`
   position: relative;
   padding: 35px 25px;
   background: ${({ theme }) => theme.colors.dark};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 20px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    grid-column: 1/3;
-  }
+  min-height: 250px;
 `;
 
 export const StyledTitle = styled(Text)`
@@ -126,8 +122,7 @@ export const StyledTitle = styled(Text)`
   margin-bottom: 22px;
   font-size: 22px;
   line-height: 32px;
-  letter-spacing: -0.02em;
-  font-weight: 400;
+  font-weight: bold;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-bottom: 0px;
@@ -150,15 +145,15 @@ const Row = styled.div`
 const ProgressWrap = styled.div`
   padding: 7px 9px;
   margin-bottom: 10px;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 10px;
-  background: ${({ theme }) => transparentize(0.9, theme.colors.grey)};
+  background: ${({ theme }) => transparentize(0.65, theme.colors.grey2)};
 `;
 
 const ProgressTrack = styled.div`
   width: 100%;
   height: 16px;
-  background: ${({ theme }) => transparentize(0.5, theme.colors.success)};
+  background: ${({ theme }) => theme.colors.gradient2};
   border-radius: 6px;
 `;
 
@@ -169,9 +164,10 @@ const ProgressBar = styled.div<{ widthProgress: number }>`
   align-items: center;
   width: ${({ widthProgress }) => `${widthProgress}%` || 0};
   height: inherit;
-  background: ${({ theme }) => theme.colors.success};
+  background: ${({ theme }) => theme.colors.gradient};
   border-radius: 6px;
   transition: 0.3s;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow5};
 `;
 
 const ProgressThumb = styled.div`
@@ -192,7 +188,7 @@ const ProgressThumb = styled.div`
     transform: translate(-50%, -50%);
     width: 44px;
     height: 44px;
-    background: ${({ theme }) => transparentize(0.92, theme.colors.success)};
+    background: ${({ theme }) => transparentize(0.9, theme.colors.violet)};
     border-radius: 50%;
   }
 `;
