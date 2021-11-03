@@ -24,7 +24,6 @@ const flip = keyframes`
     100% { transform: rotateY(0deg); }
   `;
 
-
 const LoaderBlock = styled.div`
   display: flex;
   align-items: center;

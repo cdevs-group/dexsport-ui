@@ -25,12 +25,12 @@ const LinkItem = styled(Text)`
   font-size: 15px;
   line-height: 18px;
   color: ${({ theme }) => theme.colors.lightGrey};
-  margin: 0 0 20px;
+  margin: 37px 0 0;
   transition: 0.3s;
   cursor: pointer;
   &:hover {
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.md} {
     &::after {
       display: block;
       bottom: -30px;

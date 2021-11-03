@@ -69,7 +69,7 @@ export const Variants: React.FC = () => {
           </Button>
           <Button width="130px" scale="sm" variant="load-color">
             Button
-          </Button>          
+          </Button>
         </Row>
       </BrowserRouter>
     </div>

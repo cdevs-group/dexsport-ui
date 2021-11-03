@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { AVATAR, DEX_TOKEN } from "../../../constants/images";
@@ -9,7 +9,6 @@ import { Button } from "../../../components/Button";
 
 interface DropdownMenuProps {
   isOpen: boolean;
-  setOpen: (value: boolean) => void;
   balance: string | number | undefined;
   account: string;
   logout: () => void;
@@ -28,35 +27,15 @@ const DropdownMenu = ({
   linkExternalWalletModal,
   account,
   isOpen,
-  setOpen,
   handleAddToken,
   logout,
   balance,
   texts,
 }: DropdownMenuProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
-  const refSelect = useRef<any>(null);
-
-  const handleClickOutside = useCallback(
-    (e) => {
-      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
-        setOpen(false);
-      }
-    },
-    [setOpen]
-  );
-
-  useEffect(() => {
-    if (document && refSelect && refSelect.current) {
-      document.addEventListener("mousedown", handleClickOutside, false);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside, false);
-    };
-  }, [refSelect, handleClickOutside]);
 
   return (
-    <Wrapper ref={refSelect} open={isOpen}>
+    <Wrapper open={isOpen}>
       <ConnectLine>
         <TitleStyle>{texts.connected}</TitleStyle>
         <ContentLine>
@@ -107,9 +86,9 @@ export default DropdownMenu;
 
 const Wrapper = styled.div<{ open: boolean }>`
   position: absolute;
-  min-width: 350px;
-  top: ${({ open }) => (open ? "calc(100% + 17px)" : "calc(100% + 40px)")};
-  right: 30px;
+  min-width: 264px;
+  top: 0;
+  right: -50px;
   background: ${({ theme }) => theme.colors.dark};
   box-shadow: ${({ theme }) => theme.colors.boxShadow6};
   border-radius: 20px;
@@ -121,7 +100,7 @@ const Wrapper = styled.div<{ open: boolean }>`
   &:after {
     position: absolute;
     content: "";
-    display: block;
+    display: none;
     height: 35px;
     width: 35px;
     background: ${({ theme }) => theme.colors.dark};
@@ -129,9 +108,20 @@ const Wrapper = styled.div<{ open: boolean }>`
     top: -8px;
     right: 33px;
   }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    min-width: 350px;
+    right: 30px;
+    top: ${({ open }) => (open ? "calc(100% + 17px)" : "calc(100% + 40px)")};
+    &:after {
+      display: block;
+    }
+  }
 `;
 const ConnectLine = styled.div`
-  padding: 23px 36px 0;
+  padding: 23px 20px 0;
+  ${({ theme }) => theme.mediaQueries.lg} {
+    padding: 23px 36px 0;
+  }
 `;
 const BalanceLine = styled(ConnectLine)`
   padding-bottom: 20px;
@@ -151,7 +141,10 @@ const BalanceLine = styled(ConnectLine)`
 `;
 const DisconnectLine = styled(ConnectLine)`
   padding-bottom: 24px;
-  text-align: left;
+  text-align: center;
+  ${({ theme }) => theme.mediaQueries.md} {
+    text-align: left;
+  }
 `;
 const TitleStyle = styled(Text)`
   margin-bottom: 23px;
@@ -162,14 +155,24 @@ const TitleStyle = styled(Text)`
   opacity: 0.8;
 `;
 const ContentLine = styled(Flex)`
+  font-size: 14px;
+  line-height: 16px;
   position: relative;
   align-items: center;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-
   & img {
     margin-right: 10px;
+    width: 28px;
+    height: 28px;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 16px;
+    line-height: 19px;
+    & img {
+      margin-right: 10px;
+      width: 32px;
+      height: 32px;
+    }
   }
 `;
 const DisconnectButton = styled(Button)`
@@ -186,11 +189,14 @@ const DisconnectButton = styled(Button)`
   }
 `;
 const Buttons = styled(Flex)`
-  max-width: 86px;
+  max-width: 66px;
   width: 100%;
   margin-left: auto;
   justify-content: space-between;
   align-items: center;
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 86px;
+  }
 `;
 const AddTokenButton = styled.button`
   width: 100%;
@@ -199,25 +205,45 @@ const AddTokenButton = styled.button`
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.whiteRgba};
   font-weight: 500;
-  font-size: 12px;
+
   color: ${({ theme }) => theme.colors.white};
-  line-height: 14px;
+
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 10px;
+  line-height: 12px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 const ActionButton = styled.button`
-  max-width: 38px;
-  max-height: 38px;
+  max-width: 28px;
+  max-height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   outline: none;
   padding: 10px;
-  border-radius: 12px;
+
+  border-radius: 8px;
   background: ${({ theme }) => theme.colors.whiteRgba};
   cursor: pointer;
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 38px;
+    max-height: 38px;
+    border-radius: 12px;
+    & svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};

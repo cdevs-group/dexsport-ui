@@ -44,12 +44,7 @@ const ClaimTokens = ({
       <Card disabledCard={disabledCardClaimTokens} id="ClaimTokens">
         <Row>
           <StyledTitle>{texts.title}</StyledTitle>
-          <StyledButton
-            variant="violet"
-            onClick={handleClaimTokens}
-            disabled={disabledButton}
-            spin={isLoading}
-          >
+          <StyledButton variant="violet" onClick={handleClaimTokens} disabled={disabledButton} spin={isLoading}>
             {texts.button}
           </StyledButton>
         </Row>

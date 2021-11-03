@@ -80,16 +80,35 @@ const Account: React.FC<Props> = ({
     linkExternalWalletModal
   );
   const [isOpen, setOpen] = useState(false);
+  const refSelect = useRef<any>(null);
 
   const handleOpenDropdown = () => {
     setOpen(!isOpen);
   };
 
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
+        setOpen(false);
+      }
+    },
+    [setOpen]
+  );
+
+  useEffect(() => {
+    if (document && refSelect && refSelect.current) {
+      document.addEventListener("mousedown", handleClickOutside, false);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside, false);
+    };
+  }, [refSelect, handleClickOutside]);
+
   return (
     <>
       {account ? (
-        <WrapperAccountBlock>
-          <AccountBlock as="button" onClick={handleOpenDropdown}>
+        <WrapperAccountBlock ref={refSelect}>
+          <AccountBlock onClick={handleOpenDropdown} as="button">
             {ellipsis(account)}
             <BalanceBlock>
               <WalletIcon />
@@ -106,7 +125,6 @@ const Account: React.FC<Props> = ({
             handleAddToken={handleAddToken}
             balance={desuBalance}
             isOpen={isOpen}
-            setOpen={setOpen}
             texts={textDropdown}
           />
         </WrapperAccountBlock>
@@ -129,24 +147,15 @@ const AccountBlock = styled(Text)`
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 30px;
   height: 100%;
-  min-width: 120px;
   align-items: end;
   justify-content: center;
-  margin-right: 6px;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  padding: 0 26px 0 10px;
   background: ${({ theme }) => theme.colors.black};
-  border-radius: 7px;
   color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   border: none;
-  order: -1;
-
   &.notAuth {
     align-items: center;
     flex-direction: row;
@@ -154,16 +163,15 @@ const AccountBlock = styled(Text)`
     color: ${({ theme }) => theme.colors.purple};
     box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   }
-
+  min-height: 40px;
+  min-width: 166px;
+  font-size: 15px;
+  line-height: 19px;
+  padding: 0 36px 0 20px;
+  border-radius: 12px;
+  order: 0;
   ${({ theme }) => theme.mediaQueries.lg} {
-    min-height: 40px;
-    min-width: 166px;
     margin-right: 34px;
-    font-size: 15px;
-    line-height: 19px;
-    padding: 0 36px 0 20px;
-    border-radius: 12px;
-    order: 0;
   }
 `;
 const Avatar = styled.div`
@@ -212,5 +220,6 @@ const BalanceText = styled(Text)`
 `;
 const WrapperAccountBlock = styled.div`
   position: relative;
+  z-index: 2;
 `;
 export default Account;
