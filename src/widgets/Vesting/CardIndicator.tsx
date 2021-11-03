@@ -17,19 +17,8 @@ const CardIndicator = ({ data, canClaim, disabledTopCards, id }: IProps) => {
   return (
     <div style={{ position: "relative" }}>
       <Card id={id}>
-        <Text
-          color="greyText"
-          fontSize="14px"
-          lineHeight="24px"
-          letterSpacing="-0.02em"
-          marginBottom="2px"
-          fontWeight="400"
-        >
-          {data.text}
-        </Text>
-        <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-          {data.value}
-        </Text>
+        <TextTop>{data.text}</TextTop>
+        <TextBottom>{data.value}</TextBottom>
       </Card>{" "}
       <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} id={id} />
     </div>
@@ -38,11 +27,27 @@ const CardIndicator = ({ data, canClaim, disabledTopCards, id }: IProps) => {
 
 const Card = styled.div<{ blur?: boolean; blurTop?: boolean }>`
   position: relative;
-  padding: 18px 24px;
   background: ${({ theme }) => theme.colors.dark};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow2};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 20px;
+  overflow: hidden;
 `;
+
+const TextTop = styled(Text)`
+  padding: 6px 24px;
+  background: ${({ theme }) => theme.colors.gradient};
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+`;
+const TextBottom = styled(Text)`
+  padding: 10px 24px 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+`;
+
 const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean; id: string }>`
   position: absolute;
   top: 0;

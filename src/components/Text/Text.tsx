@@ -41,18 +41,18 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 const Text = styled.div<TextProps>`
   font-size: ${({ size }) => style[size || sizes.MD].fontSize};
   line-height: ${({ size }) => style[size || sizes.MD].fontSizeLg};
-  /* color:${({ theme }) => theme.colors.text}; */
+  /* color:${({ theme }) => theme.colors.white}; */
   color: ${getColor};
   /* font-size: ${getFontSize}; */
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
-  font-weight: ${({ bold }) => (bold ? 700 : 500) || 500};
+  font-weight: ${({ bold }) => (bold ? 700 : 400) || 400};
   line-height: 1.5;
   ${space}
   ${typography}
 `;
 
 Text.defaultProps = {
-  color: "text",
+  color: "white",
   small: false,
 };
 

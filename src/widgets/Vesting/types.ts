@@ -29,8 +29,7 @@ export interface VestingWidgetProps {
   canClaim: boolean;
   claimedGift: boolean;
   imagesGift?: {
-    gift: string;
-    gift2: string;
+    bg: string;
   };
   dataTimer: {
     textFront: string;

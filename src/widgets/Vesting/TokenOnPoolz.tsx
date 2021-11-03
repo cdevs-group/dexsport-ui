@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
-import BG from "./img/link-bg.png";
+import BG from "./img/widget.png";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { StyledTitle } from "./ClaimTokens";
@@ -24,7 +24,7 @@ const TokenOnPoolz = ({ images, texts, linkClaimTokens, disabledCardClaimTokens 
         <CardStyle src={images?.bg || BG}>
           <StyledTitle size="xl">{texts.title}</StyledTitle>
           <Text margin="42px 0">{texts.description}</Text>
-          <StyledButton as="a" margin="0 auto" minWidth="204px" variant="green" href={linkClaimTokens || "#"}>
+          <StyledButton as="a" margin="0 auto" minWidth="204px" variant="violet" href={linkClaimTokens || "#"}>
             {texts.button}
           </StyledButton>
         </CardStyle>
@@ -37,7 +37,7 @@ const TokenOnPoolz = ({ images, texts, linkClaimTokens, disabledCardClaimTokens 
 export default TokenOnPoolz;
 
 export const Wrap = styled.div`
-  ${({ theme }) => theme.mediaQueries.sm} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     grid-column: 1/4;
   }
 `;
@@ -67,13 +67,14 @@ const CardStyle = styled.div<{ src?: string }>`
   height: 100%;
   background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
 `;
+
 const Wrapper = styled.div<{ disabledCard?: boolean }>`
   position: relative;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   background: ${({ theme }) => theme.colors.dark};
+  overflow: hidden;
   border-radius: 20px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    grid-column: 1/3;
-  }
+  min-height: 250px;
 `;
 
 const StyledButton = styled(Button)`
@@ -83,7 +84,7 @@ const StyledButton = styled(Button)`
   margin: 0 auto;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.white};
-  background: ${({ theme }) => theme.colors.success};
+  background: ${({ theme }) => theme.colors.gradient3};
   border-radius: 10px;
   max-width: 204px;
   font-size: 15px;

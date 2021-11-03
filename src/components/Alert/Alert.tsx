@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { space, background, layout } from "styled-system";
+import { transparentize } from "polished";
 import Text from "../Text/Text";
 import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
 import { AlertProps, variants } from "./types";
@@ -13,10 +14,10 @@ const StyledAlert = styled.div`
   z-index: 5;
   transition: 0.3s ease;
   padding: 15px 90px 15px 23px;
-  background: ${({ theme }) => theme.colors.buttonBg};
-  box-shadow: inset ${({ theme }) => theme.colors.textShadow};
+  background: ${({ theme }) => transparentize(0.75, theme.colors.black)};
+  box-shadow: inset ${({ theme }) => theme.colors.boxShadow};
   border-radius: 12px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
   ${background}
   ${space}
   ${layout}
