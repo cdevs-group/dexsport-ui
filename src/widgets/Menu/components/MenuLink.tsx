@@ -19,16 +19,16 @@ const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
 export default MenuLink;
 
 const StyledLink = styled(NavLink)``;
-
 const LinkItem = styled(Text)`
   position: relative;
-  color: ${({ theme }) => theme.colors.text};
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: ${({ theme }) => theme.colors.lightGrey};
   margin: 0 0 20px;
   transition: 0.3s;
-  text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.colors.green};
   }
   ${({ theme }) => theme.mediaQueries.lg} {
     &::after {
@@ -51,6 +51,6 @@ const LinkItem = styled(Text)`
     }
   }
   ${({ theme }) => theme.mediaQueries.xl} {
-    margin: 0 35px;
+    margin: 0 50px;
   }
 `;

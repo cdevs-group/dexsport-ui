@@ -5,9 +5,9 @@ import Account from "./Account";
 import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
-import Logo from "../image/Logo.png";
 import Network from "./Network";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
+import { LOGO_HEADER } from "../../../constants/images";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -30,7 +30,7 @@ const Header: React.FC<NavProps> = ({
   valuesNetworks,
   listNetwork,
   vesting,
-  yayBalance,
+  desuBalance,
   dataTransactions,
   handleClaimed,
   handleAddToken,
@@ -40,6 +40,7 @@ const Header: React.FC<NavProps> = ({
   minHeight,
   buttonLogoutType,
   linkExternalWalletModal,
+  textDropdown,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -72,7 +73,7 @@ const Header: React.FC<NavProps> = ({
       <Content>
         <Line>
           <LogoWrap href={linkLogo}>
-            <img src={Logo} alt="" />
+            <img src={LOGO_HEADER} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
             {links.map((item, i) => (
@@ -83,17 +84,17 @@ const Header: React.FC<NavProps> = ({
             </LanguageBlockMob>
           </Nav>
           <RightContent>
-            {network ? (
-              <Network
-                titleNetwork={titleNetwork}
-                linkHrefNetwork={linkHrefNetwork}
-                linkTextNetwork={linkTextNetwork}
-                handleToggleNetwork={handleToggleNetwork}
-                network={network}
-                valuesNetworks={valuesNetworks}
-                listNetwork={listNetwork}
-              />
-            ) : null}
+            {/*{network ? (*/}
+            {/*  <Network*/}
+            {/*    titleNetwork={titleNetwork}*/}
+            {/*    linkHrefNetwork={linkHrefNetwork}*/}
+            {/*    linkTextNetwork={linkTextNetwork}*/}
+            {/*    handleToggleNetwork={handleToggleNetwork}*/}
+            {/*    network={network}*/}
+            {/*    valuesNetworks={valuesNetworks}*/}
+            {/*    listNetwork={listNetwork}*/}
+            {/*  />*/}
+            {/*) : null}*/}
             <Account
               text={textConnect || "Connect"}
               account={account}
@@ -104,7 +105,7 @@ const Header: React.FC<NavProps> = ({
               hrefLearnHow={hrefLearnHow}
               network={network}
               vesting={vesting}
-              yayBalance={yayBalance}
+              desuBalance={desuBalance}
               dataTransactions={dataTransactions}
               handleClaimed={handleClaimed}
               handleAddToken={handleAddToken}
@@ -112,6 +113,7 @@ const Header: React.FC<NavProps> = ({
               minHeight={minHeight}
               buttonLogoutType={buttonLogoutType}
               linkExternalWalletModal={linkExternalWalletModal}
+              textDropdown={textDropdown}
             />
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
@@ -135,10 +137,9 @@ const HeaderWrap = styled.div`
   }
 `;
 const Content = styled.div`
-  background-color: ${({ theme }) => theme.colors.grey};
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  background: ${({ theme }) => theme.colors.darkPurpleGradient};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
 `;
-
 const Line = styled.div`
   padding: 15px 15px 10px;
   display: flex;

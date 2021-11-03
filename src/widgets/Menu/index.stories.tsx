@@ -37,6 +37,13 @@ export const HeaderDefault: React.FC = () => {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
+  const textsDropdown = {
+    connected: "Connected",
+    balance: "Your balance",
+    disconnect: "Disconnect",
+    addToken: "Add token",
+    copied: "Copied",
+  };
 
   return (
     <BrowserRouter>
@@ -57,6 +64,7 @@ export const HeaderDefault: React.FC = () => {
           }}
           textsAccount={textsAccount}
           textsConnect={textsConnect}
+          textDropdown={textsDropdown}
           linkLogo="/"
         />
       </div>
