@@ -72,7 +72,7 @@ const Account: React.FC<Props> = ({
       {account ? (
         <WrapperAccountBlock ref={refSelect}>
           <AccountBlock as="button" onClick={handleOpenDropdown}>
-            {ellipsis(account)}
+            {ellipsis(account, 5)}
             <BalanceBlock>
               <WalletIcon />
               <BalanceText>{`${balance || 0} DESU`}</BalanceText>
@@ -127,10 +127,10 @@ const AccountBlock = styled(Text)`
     box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   }
   min-height: 40px;
-  min-width: 166px;
+  min-width: 220px;
   font-size: 15px;
   line-height: 19px;
-  padding: 0 36px 0 20px;
+  padding: 0 36px 0 10px;
   border-radius: 12px;
   order: 0;
   ${({ theme }) => theme.mediaQueries.lg} {
@@ -173,7 +173,7 @@ const Avatar = styled.div`
 const BalanceBlock = styled(Flex)`
   align-items: center;
   margin-top: 1px;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 `;
 const BalanceText = styled(Text)`

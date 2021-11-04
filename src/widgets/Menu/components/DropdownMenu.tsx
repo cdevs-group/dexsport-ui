@@ -88,7 +88,7 @@ const Wrapper = styled.div<{ open: boolean }>`
   position: absolute;
   min-width: 264px;
   top: 0;
-  right: -50px;
+  right: -25px;
   background: ${({ theme }) => theme.colors.dark};
   box-shadow: ${({ theme }) => theme.colors.boxShadow6};
   border-radius: 20px;
@@ -142,6 +142,7 @@ const BalanceLine = styled(ConnectLine)`
 const DisconnectLine = styled(ConnectLine)`
   padding-bottom: 24px;
   text-align: center;
+
   ${({ theme }) => theme.mediaQueries.md} {
     text-align: left;
   }
@@ -180,6 +181,7 @@ const DisconnectButton = styled(Button)`
   border-radius: 12px;
   font-size: 14px;
   line-height: 16px;
+  font-weight: 500;
   text-align: center;
   color: ${({ theme }) => theme.colors.purple};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
