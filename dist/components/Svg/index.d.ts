@@ -1,4 +1,3 @@
-export { default as AddIcon } from "./Icons/AddIcon";
 export { default as CloseIcon } from "./Icons/CloseIcon";
 export { default as CloseIcon2 } from "./Icons/CloseIcon2";
 export { default as CloseSimpleIcon } from "./Icons/CloseSimpleIcon";
