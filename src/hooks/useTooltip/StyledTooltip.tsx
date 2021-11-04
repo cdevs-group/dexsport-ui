@@ -24,7 +24,7 @@ export const StyledTooltip = styled.div`
   max-width: 320px;
   z-index: 101;
   background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   &[data-popper-placement^="top"] > ${Arrow} {
     bottom: -4px;

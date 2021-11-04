@@ -12,7 +12,7 @@ const StyledLink = styled(Text)<LinkProps>`
     text-decoration: underline;
   }
   & svg {
-    fill: ${({ theme }) => theme.colors.green};
+    fill: ${({ theme }) => theme.colors.success};
   }
 `;
 

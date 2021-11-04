@@ -3,14 +3,13 @@ import styled from "styled-components";
 import { IconButton } from "../../components/Button";
 import { CloseIcon } from "../../components/Svg";
 import { InjectedProps } from "./types";
-import { Gift2 } from "../../constants/images";
 
 interface Props extends InjectedProps {
   title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
   welcome?: boolean;
-  image?: boolean;
+  image?: React.ReactNode;
   paddingTopHeader?: string;
 }
 
@@ -23,7 +22,7 @@ const StyledModal = styled.div`
   max-height: 100vh;
   min-width: 303px;
   width: 100%;
-  background: ${({ theme }) => theme.colors.bgGray};
+  background: ${({ theme }) => theme.colors.dark};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
@@ -56,13 +55,13 @@ const ModalHeader = styled.div<{ paddingTopHeader?: string }>`
 const ModalTitle = styled.div`
   align-items: center;
   flex: 1;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const Overlay = styled.div`
   pointer-events: none;
   display: block;
-  background: ${({ theme }) => theme.colors.overlayBg};
+  background: ${({ theme }) => theme.colors.lightGrey};
   position: fixed;
   z-index: -1;
   top: 0;
@@ -104,11 +103,7 @@ const Modal: React.FC<Props> = ({
           <ModalTitle>
             <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
           </ModalTitle>
-          {image ? (
-            <Image>
-              <img src={Gift2} alt="" />
-            </Image>
-          ) : null}
+          {image ? <Image>{image}</Image> : null}
           {!hideCloseButton && (
             <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
               <CloseIcon />

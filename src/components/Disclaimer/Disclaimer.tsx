@@ -26,7 +26,7 @@ const Block = styled.div<{ open: boolean }>`
   transition: 0.3s;
   width: 100%;
   padding: ${({ open }) => (!open ? 0 : "13px 46px 13px 23px")};
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.success};
   z-index: 1;
   overflow: hidden;
   max-height: ${({ open }) => (!open ? 0 : 100)};
