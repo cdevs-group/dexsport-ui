@@ -4,7 +4,6 @@ import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { links } from "./config";
 
-
 export default {
   title: "Components/Header",
   component: Header,

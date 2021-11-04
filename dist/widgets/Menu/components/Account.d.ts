@@ -42,6 +42,13 @@ interface Props {
     minHeight?: string;
     buttonLogoutType?: Variant;
     linkExternalWalletModal?: string;
+    textDropdown: {
+        connected: string;
+        balance: string;
+        disconnect: string;
+        addToken: string;
+        copied: string;
+    };
 }
 declare const Account: React.FC<Props>;
 export default Account;
