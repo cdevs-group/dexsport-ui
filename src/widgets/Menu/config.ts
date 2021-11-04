@@ -1,18 +1,14 @@
 export const links = [
   {
-    name: "Gaming Marketplace",
+    name: "IGO",
     url: "http:/gf",
   },
   {
-    name: "Swap",
+    name: "Platform",
     url: "/1",
   },
   {
-    name: "Farm",
+    name: "Documentation",
     url: "/2",
-  },
-  {
-    name: "Profile",
-    url: "/3",
   },
 ];
