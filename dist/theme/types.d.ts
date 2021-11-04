@@ -37,6 +37,7 @@ export declare type Colors = {
     boxShadow4: string;
     boxShadow5: string;
     boxShadow6: string;
+    boxShadow7: string;
     gradient: string;
     violet: string;
     purple: string;

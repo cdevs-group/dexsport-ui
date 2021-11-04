@@ -18,6 +18,5 @@ export * from "./widgets/WalletModal";
 export * from "./widgets/Menu";
 export * from "./widgets/Toast";
 export * from "./widgets/Vesting";
-export * from "./widgets/ModalPlatform";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

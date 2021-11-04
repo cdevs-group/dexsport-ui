@@ -9,7 +9,7 @@ export interface TextsAccount {
     button: string;
     view: string;
     copied: string;
-    yayBalance?: string;
+    balance?: string;
     address?: string;
     tabs?: Array<string>;
     recentTransactions?: string;
@@ -21,5 +21,5 @@ export interface TextsConnect {
     title: string;
     link: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined, hrefLearnHow?: string | undefined) => ReturnType;
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined) => ReturnType;
 export default useWalletModal;

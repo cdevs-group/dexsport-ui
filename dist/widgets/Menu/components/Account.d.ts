@@ -8,7 +8,6 @@ interface Props {
     logout: () => void;
     textsConnect: TextsConnect;
     textsAccount: TextsAccount;
-    hrefLearnHow?: string;
     handleAddToken?: () => void;
     linkExternalWalletModal?: string;
     textDropdown: {

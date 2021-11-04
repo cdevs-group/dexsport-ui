@@ -22,6 +22,7 @@ export declare const baseColors: {
     boxShadow4: string;
     boxShadow5: string;
     boxShadow6: string;
+    boxShadow7: string;
     gradient: string;
     gradient2: string;
     gradient3: string;
