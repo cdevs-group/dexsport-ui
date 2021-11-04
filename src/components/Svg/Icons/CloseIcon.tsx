@@ -3,30 +3,11 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <svg width={42} height={42} viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <rect x={6} y={6} width={30} height={30} rx={7} fill={props.fill || "rgb(58,58,64)"} />
-      <g filter="url(#prefix__filter0_dCloseIcon)" stroke="#fff" strokeWidth={2} strokeLinecap="round">
-        <path d="M17.465 17.465l7.07 7.07M24.537 17.465l-7.071 7.07" />
-      </g>
-      <defs>
-        <filter
-          id="prefix__filter0_dCloseIcon"
-          x={12.465}
-          y={14.464}
-          width={17.073}
-          height={17.071}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-          <feOffset dy={2} />
-          <feGaussianBlur stdDeviation={2} />
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-      </defs>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        d="M17.2533 16L23.7333 9.52C23.8789 9.34995 23.955 9.13122 23.9464 8.90751C23.9377 8.68379 23.845 8.47158 23.6867 8.31328C23.5284 8.15497 23.3162 8.06223 23.0924 8.05359C22.8687 8.04495 22.65 8.12104 22.4799 8.26667L15.9999 14.7467L9.51995 8.25778C9.3499 8.11215 9.13117 8.03606 8.90746 8.0447C8.68375 8.05334 8.47153 8.14608 8.31323 8.30439C8.15492 8.46269 8.06218 8.67491 8.05354 8.89862C8.0449 9.12233 8.12099 9.34106 8.26662 9.51111L14.7466 16L8.25773 22.48C8.16468 22.5597 8.0891 22.6577 8.03575 22.768C7.9824 22.8783 7.95241 22.9984 7.94768 23.1208C7.94296 23.2433 7.96358 23.3653 8.00827 23.4794C8.05296 23.5935 8.12075 23.6971 8.20737 23.7837C8.294 23.8703 8.3976 23.9381 8.51166 23.9828C8.62573 24.0275 8.7478 24.0481 8.87022 24.0434C8.99264 24.0386 9.11275 24.0087 9.22303 23.9553C9.33331 23.902 9.43137 23.8264 9.51106 23.7333L15.9999 17.2533L22.4799 23.7333C22.65 23.879 22.8687 23.955 23.0924 23.9464C23.3162 23.9378 23.5284 23.845 23.6867 23.6867C23.845 23.5284 23.9377 23.3162 23.9464 23.0925C23.955 22.8688 23.8789 22.65 23.7333 22.48L17.2533 16Z"
+        fill="white"
+      />
     </svg>
   );
 };

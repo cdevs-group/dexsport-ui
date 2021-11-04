@@ -19,7 +19,6 @@ const Header: React.FC<NavProps> = ({
   textConnect,
   textsAccount,
   textsConnect,
-  hrefLearnHow,
   linkLogo,
   balance,
   handleAddToken,
@@ -61,7 +60,6 @@ const Header: React.FC<NavProps> = ({
       logout={logout}
       textsAccount={textsAccount}
       textsConnect={textsConnect}
-      hrefLearnHow={hrefLearnHow}
       balance={balance}
       handleAddToken={handleAddToken}
       linkExternalWalletModal={linkExternalWalletModal}

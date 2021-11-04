@@ -9,9 +9,9 @@ export default {
 
 export const VestingWidgetComponent: React.FC = () => {
   const dataClaimTokens = {
-    totalRaised: "10M YAY",
-    total: "30M YAY",
-    left: "20M YAY",
+    totalRaised: "10M",
+    total: "30M",
+    left: "20M",
   };
 
   const textsClaimTokens = {
@@ -27,7 +27,7 @@ export const VestingWidgetComponent: React.FC = () => {
   const dataCardsIndicators = [
     {
       text: "Your can claim",
-      value: "2000000 $YAY",
+      value: "2000000 $",
     },
     {
       text: "Your round",
@@ -35,7 +35,7 @@ export const VestingWidgetComponent: React.FC = () => {
     },
     {
       text: "Total raised",
-      value: "1,000,000 $YAY",
+      value: "1,000,000 $",
     },
   ];
 

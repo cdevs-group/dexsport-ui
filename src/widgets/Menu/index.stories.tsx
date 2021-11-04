@@ -30,7 +30,7 @@ export const HeaderDefault: React.FC = () => {
     button: "Logout",
     view: "View on BscScan",
     copied: "Copied",
-    yayBalance: "$YAY balance",
+    balance: "$ balance",
     address: "Your address",
     tabs: ["Wallet", "Transactions"],
     recentTransactions: "Recent transactions",

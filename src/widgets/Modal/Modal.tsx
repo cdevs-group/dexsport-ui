@@ -8,9 +8,7 @@ interface Props extends InjectedProps {
   title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
-  welcome?: boolean;
   image?: React.ReactNode;
-  paddingTopHeader?: string;
 }
 
 const ModalContent = styled.div`
@@ -23,7 +21,7 @@ const StyledModal = styled.div`
   min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.dark};
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
@@ -40,16 +38,7 @@ const StyledModal = styled.div`
 const ModalHeader = styled.div<{ paddingTopHeader?: string }>`
   display: flex;
   align-items: center;
-  padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "20px"} 14px 24px`};
-  &.welcome {
-    padding-bottom: 0;
-  }
-  ${({ theme }) => theme.mediaQueries.md} {
-    padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "27px"} 20px 40px 27px`};
-    &.welcome {
-      padding-bottom: 0;
-    }
-  }
+  padding: 30px 20px 35px 27px;
 `;
 
 const ModalTitle = styled.div`
@@ -61,7 +50,6 @@ const ModalTitle = styled.div`
 const Overlay = styled.div`
   pointer-events: none;
   display: block;
-  background: ${({ theme }) => theme.colors.lightGrey};
   position: fixed;
   z-index: -1;
   top: 0;
@@ -72,11 +60,10 @@ const Overlay = styled.div`
 `;
 
 const Heading = styled.div`
-  &.welcome {
-    font-weight: 500;
-    font-size: 21px;
-    letter-spacing: 0.5px;
-  }
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
 `;
 
 const Image = styled.div`
@@ -86,22 +73,14 @@ const Image = styled.div`
   transform: translateX(-50%);
 `;
 
-const Modal: React.FC<Props> = ({
-  welcome,
-  title,
-  onDismiss,
-  children,
-  hideCloseButton = false,
-  image,
-  paddingTopHeader,
-}) => (
+const Modal: React.FC<Props> = ({ title, onDismiss, children, hideCloseButton = false, image }) => (
   <div>
     <Overlay />
     <StyledModal>
       <ModalContent>
-        <ModalHeader className={welcome ? "welcome" : ""} paddingTopHeader={paddingTopHeader}>
+        <ModalHeader>
           <ModalTitle>
-            <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
+            <Heading>{title}</Heading>
           </ModalTitle>
           {image ? <Image>{image}</Image> : null}
           {!hideCloseButton && (

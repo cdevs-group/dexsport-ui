@@ -6,7 +6,7 @@ const BaseLayoutBlock = styled.div<{ src: string }>`
   width: 100%;
   min-height: 100vh;
   padding-top: 59px;
-  background: ${({ src }) => `url(${src}) no-repeat center top / cover`}, ${({ theme }) => theme.colors.background};
+  background: ${({ src }) => `url(${src}) no-repeat center top / cover`}, ${({ theme }) => theme.colors.dark};
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-top: 80px;
   }

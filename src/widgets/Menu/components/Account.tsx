@@ -17,7 +17,6 @@ interface Props {
   logout: () => void;
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
-  hrefLearnHow?: string;
   handleAddToken?: () => void;
   linkExternalWalletModal?: string;
   textDropdown: {
@@ -37,13 +36,12 @@ const Account: React.FC<Props> = ({
   logout,
   textsAccount,
   textsConnect,
-  hrefLearnHow,
   handleAddToken,
   linkExternalWalletModal,
   textDropdown,
   balance,
 }) => {
-  const { onPresentConnectModal } = useWalletModal(login, logout, textsAccount, textsConnect, account, hrefLearnHow);
+  const { onPresentConnectModal } = useWalletModal(login, logout, textsAccount, textsConnect, account);
   const [isOpen, setOpen] = useState(false);
   const refSelect = useRef<any>(null);
 

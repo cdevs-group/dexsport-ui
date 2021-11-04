@@ -1,5 +1,4 @@
 import { Colors } from "./types";
-import { boxShadow } from "styled-system";
 
 export const baseColors = {
   failure: "#ED4B9E",
@@ -24,6 +23,7 @@ export const baseColors = {
   boxShadow4: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)",
   boxShadow5: "0px 0px 20px rgba(97, 18, 176, 0.35)",
   boxShadow6: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+  boxShadow7: " inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   gradient: "linear-gradient(90deg, #3C43DF 0%, #4932CF 33.85%, #6112B0 100%)",
   gradient2:
     "linear-gradient(90deg, rgba(60, 67, 223, 0.5) 0%, rgba(73, 50, 207, 0.5) 33.85%, rgba(97, 18, 176, 0.5) 100%);",

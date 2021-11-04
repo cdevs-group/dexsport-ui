@@ -15,7 +15,7 @@ export interface TextsAccount {
   button: string;
   view: string;
   copied: string;
-  yayBalance?: string;
+  balance?: string;
   address?: string;
   tabs?: Array<string>;
   recentTransactions?: string;
@@ -35,14 +35,13 @@ const useWalletModal = (
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
   account?: string,
-  hrefLearnHow?: string
 ): ReturnType => {
   const pageModal = () => {
     return <AccountModal texts={textsAccount} account={account || ""} logout={logout} />;
   };
 
   const [onPresentConnectModal] = useModal(
-    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} />
+    <ConnectModal texts={textsConnect} login={login} />
   );
   const [onPresentAccountModal] = useModal(pageModal());
 

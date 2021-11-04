@@ -1,4 +1,3 @@
-import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
 
@@ -53,32 +52,12 @@ export interface PanelProps {
   links: Array<MenuEntry>;
 }
 
-interface textsBridge {
-  titleModal: string;
-  title: string;
-  network: string;
-  wallet: string;
-  newtworkName: string;
-  walletName: string;
-  button: string;
-  completeText: string;
-  noRecentTransactions?: string;
-  transactionTitle?: string;
-  tabsList?: Array<string>;
-}
 interface ITextDropdown {
   connected: string;
   balance: string;
   disconnect: string;
   addToken: string;
   copied: string;
-}
-interface Itransactions {
-  number: string;
-  link: string;
-  status: boolean;
-  profit: string;
-  linkHref: string;
 }
 export interface NavProps extends PanelProps {
   account?: string;
@@ -88,7 +67,6 @@ export interface NavProps extends PanelProps {
   textConnect?: string;
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
-  hrefLearnHow?: string;
   linkLogo: string;
   balance?: string | number;
   handleAddToken?: () => void;

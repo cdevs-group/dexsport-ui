@@ -38,7 +38,6 @@ import {
   AvalancheIcon,
   ReverseArrowsIcon,
   ClipIcon,
-  YAYIcon,
   CalculateIcon,
   PlusIcon,
   MinusIcon,
@@ -86,7 +85,6 @@ export default {
     AvalancheIcon,
     ReverseArrowsIcon,
     ClipIcon,
-    YAYIcon,
     CalculateIcon,
     PlusIcon,
     MinusIcon,
@@ -219,9 +217,6 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <ClipIcon />
-        </div>
-        <div style={{ marginRight: 20 }}>
-          <YAYIcon />
         </div>
         <div style={{ marginRight: 20 }}>
           <CalculateIcon />
