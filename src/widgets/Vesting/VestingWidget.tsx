@@ -15,8 +15,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   textsTakeGift,
   handleTakeGift,
   claimedGift,
-  imagesGift,
-  imagesMarketplace,
+  imagesBg,
   dataTimer,
   canClaim,
   textsPoolz,
@@ -51,7 +50,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       {!canClaim ? (
         <TokenOnPoolz
           texts={textsPoolz}
-          images={imagesMarketplace}
+          images={imagesBg}
           linkClaimTokens={linkClaimTokens}
           disabledCardClaimTokens={disabledCardClaimTokens}
         />
@@ -70,7 +69,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
         texts={textsTakeGift}
         handleTakeGift={handleTakeGift}
         claimedGift={claimedGift}
-        images={imagesGift}
+        images={imagesBg}
       />
     </Wrapper>
   );

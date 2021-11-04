@@ -14,16 +14,14 @@ interface IProps {
     claimed: string;
   };
   claimedGift: boolean;
-  images?: {
-    bg: string;
-  };
+  images?: string;
   giftLoader?: boolean;
 }
 
 const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
     <div style={{ position: "relative" }}>
-      <Card id="TakeGift" src={images?.bg || BG}>
+      <Card id="TakeGift" src={images || BG}>
         <StyledTitle>{texts.title}</StyledTitle>
         <StyledButton variant="violet" onClick={handleTakeGift}>
           {texts.button}

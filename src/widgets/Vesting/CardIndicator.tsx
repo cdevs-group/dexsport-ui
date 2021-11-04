@@ -31,6 +31,7 @@ const Card = styled.div<{ blur?: boolean; blurTop?: boolean }>`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 20px;
   overflow: hidden;
+  height: 100%;
 `;
 
 const TextTop = styled(Text)`

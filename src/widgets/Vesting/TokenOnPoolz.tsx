@@ -7,7 +7,7 @@ import { Button } from "../../components/Button";
 import { StyledTitle } from "./ClaimTokens";
 
 interface Iprops {
-  images?: { bg: string };
+  images?: string;
   texts: {
     title: string;
     button: string;
@@ -20,8 +20,8 @@ interface Iprops {
 const TokenOnPoolz = ({ images, texts, linkClaimTokens, disabledCardClaimTokens }: Iprops) => {
   return (
     <Wrap style={{ position: "relative" }}>
-      <Wrapper disabledCard={disabledCardClaimTokens} id="TokenOnPoolz">
-        <CardStyle src={images?.bg || BG}>
+      <Wrapper id="TokenOnPoolz" src={images || BG}>
+        <CardStyle>
           <StyledTitle size="xl">{texts.title}</StyledTitle>
           <Text margin="42px 0">{texts.description}</Text>
           <StyledButton as="a" margin="0 auto" minWidth="204px" variant="violet" href={linkClaimTokens || "#"}>
@@ -61,17 +61,16 @@ export const Blur = styled.div<{ disabledCard?: boolean }>`
   filter: blur(10px);
 `;
 
-const CardStyle = styled.div<{ src?: string }>`
+const CardStyle = styled.div`
   text-align: center;
   padding: 20px 50px 21px;
   height: 100%;
-  background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
 `;
 
-const Wrapper = styled.div<{ disabledCard?: boolean }>`
+const Wrapper = styled.div<{ src?: string }>`
   position: relative;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
-  background: ${({ theme }) => theme.colors.dark};
+  background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
   overflow: hidden;
   border-radius: 20px;
   min-height: 250px;
