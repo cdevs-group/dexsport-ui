@@ -49,25 +49,7 @@ const useWalletModal = (
   linkExternalWalletModal?: string
 ): ReturnType => {
   const pageModal = () => {
-    if (vesting) {
-      return (
-        <AccountVestingModal
-          texts={textsAccount}
-          account={account || ""}
-          logout={logout}
-          yayBalance={yayBalance}
-          dataTransactions={dataTransactions}
-          handleClaimed={handleClaimed}
-          handleAddToken={handleAddToken}
-          marginContent={marginContent}
-          minHeight={minHeight}
-          buttonLogoutType={buttonLogoutType}
-          linkExternalWalletModal={linkExternalWalletModal}
-        />
-      );
-    } else {
-      return <AccountModal texts={textsAccount} account={account || ""} logout={logout} />;
-    }
+    return <AccountModal texts={textsAccount} account={account || ""} logout={logout} />;
   };
 
   const [onPresentConnectModal] = useModal(

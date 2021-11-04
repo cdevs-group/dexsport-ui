@@ -74,14 +74,6 @@ interface Itransactions {
   profit: string;
   linkHref: string;
 }
-
-interface ITextDropdown {
-  connected: string;
-  balance: string;
-  disconnect: string;
-  addToken: string;
-  copied: string;
-}
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
@@ -92,15 +84,20 @@ export interface NavProps extends PanelProps {
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
   linkLogo: string;
+  network?: BlockChainNetwork;
   titleNetwork?: string;
   linkTextNetwork?: string;
   linkHrefNetwork?: string;
   handleToggleNetwork?: (e: any) => void;
   valuesNetworks?: string[];
+  listNetwork?: BlockChainNetwork[];
   vesting?: boolean;
-  desuBalance?: string | number;
+  yayBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed?: (value: string) => void;
+  bridge?: boolean;
+  textsBridge?: textsBridge;
+  transactionsList?: Array<Itransactions> | [];
   handleAddToken?: () => void;
   disclaimer?: boolean;
   disclaimerText?: string;
@@ -108,5 +105,18 @@ export interface NavProps extends PanelProps {
   minHeight?: string;
   buttonLogoutType?: Variant;
   linkExternalWalletModal?: string;
-  textDropdown: ITextDropdown;
 }
+
+export type BlockChainNetwork = {
+  name: string;
+  icon?: string;
+  chainId: string;
+  chainName: string;
+  nativeCurrency: {
+    name: string;
+    symbol: string;
+    decimals: number;
+  };
+  rpcUrls: string[];
+  blockExplorerUrls: string[];
+};

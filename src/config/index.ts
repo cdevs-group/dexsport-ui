@@ -69,18 +69,4 @@ export const NETWORK_CHAIN: BlockChainNetwork[] = [
     blockExplorerUrls: ["https://bscscan.com"],
     icon: "/images/bnb.png",
   },
-  {
-    name: "AVAX",
-    chainId: "43114",
-    chainName: "AVAX Mainnet",
-    shortName: "avax",
-    nativeCurrency: {
-      name: "AVAX",
-      symbol: "avax",
-      decimals: 18,
-    },
-    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-    blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
-    icon: "/images/avalanche.png",
-  },
 ];

@@ -5,13 +5,15 @@ import Account from "./Account";
 import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
+import Logo from "../image/Logo.png";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
-import { LOGO_HEADER } from "../../../constants/images";
 
 const Header: React.FC<NavProps> = ({
   account,
   login,
   logout,
+  isDark,
+  toggleTheme,
   langs,
   setLang,
   currentLang,
@@ -26,10 +28,14 @@ const Header: React.FC<NavProps> = ({
   linkHrefNetwork,
   titleNetwork,
   valuesNetworks,
+  listNetwork,
   vesting,
-  desuBalance,
+  yayBalance,
   dataTransactions,
   handleClaimed,
+  bridge,
+  textsBridge,
+  transactionsList,
   handleAddToken,
   disclaimer,
   disclaimerText,
@@ -37,7 +43,6 @@ const Header: React.FC<NavProps> = ({
   minHeight,
   buttonLogoutType,
   linkExternalWalletModal,
-  textDropdown,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -70,34 +75,9 @@ const Header: React.FC<NavProps> = ({
       <Content>
         <Line>
           <LogoWrap href={linkLogo}>
-            <img src={LOGO_HEADER} alt="" />
+            <img src={Logo} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
-            <AccountMob>
-              {" "}
-              <Account
-                text={textConnect || "Connect"}
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
-                vesting={vesting}
-                desuBalance={desuBalance}
-                dataTransactions={dataTransactions}
-                handleClaimed={handleClaimed}
-                handleAddToken={handleAddToken}
-                marginContent={marginContent}
-                minHeight={minHeight}
-                buttonLogoutType={buttonLogoutType}
-                linkExternalWalletModal={linkExternalWalletModal}
-                textDropdown={textDropdown}
-              />
-              <CloseButton onClick={() => setOpenMenu(!openMenu)}>
-                <CloseLine />
-              </CloseButton>
-            </AccountMob>
             {links.map((item, i) => (
               <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
             ))}
@@ -106,43 +86,31 @@ const Header: React.FC<NavProps> = ({
             </LanguageBlockMob>
           </Nav>
           <RightContent>
-            {/*{network ? (*/}
-            {/*  <Network*/}
-            {/*    titleNetwork={titleNetwork}*/}
-            {/*    linkHrefNetwork={linkHrefNetwork}*/}
-            {/*    linkTextNetwork={linkTextNetwork}*/}
-            {/*    handleToggleNetwork={handleToggleNetwork}*/}
-            {/*    network={network}*/}
-            {/*    valuesNetworks={valuesNetworks}*/}
-            {/*    listNetwork={listNetwork}*/}
-            {/*  />*/}
-            {/*) : null}*/}
-            <AccountDesk>
-              {" "}
-              <Account
-                text={textConnect || "Connect"}
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
-                vesting={vesting}
-                desuBalance={desuBalance}
-                dataTransactions={dataTransactions}
-                handleClaimed={handleClaimed}
-                handleAddToken={handleAddToken}
-                marginContent={marginContent}
-                minHeight={minHeight}
-                buttonLogoutType={buttonLogoutType}
-                linkExternalWalletModal={linkExternalWalletModal}
-                textDropdown={textDropdown}
-              />
-            </AccountDesk>
+            <Account
+              text={textConnect || "Connect"}
+              account={account}
+              login={login}
+              logout={logout}
+              textsAccount={textsAccount}
+              textsConnect={textsConnect}
+              hrefLearnHow={hrefLearnHow}
+              vesting={vesting}
+              bridge={bridge}
+              yayBalance={yayBalance}
+              dataTransactions={dataTransactions}
+              handleClaimed={handleClaimed}
+              textsBridge={textsBridge}
+              transactionsList={transactionsList}
+              handleAddToken={handleAddToken}
+              marginContent={marginContent}
+              minHeight={minHeight}
+              buttonLogoutType={buttonLogoutType}
+              linkExternalWalletModal={linkExternalWalletModal}
+            />
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
             </LanguageBlockDesk>
-            <Burger onClick={() => setOpenMenu(!openMenu)} />
+            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
           </RightContent>
         </Line>
       </Content>
@@ -161,9 +129,10 @@ const HeaderWrap = styled.div`
   }
 `;
 const Content = styled.div`
-  background: ${({ theme }) => theme.colors.gradient2};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow3};
+  background-color: ${({ theme }) => theme.colors.dark};
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
 `;
+
 const Line = styled.div`
   padding: 15px 15px 10px;
   display: flex;
@@ -172,45 +141,28 @@ const Line = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     padding: 21px 15px 15px;
   }
 `;
-const AccountDesk = styled.div`
-  display: none;
-  ${({ theme }) => theme.mediaQueries.md} {
-    display: block;
-  }
-`;
-const AccountMob = styled.div`
-  display: block;
-  ${({ theme }) => theme.mediaQueries.md} {
-    display: none;
-  }
-`;
+
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
   position: fixed;
   min-height: 100vh;
-  height: 100vh;
-  right: -100%;
-  width: 100vw;
+  height: 100%;
+  left: -100%;
   padding: 20px 30px 20px;
-  top: 40px;
+  top: 59px;
   transition: 0.3s ease-in-out;
-  background: rgba(38, 38, 45, 0.7);
-  backdrop-filter: blur(25px);
-  pointer-events: none;
-  z-index: 1;
   &.open {
-    right: 0%;
-    pointer-events: all;
+    left: 0;
   }
-  //background-color: ${({ theme }) => theme.colors.grey};
-  ${({ theme }) => theme.mediaQueries.md} {
+  background-color: ${({ theme }) => theme.colors.dark};
+  ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
     position: relative;
     background: transparent;
@@ -228,15 +180,14 @@ const RightContent = styled.div`
 `;
 
 const LanguageBlockMob = styled.div`
-  margin-top: 37px;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
   }
 `;
 
 const LanguageBlockDesk = styled.div`
   display: none;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
     margin-left: 11px;
   }
@@ -245,47 +196,22 @@ const LanguageBlockDesk = styled.div`
 const LogoWrap = styled.a`
   display: flex;
   align-items: center;
-  // & img {
-  //   width: 79px;
-  //   height: 34px;
-  // }
-  // & svg {
-  //   width: 133px;
-  //   ${({ theme }) => theme.mediaQueries.md} {
-  //     width: 153px;
-  //   }
-  // }
-  ${({ theme }) => theme.mediaQueries.md} {
+  & img {
+    width: 79px;
+    height: 34px;
+  }
+  & svg {
+    width: 133px;
+    ${({ theme }) => theme.mediaQueries.lg} {
+      width: 153px;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
     & img {
       width: auto;
       height: auto;
     }
   }
 `;
-const CloseButton = styled.button`
-  height: 50px;
-  width: 50px;
-  top: 15px;
-  right: -10px;
-  position: absolute;
-  border: none;
-  background: none;
-  outline: none;
-`;
-const CloseLine = styled.div`
-  width: 20px;
-  height: 2px;
-  transform: rotate(45deg);
-  position: relative;
-  background: ${({ theme }) => theme.colors.white};
-  &:after {
-    display: block;
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 2px;
-    transform: rotate(-90deg);
-    background: ${({ theme }) => theme.colors.white};
-  }
-`;
+
 export default Header;

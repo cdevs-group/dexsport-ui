@@ -15,10 +15,9 @@ export default LanguageSelect;
 const Button = styled.button`
   margin-right: 21px;
   padding: 0;
-  background: ${({ theme }) => theme.colors.grey};
+  background: ${({ theme }) => theme.colors.dark};
   border: none;
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
 `;
 
