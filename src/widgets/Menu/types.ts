@@ -66,7 +66,13 @@ interface textsBridge {
   transactionTitle?: string;
   tabsList?: Array<string>;
 }
-
+interface ITextDropdown {
+  connected: string;
+  balance: string;
+  disconnect: string;
+  addToken: string;
+  copied: string;
+}
 interface Itransactions {
   number: string;
   link: string;
@@ -105,6 +111,7 @@ export interface NavProps extends PanelProps {
   minHeight?: string;
   buttonLogoutType?: Variant;
   linkExternalWalletModal?: string;
+  textDropdown: ITextDropdown;
 }
 
 export type BlockChainNetwork = {

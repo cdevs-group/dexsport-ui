@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { ellipsis } from "../../../helpers/ellipsis";
@@ -10,6 +10,7 @@ import { BlockChainNetwork } from "../types";
 import { Variant } from "../../../components/Button/types";
 import { Flex } from "../../../components/Box";
 import { WalletIcon } from "../../../components/Svg";
+import DropdownMenu from "./DropdownMenu";
 
 interface textsBridge {
   titleModal: string;
@@ -53,6 +54,13 @@ interface Props {
   minHeight?: string;
   buttonLogoutType?: Variant;
   linkExternalWalletModal?: string;
+  textDropdown: {
+    connected: string;
+    balance: string;
+    disconnect: string;
+    addToken: string;
+    copied: string;
+  };
 }
 
 const Account: React.FC<Props> = ({
@@ -75,8 +83,9 @@ const Account: React.FC<Props> = ({
   minHeight,
   buttonLogoutType,
   linkExternalWalletModal,
+  textDropdown,
 }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+  const { onPresentConnectModal } = useWalletModal(
     login,
     logout,
     textsAccount,
@@ -93,25 +102,36 @@ const Account: React.FC<Props> = ({
     buttonLogoutType,
     linkExternalWalletModal
   );
+  const [isOpen, setOpen] = useState(false);
+  const refSelect = useRef<any>(null);
 
+  const handleOpenDropdown = () => {
+    setOpen(!isOpen);
+  };
   return (
     <>
       {account ? (
-        <AccountBlock
-          as="button"
-          onClick={() => {
-            onPresentAccountModal();
-          }}
-        >
-          {ellipsis(account)}
-          <BalanceBlock>
-            <WalletIcon />
-            <BalanceText>{`${yayBalance || 0} DESU`}</BalanceText>
-          </BalanceBlock>
-          <Avatar>
-            <img src={AVATAR_HEADER} />
-          </Avatar>
-        </AccountBlock>
+        <WrapperAccountBlock ref={refSelect}>
+          <AccountBlock as="button" onClick={handleOpenDropdown}>
+            {ellipsis(account)}
+            <BalanceBlock>
+              <WalletIcon />
+              <BalanceText>{`${yayBalance || 0} DESU`}</BalanceText>
+            </BalanceBlock>
+            <Avatar>
+              <img src={AVATAR_HEADER} />
+            </Avatar>
+          </AccountBlock>
+          <DropdownMenu
+            linkExternalWalletModal={linkExternalWalletModal}
+            logout={logout}
+            account={account}
+            handleAddToken={handleAddToken}
+            balance={yayBalance}
+            isOpen={isOpen}
+            texts={textDropdown}
+          />
+        </WrapperAccountBlock>
       ) : (
         <AccountBlock
           as="button"

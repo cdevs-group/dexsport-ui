@@ -44,6 +44,7 @@ const Header: React.FC<NavProps> = ({
   minHeight,
   buttonLogoutType,
   linkExternalWalletModal,
+  textDropdown,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -100,6 +101,7 @@ const Header: React.FC<NavProps> = ({
                 minHeight={minHeight}
                 buttonLogoutType={buttonLogoutType}
                 linkExternalWalletModal={linkExternalWalletModal}
+                textDropdown={textDropdown}
               />
               <CloseButton onClick={() => setOpenMenu(!openMenu)}>
                 <CloseLine />
@@ -133,6 +135,7 @@ const Header: React.FC<NavProps> = ({
                 marginContent={marginContent}
                 minHeight={minHeight}
                 buttonLogoutType={buttonLogoutType}
+                textDropdown={textDropdown}
                 linkExternalWalletModal={linkExternalWalletModal}
               />
             </AccountDesk>
