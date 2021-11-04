@@ -36,12 +36,13 @@ const LinkItem = styled(Text)`
     padding: 30px 25px;
     &::after {
       display: block;
-      bottom: -30px;
+      bottom: 0px;
+      left: 0;
       width: 0;
       height: 2px;
       content: "";
       position: absolute;
-      background: #4be43e;
+      background: #6112B0;
       transition: all.3s;
       opacity: 0;
     }

@@ -3,8 +3,6 @@ import { useModal } from "../Modal";
 import ConnectModal from "./ConnectModal";
 import AccountModal from "./AccountModal";
 import { Login } from "./types";
-import AccountVestingModal from "./AccountVestingModal";
-import { Variant } from "../../components/Button/types";
 
 interface ReturnType {
   onPresentConnectModal: () => void;
@@ -38,15 +36,6 @@ const useWalletModal = (
   textsConnect: TextsConnect,
   account?: string,
   hrefLearnHow?: string,
-  vesting?: boolean,
-  yayBalance?: string | number,
-  dataTransactions?: Array<any>,
-  handleClaimed?: any,
-  handleAddToken?: any,
-  marginContent?: string,
-  minHeight?: string,
-  buttonLogoutType?: Variant,
-  linkExternalWalletModal?: string
 ): ReturnType => {
   const pageModal = () => {
     return <AccountModal texts={textsAccount} account={account || ""} logout={logout} />;

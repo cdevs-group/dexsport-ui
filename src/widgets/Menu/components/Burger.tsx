@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Burger = ({ open, onClick }: { open: boolean; onClick: () => void }) => {
+const Burger = ({ onClick }: { onClick: () => void }) => {
   return (
     <BurgerWrap onClick={onClick}>
       <BurgerLine />

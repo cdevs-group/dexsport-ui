@@ -5,16 +5,13 @@ import Account from "./Account";
 import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
-import Logo from "../image/Logo.png";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
-import { LOGO_HEADER } from "../../../constants/images";
+import Logo from "../Logo";
 
 const Header: React.FC<NavProps> = ({
   account,
   login,
   logout,
-  isDark,
-  toggleTheme,
   langs,
   setLang,
   currentLang,
@@ -24,25 +21,10 @@ const Header: React.FC<NavProps> = ({
   textsConnect,
   hrefLearnHow,
   linkLogo,
-  handleToggleNetwork,
-  linkTextNetwork,
-  linkHrefNetwork,
-  titleNetwork,
-  valuesNetworks,
-  listNetwork,
-  vesting,
-  yayBalance,
-  dataTransactions,
-  handleClaimed,
-  bridge,
-  textsBridge,
-  transactionsList,
+  balance,
   handleAddToken,
   disclaimer,
   disclaimerText,
-  marginContent,
-  minHeight,
-  buttonLogoutType,
   linkExternalWalletModal,
   textDropdown,
 }) => {
@@ -71,38 +53,33 @@ const Header: React.FC<NavProps> = ({
     setOpenMenu(false);
   };
 
+  const AccountBlock = () => (
+    <Account
+      text={textConnect || "Connect"}
+      account={account}
+      login={login}
+      logout={logout}
+      textsAccount={textsAccount}
+      textsConnect={textsConnect}
+      hrefLearnHow={hrefLearnHow}
+      balance={balance}
+      handleAddToken={handleAddToken}
+      linkExternalWalletModal={linkExternalWalletModal}
+      textDropdown={textDropdown}
+    />
+  );
+
   return (
     <HeaderWrap ref={refSelect}>
       {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
       <Content>
         <Line>
           <LogoWrap href={linkLogo}>
-            <img src={LOGO_HEADER} alt="" />
+            <Logo />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
             <AccountMob>
-              <Account
-                text={textConnect || "Connect"}
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
-                vesting={vesting}
-                bridge={bridge}
-                yayBalance={yayBalance}
-                dataTransactions={dataTransactions}
-                handleClaimed={handleClaimed}
-                textsBridge={textsBridge}
-                transactionsList={transactionsList}
-                handleAddToken={handleAddToken}
-                marginContent={marginContent}
-                minHeight={minHeight}
-                buttonLogoutType={buttonLogoutType}
-                linkExternalWalletModal={linkExternalWalletModal}
-                textDropdown={textDropdown}
-              />
+              <AccountBlock />
               <CloseButton onClick={() => setOpenMenu(!openMenu)}>
                 <CloseLine />
               </CloseButton>
@@ -116,33 +93,12 @@ const Header: React.FC<NavProps> = ({
           </Nav>
           <RightContent>
             <AccountDesk>
-              <Account
-                text={textConnect || "Connect"}
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
-                vesting={vesting}
-                bridge={bridge}
-                yayBalance={yayBalance}
-                dataTransactions={dataTransactions}
-                handleClaimed={handleClaimed}
-                textsBridge={textsBridge}
-                transactionsList={transactionsList}
-                handleAddToken={handleAddToken}
-                marginContent={marginContent}
-                minHeight={minHeight}
-                buttonLogoutType={buttonLogoutType}
-                textDropdown={textDropdown}
-                linkExternalWalletModal={linkExternalWalletModal}
-              />
+              <AccountBlock />
             </AccountDesk>
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
             </LanguageBlockDesk>
-            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            <Burger onClick={() => setOpenMenu(!openMenu)} />
           </RightContent>
         </Line>
       </Content>
@@ -208,7 +164,6 @@ const Nav = styled.div`
     right: 0%;
     pointer-events: all;
   }
-  //background-color: ${({ theme }) => theme.colors.grey};
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
     position: relative;
@@ -223,6 +178,8 @@ const Nav = styled.div`
 `;
 
 const RightContent = styled.div`
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: center;
 `;

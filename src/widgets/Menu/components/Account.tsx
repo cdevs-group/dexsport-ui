@@ -1,38 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { ellipsis } from "../../../helpers/ellipsis";
 import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
-import { AccountIcon, AVATAR_HEADER } from "../../../constants/images";
+import { AVATAR_HEADER } from "../../../constants/images";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork } from "../types";
-import { Variant } from "../../../components/Button/types";
 import { Flex } from "../../../components/Box";
 import { WalletIcon } from "../../../components/Svg";
 import DropdownMenu from "./DropdownMenu";
-
-interface textsBridge {
-  titleModal: string;
-  title: string;
-  network: string;
-  wallet: string;
-  newtworkName: string;
-  walletName: string;
-  button: string;
-  completeText: string;
-  noRecentTransactions?: string;
-  transactionTitle?: string;
-  tabsList?: Array<string>;
-}
-
-interface Itransactions {
-  number: string;
-  link: string;
-  status: boolean;
-  profit: string;
-  linkHref: string;
-}
 
 interface Props {
   account?: string;
@@ -42,17 +18,7 @@ interface Props {
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
-  vesting?: boolean;
-  yayBalance?: string | number;
-  dataTransactions?: Array<any>;
-  handleClaimed?: (value: string) => void;
-  bridge?: boolean;
-  textsBridge?: textsBridge;
-  transactionsList?: Array<Itransactions> | [];
   handleAddToken?: () => void;
-  marginContent?: string;
-  minHeight?: string;
-  buttonLogoutType?: Variant;
   linkExternalWalletModal?: string;
   textDropdown: {
     connected: string;
@@ -61,6 +27,7 @@ interface Props {
     addToken: string;
     copied: string;
   };
+  balance?: string | number;
 }
 
 const Account: React.FC<Props> = ({
@@ -71,43 +38,37 @@ const Account: React.FC<Props> = ({
   textsAccount,
   textsConnect,
   hrefLearnHow,
-  vesting,
-  yayBalance,
-  dataTransactions,
-  handleClaimed,
-  bridge,
-  textsBridge,
-  transactionsList,
   handleAddToken,
-  marginContent,
-  minHeight,
-  buttonLogoutType,
   linkExternalWalletModal,
   textDropdown,
+  balance,
 }) => {
-  const { onPresentConnectModal } = useWalletModal(
-    login,
-    logout,
-    textsAccount,
-    textsConnect,
-    account,
-    hrefLearnHow,
-    vesting,
-    yayBalance,
-    dataTransactions,
-    handleClaimed,
-    handleAddToken,
-    marginContent,
-    minHeight,
-    buttonLogoutType,
-    linkExternalWalletModal
-  );
+  const { onPresentConnectModal } = useWalletModal(login, logout, textsAccount, textsConnect, account, hrefLearnHow);
   const [isOpen, setOpen] = useState(false);
   const refSelect = useRef<any>(null);
 
   const handleOpenDropdown = () => {
     setOpen(!isOpen);
   };
+
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
+        setOpen(false);
+      }
+    },
+    [setOpen]
+  );
+
+  useEffect(() => {
+    if (document && refSelect && refSelect.current) {
+      document.addEventListener("mousedown", handleClickOutside, false);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside, false);
+    };
+  }, [refSelect, handleClickOutside]);
+
   return (
     <>
       {account ? (
@@ -116,7 +77,7 @@ const Account: React.FC<Props> = ({
             {ellipsis(account)}
             <BalanceBlock>
               <WalletIcon />
-              <BalanceText>{`${yayBalance || 0} DESU`}</BalanceText>
+              <BalanceText>{`${balance || 0} DESU`}</BalanceText>
             </BalanceBlock>
             <Avatar>
               <img src={AVATAR_HEADER} />
@@ -127,7 +88,7 @@ const Account: React.FC<Props> = ({
             logout={logout}
             account={account}
             handleAddToken={handleAddToken}
-            balance={yayBalance}
+            balance={balance}
             isOpen={isOpen}
             texts={textDropdown}
           />
@@ -227,4 +188,5 @@ const WrapperAccountBlock = styled.div`
   position: relative;
   z-index: 2;
 `;
+
 export default Account;
