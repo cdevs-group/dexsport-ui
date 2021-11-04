@@ -42,7 +42,7 @@ const LinkItem = styled(Text)`
       height: 2px;
       content: "";
       position: absolute;
-      background: #6112B0;
+      background: #6112b0;
       transition: all.3s;
       opacity: 0;
     }

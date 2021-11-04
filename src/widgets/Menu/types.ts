@@ -89,7 +89,7 @@ export interface NavProps extends PanelProps {
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
-  linkLogo: string;  
+  linkLogo: string;
   balance?: string | number;
   handleAddToken?: () => void;
   disclaimer?: boolean;

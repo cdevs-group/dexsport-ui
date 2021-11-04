@@ -35,7 +35,7 @@ const useWalletModal = (
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
   account?: string,
-  hrefLearnHow?: string,
+  hrefLearnHow?: string
 ): ReturnType => {
   const pageModal = () => {
     return <AccountModal texts={textsAccount} account={account || ""} logout={logout} />;

@@ -15,8 +15,29 @@ var reactTransitionGroup = require('react-transition-group');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+function _interopNamespace(e) {
+    if (e && e.__esModule) return e;
+    var n = Object.create(null);
+    if (e) {
+        Object.keys(e).forEach(function (k) {
+            if (k !== 'default') {
+                var d = Object.getOwnPropertyDescriptor(e, k);
+                Object.defineProperty(n, k, d.get ? d : {
+                    enumerable: true,
+                    get: function () {
+                        return e[k];
+                    }
+                });
+            }
+        });
+    }
+    n['default'] = e;
+    return Object.freeze(n);
+}
+
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 
@@ -2077,8 +2098,6 @@ var BG$1 = "641b6da0d0d66ace.png";
 
 var AVATAR_HEADER = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGuSURBVHgBrZS7T8JQFMbPrcgrqDAoDhpBXVx8JCxqoo5uxMFFB1JjjLOLI+noppvRRGrCHwBuxkQn46AD6iLxQQmjkoIiUSq93lYgLW1Nm/SXNO39evrdc05PC2AzyGzgx3piQQSYpDpQFGNyRpDqQJjx7NOcKcN2AxLp1wnjEEZs10GM0RiaNDCCAxEz3Yc0Kxu+b7C8RQNDY6qRpx1mEn6H0Z3iYFa1rva8wX/0P02B88ubcRiZXa7sgBVGrxdTY+fLeQps4jlymhYR7OoaCu6qRhv2xeRDyYA3qtICZCZ1SxZcn6p1wDkB071H8vVL5bilzxCtk/IDX8tA6ftO1v4MEaYBozi5CknZlYMFlSFfu4V7noGaWFLpN8Ut8DmG5PuoMdKtweY3E6HH2ZOLXOQsJLjUJTtJFlImqiqIuXID8sXQqyN11qGsP7mNOJJpSPngeCAOQfccVH7y0M7V65pGM5zDJlLjs+U9jd7nmdeNV71lAfCSgMSwdJBlRtKk3unxoLOJJkM6DFJT5MYkc7hEyodCNQ1WsG2wmxj2UBRRmqLIb8kkIqqbjrXEL3z0l3NyyGp+AAAAAElFTkSuQmCC";
 
-var LOGO_HEADER = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAPCAYAAAAvQwurAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPpSURBVHgB3VnrUdtAEF6Y/I9TQUQFmAoQFQQqsFIBpgKbCnAqkKgAqECiAjsV6FKBTQWbXesEp9Xe6QTOMJNvZkfy7fP2XqvzESKWEMaO6Ono6KiQDNKd0uMOIkE2LqxeTo9EsA3xf1r+JT2ufXzHf0qPGVHq2ON4DdGG6J50qnfE+0T0SLrGJ+DxvbG+2e+jR2cBYezzTVS5/iN11UBjURMlMuAR+hihl1p+rfCk7xxHxo0j4yXMlHxNIn3fKboZxqPGZkK+R/cVQwO8VZxOPjrAVvdBEeE2rSMrobvAccjeOcCMVPguRujmHxhgBud/8pEB/gJ+8BbzDN0tLSGaEy0DesbSEHi7TYkmTtslKFu34m8OfRREf4hOiaaOnUI7XoT9ysbh6rkxMd/dliWYv7OyLnhQOseEAs5x7fHPbRnRytqvhG4qfrPMptPimTVzyys1vqOrrYglRIL94DAyoZN4YuZkJo5cZuNPBuLNB2yXDl9bvXOHv1T4KxGTt38e/tKTu2CsLeQKNkQXfLhjk5hUsc1nUBIoQM6VoIy2iqhtRbI/PH4Y2urbKXI80/cDRfYMNDP9uS3qDohTpa0Q77IQ4v5pO46Gr3BoOKNfY/dQT+yMqpWZMrUysWdaGfDPfraKTo2isHJ0SoxDx4Yn3jU2K2+Fel9zJVevUGLrxeDwtBW6tX5r1JEE8iZRQkRAOXaTwit2LWQOPcC1orPFcOdKjEONb4VKbLwupvBvBziE1UDeJHp5PlZ0M7CFDzYJrqA5/F0Y8MNYHZd+B+SX0C9sAJxtV4KPB7v9Mv0CWVh0kUA//ljckB/XtpEC2P2qSBQb2pES6zt2a/dCG+ANd4qC5YuGNfTPHU5uKGiuGi8EqYFiU2DMArZ4xc0VvaldGVwLzInO6P0bNAOuDfYE/GgvRlpifZ40J1wjCNlnRT9z41X4ocnHKIhulfYJHADaZ9I9Je8B+iV/iwrCuCT97x7ebVuc2dkuCxJOBre7nVuQrLxVerByOfEWVq/dJbTEGPDjUd6QBVBAf0LeUQy8CF5An6z3EAYXgwXZOIfuBGn7PTRBwsBxqHG4aAkhdXS1Tw62t1Ta147eNY5DPRBvPjJfJcYj5qIjC8Q2VLsMyh9DPAzRVeh+Nhaob83GXgi0H/UueEte2vcniLtIASt36E+lKxjedhkV0Q1Ewva9Es3qETUGvEWbARnuDJ89hXL27iA+2XtgU5TMFL39OcQ+SIbf5Z8NM2ov7AQ7wWY3yODt5krGzBNhJWLW4n2BEbD2zpxJmgr77Z8chaKu+Xfj46NCrsK231rdYwK2/i9g8zmXwCfgM30P4S83eGfgQKBg7wAAAABJRU5ErkJggg==";
-
 var DEX_TOKEN = "data:image/png;base64,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";
 
 var AVATAR = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKMSURBVHgBxZfPbxJBFMe/S4CWFlusBz1IXfTSk2A8mZhQ7yZtevWgR0/av8D+CZXEe1v/AIOJF6MxkngXYoxR07JKD+XQQmwLygLje7sLXSJlZ3ALn+Sx7OzsfN+8+bFvNEgihIjRZZksTZYi08lizuMqmUGWJ8uRZTVNq8IPSFgne0pWEWps8LsYFu4x2br4f9ad6Cn3uij8oyhko0EVU8JfcbcTqVH3vJ8TultTc4nzOH2EPbvPEoPsRmeVBFwP1kYgDkdjrXNjRcAJSxFD0i5V0Pq+By0SRvDWNdnXEhQFo+PAJl3uy7wlag20dytofttDi6y9e2CVdQhciGLibkrGkQw5sKo5Y18ZJNgslKiXB5YoC8og4QjPgUQQ9vZ6Kua7L/jzKg9V2vtHqG99QGQqhGByvl8Va2tnBxahgDlZgxmude+bk3WYE7V/6oUaEcyU5xGYiw5qLs0OJKHAzs03+Hr7pVTdlddvEYjPDaqS4mWoQwGOgJtw4PRtPvLwDjzQ2QGlD4U73Cy+HN/G9diTbln64gurTJJY0KtGiGYxrwCz8NPqfX12v/us0a5i+/A5yr9z3bKdwy1MB69AFl6GvAQ9o5D/9Bifo896yuJTSz1DwA6Vaifz416i5dVslYfAgAT1S7967hdmHiFE4kdNo2uXp5egiMFDUICdYg1kYXYVV889gEm9zJVXcNz8gfPhJKKucJfrOSiSZwfeQ2IbZjHmmHrKcKjd4R6SHA9BFva2OA6y1q+wk85Rs8HavnyOh8T6HFsJCf+hSwajI+Nojj8l60GMISnt58T40vIzjERRqB7ThH0082N5chtqR7M+0dgUalQcYd2rfQ2SiJPj+SLsLEqHD8fzvx9Ti+LkrQ9uAAAAAElFTkSuQmCC";
@@ -2238,7 +2257,7 @@ var AccountText = styled__default['default'](Text)(templateObject_4$a || (templa
 });
 var templateObject_1$i, templateObject_2$e, templateObject_3$c, templateObject_4$a;
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, handleAddToken, marginContent, minHeight, buttonLogoutType, linkExternalWalletModal) {
+var useWalletModal = function (login, logout, textsAccount, textsConnect, account, hrefLearnHow) {
     var pageModal = function () {
         return React__default['default'].createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout });
     };
@@ -2379,22 +2398,35 @@ var Tooltip = styled__default['default'].div(templateObject_11$2 || (templateObj
 var templateObject_1$h, templateObject_2$d, templateObject_3$b, templateObject_4$9, templateObject_5$8, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$2;
 
 var Account = function (_a) {
-    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow; _a.vesting; var yayBalance = _a.yayBalance; _a.dataTransactions; _a.handleClaimed; _a.bridge; _a.textsBridge; _a.transactionsList; var handleAddToken = _a.handleAddToken; _a.marginContent; _a.minHeight; _a.buttonLogoutType; var linkExternalWalletModal = _a.linkExternalWalletModal, textDropdown = _a.textDropdown;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, handleAddToken = _a.handleAddToken, linkExternalWalletModal = _a.linkExternalWalletModal, textDropdown = _a.textDropdown, balance = _a.balance;
     var onPresentConnectModal = useWalletModal(login, logout, textsAccount, textsConnect, account, hrefLearnHow).onPresentConnectModal;
     var _b = React.useState(false), isOpen = _b[0], setOpen = _b[1];
     var refSelect = React.useRef(null);
     var handleOpenDropdown = function () {
         setOpen(!isOpen);
     };
+    var handleClickOutside = React.useCallback(function (e) {
+        if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
+            setOpen(false);
+        }
+    }, [setOpen]);
+    React.useEffect(function () {
+        if (document && refSelect && refSelect.current) {
+            document.addEventListener("mousedown", handleClickOutside, false);
+        }
+        return function () {
+            document.removeEventListener("mousedown", handleClickOutside, false);
+        };
+    }, [refSelect, handleClickOutside]);
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(WrapperAccountBlock, { ref: refSelect },
         React__default['default'].createElement(AccountBlock, { as: "button", onClick: handleOpenDropdown },
             ellipsis(account),
             React__default['default'].createElement(BalanceBlock, null,
                 React__default['default'].createElement(Icon$s, null),
-                React__default['default'].createElement(BalanceText, null, (yayBalance || 0) + " DESU")),
+                React__default['default'].createElement(BalanceText, null, (balance || 0) + " DESU")),
             React__default['default'].createElement(Avatar, null,
                 React__default['default'].createElement("img", { src: AVATAR_HEADER }))),
-        React__default['default'].createElement(DropdownMenu, { linkExternalWalletModal: linkExternalWalletModal, logout: logout, account: account, handleAddToken: handleAddToken, balance: yayBalance, isOpen: isOpen, texts: textDropdown }))) : (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
+        React__default['default'].createElement(DropdownMenu, { linkExternalWalletModal: linkExternalWalletModal, logout: logout, account: account, handleAddToken: handleAddToken, balance: balance, isOpen: isOpen, texts: textDropdown }))) : (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
         }, className: "notAuth" },
         React__default['default'].createElement(Avatar, { className: "notAuth" }, text)))));
@@ -2442,7 +2474,7 @@ var MenuLink = function (_a) {
         React__default['default'].createElement(LinkItem, { size: size }, name)));
 };
 var StyledLink = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject([""], [""])));
-var LinkItem = styled__default['default'](Text)(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"], ["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"])), function (_a) {
+var LinkItem = styled__default['default'](Text)(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: 0px;\n      left: 0;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #6112b0;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"], ["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: 0px;\n      left: 0;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #6112b0;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.lightGrey;
 }, function (_a) {
@@ -2452,7 +2484,7 @@ var LinkItem = styled__default['default'](Text)(templateObject_2$b || (templateO
 var templateObject_1$f, templateObject_2$b;
 
 var Burger = function (_a) {
-    _a.open; var onClick = _a.onClick;
+    var onClick = _a.onClick;
     return (React__default['default'].createElement(BurgerWrap, { onClick: onClick },
         React__default['default'].createElement(BurgerLine, null)));
 };
@@ -2565,8 +2597,20 @@ var StyledText$1 = styled__default['default'](Text)(templateObject_2$7 || (templ
 var Button$1 = styled__default['default'].button(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  background: none;\n  border: none;\n  padding: 0;\n"], ["\n  background: none;\n  border: none;\n  padding: 0;\n"])));
 var templateObject_1$b, templateObject_2$7, templateObject_3$7;
 
+function Logo(props) {
+    return (React__namespace.createElement("svg", { width: "120", height: "15", viewBox: "0 0 120 15", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+        React__namespace.createElement("path", { d: "M15.71 13.88V0.207153H27.0626V3.74966H20.5369V5.44841H25.7989V8.7216H20.5369V10.3375H27.3112V13.88H15.71Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M43.4486 13.88H37.6273L35.8249 10.3375L34.1676 13.88H28.7192L33.2561 7.06429L28.8849 0.207153H34.5819L36.1771 3.62536L37.793 0.207153H43.055L38.7045 6.93999L43.4486 13.88Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M51.3231 0C53.9058 0 56.005 0.649114 57.6209 1.94734L55.6736 5.05481C55.0244 4.59905 54.3408 4.23306 53.6226 3.95684C52.9183 3.68062 52.1518 3.54251 51.3231 3.54251C50.7845 3.54251 50.4047 3.60466 50.1837 3.72896C49.9765 3.83944 49.873 3.99136 49.873 4.18472C49.873 4.35045 49.9973 4.47475 50.2459 4.55761C50.5083 4.64048 50.8328 4.73025 51.2195 4.82693L53.1047 5.26197C54.4996 5.57962 55.5493 6.0492 56.2536 6.67069C56.9718 7.29218 57.3309 8.15537 57.3309 9.26024C57.3309 10.3651 57.0616 11.2766 56.5229 11.9948C55.9843 12.6992 55.2523 13.224 54.327 13.5693C53.4155 13.9145 52.3797 14.0872 51.2195 14.0872C50.3494 14.0872 49.4794 14.0112 48.6093 13.8593C47.7392 13.6936 46.9312 13.4588 46.1854 13.1549C45.4396 12.8373 44.7974 12.4575 44.2588 12.0155L46.1647 8.84591C46.5652 9.16356 47.0486 9.4536 47.6149 9.716C48.1811 9.9646 48.7681 10.1649 49.3758 10.3168C49.9835 10.4687 50.5497 10.5447 51.0745 10.5447C51.5717 10.5447 51.9101 10.4894 52.0896 10.3789C52.283 10.2546 52.3797 10.1027 52.3797 9.92317C52.3797 9.72981 52.2968 9.5848 52.1311 9.48812C51.9791 9.39145 51.696 9.29477 51.2817 9.19809L49.21 8.74233C48.4781 8.5766 47.7806 8.35562 47.1177 8.07941C46.4548 7.80319 45.9161 7.40267 45.5018 6.87785C45.0875 6.33923 44.8803 5.61415 44.8803 4.70263C44.8803 3.76348 45.1289 2.94173 45.6261 2.23737C46.1371 1.53302 46.8691 0.987482 47.822 0.600776C48.7888 0.200259 49.9558 0 51.3231 0Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M67.0559 0.207153C68.9066 0.207153 70.3222 0.621482 71.3028 1.45014C72.2972 2.2788 72.7944 3.47344 72.7944 5.03408C72.7944 6.58091 72.2972 7.77555 71.3028 8.61802C70.3222 9.44668 68.9066 9.86101 67.0559 9.86101H64.6321V13.88H59.8052V0.207153H67.0559ZM66.2687 6.4428C66.7935 6.4428 67.2079 6.33231 67.5117 6.11133C67.8155 5.87655 67.9675 5.51746 67.9675 5.03408C67.9675 4.5507 67.8155 4.19852 67.5117 3.97754C67.2079 3.74276 66.7935 3.62536 66.2687 3.62536H64.6321V6.4428H66.2687Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M81.9934 0C84.1755 0 85.8743 0.614587 87.0897 1.84376C88.3188 3.07294 88.9334 4.80621 88.9334 7.04358C88.9334 9.28096 88.3188 11.0142 87.0897 12.2434C85.8743 13.4726 84.1755 14.0872 81.9934 14.0872C80.5571 14.0872 79.3141 13.811 78.2645 13.2585C77.2286 12.7061 76.4276 11.905 75.8614 10.8554C75.3089 9.80577 75.0327 8.53517 75.0327 7.04358C75.0327 5.552 75.3089 4.28139 75.8614 3.23176C76.4276 2.18213 77.2286 1.38109 78.2645 0.828656C79.3141 0.276219 80.5571 0 81.9934 0ZM81.9934 3.62537C81.2891 3.62537 80.7712 3.90159 80.4397 4.45403C80.122 4.99266 79.9632 5.85584 79.9632 7.04358C79.9632 8.23133 80.122 9.10142 80.4397 9.65385C80.7712 10.1925 81.2891 10.4618 81.9934 10.4618C82.6978 10.4618 83.2088 10.1925 83.5264 9.65385C83.8441 9.10142 84.0029 8.23133 84.0029 7.04358C84.0029 5.85584 83.8441 4.99266 83.5264 4.45403C83.2088 3.90159 82.6978 3.62537 81.9934 3.62537Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M99.0127 0.207153C100.794 0.207153 102.161 0.60767 103.114 1.40871C104.067 2.19593 104.544 3.24556 104.544 4.5576C104.544 6.61543 103.687 7.97581 101.975 8.63874L105.31 13.88H100.069L97.6454 9.3431H96.3195V13.88H91.5962V0.207153H99.0127ZM98.184 6.17348C98.695 6.17348 99.0748 6.08371 99.3234 5.90417C99.5858 5.71082 99.717 5.37935 99.717 4.90978C99.717 4.45402 99.5858 4.12946 99.3234 3.93611C99.0748 3.74276 98.695 3.64608 98.184 3.64608H96.3195V6.17348H98.184Z", fill: "white" }),
+        React__namespace.createElement("path", { d: "M120 0.207153V3.74966H115.732V13.88H110.905V3.74966H106.617V0.207153H120Z", fill: "white" }),
+        React__namespace.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M11.5598 1.98864C10.4687 0.800902 8.85282 0.207031 6.71212 0.207031H0V13.8799H6.71212C8.85282 13.8799 10.4687 13.286 11.5598 12.0983C12.6508 10.8967 13.1964 9.21177 13.1964 7.04345C13.1964 4.86132 12.6508 3.17639 11.5598 1.98864ZM9.49484 7.42882L4.15879 11.2904L5.41433 7.88313L2.58936 6.52021L7.92541 2.65859L6.66987 6.0659L9.49484 7.42882Z", fill: "white" })));
+}
+
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo; _a.handleToggleNetwork; _a.linkTextNetwork; _a.linkHrefNetwork; _a.titleNetwork; _a.valuesNetworks; _a.listNetwork; var vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType, linkExternalWalletModal = _a.linkExternalWalletModal, textDropdown = _a.textDropdown;
+    var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, balance = _a.balance, handleAddToken = _a.handleAddToken, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, linkExternalWalletModal = _a.linkExternalWalletModal, textDropdown = _a.textDropdown;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
@@ -2585,15 +2629,16 @@ var Header = function (_a) {
     var handleLink = function () {
         setOpenMenu(false);
     };
+    var AccountBlock = function () { return (React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, balance: balance, handleAddToken: handleAddToken, linkExternalWalletModal: linkExternalWalletModal, textDropdown: textDropdown })); };
     return (React__default['default'].createElement(HeaderWrap, { ref: refSelect },
         disclaimer ? React__default['default'].createElement(Disclaimer, { text: disclaimerText || "" }) : null,
         React__default['default'].createElement(Content, null,
             React__default['default'].createElement(Line, null,
                 React__default['default'].createElement(LogoWrap, { href: linkLogo },
-                    React__default['default'].createElement("img", { src: LOGO_HEADER, alt: "" })),
+                    React__default['default'].createElement(Logo, null)),
                 React__default['default'].createElement(Nav, { className: openMenu ? "open" : "" },
                     React__default['default'].createElement(AccountMob, null,
-                        React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, linkExternalWalletModal: linkExternalWalletModal, textDropdown: textDropdown }),
+                        React__default['default'].createElement(AccountBlock, null),
                         React__default['default'].createElement(CloseButton, { onClick: function () { return setOpenMenu(!openMenu); } },
                             React__default['default'].createElement(CloseLine, null))),
                     links.map(function (item, i) { return (React__default['default'].createElement(MenuLink, { key: i, size: "md", name: item.name, url: item.url, onClick: handleLink })); }),
@@ -2601,10 +2646,10 @@ var Header = function (_a) {
                         React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
                 React__default['default'].createElement(RightContent, null,
                     React__default['default'].createElement(AccountDesk, null,
-                        React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, textDropdown: textDropdown, linkExternalWalletModal: linkExternalWalletModal })),
+                        React__default['default'].createElement(AccountBlock, null)),
                     React__default['default'].createElement(LanguageBlockDesk, null,
                         React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
-                    React__default['default'].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));
+                    React__default['default'].createElement(Burger, { onClick: function () { return setOpenMenu(!openMenu); } }))))));
 };
 var HeaderWrap = styled__default['default'].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  z-index: 10;\n  & svg {\n    flex-shrink: 0;\n  }\n"], ["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  z-index: 10;\n  & svg {\n    flex-shrink: 0;\n  }\n"])));
 var Content = styled__default['default'].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: ", ";\n"], ["\n  background: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
@@ -2626,14 +2671,11 @@ var AccountMob = styled__default['default'].div(templateObject_5$5 || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Nav = styled__default['default'].div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100vh;\n  right: -100%;\n  width: 100vw;\n  padding: 20px 30px 20px;\n  top: 40px;\n  transition: 0.3s ease-in-out;\n  background: rgba(38, 38, 45, 0.7);\n  backdrop-filter: blur(25px);\n  z-index: 1;\n  &.open {\n    right: 0%;\n    pointer-events: all;\n  }\n  //background-color: ", ";\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n    z-index: 3;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100vh;\n  right: -100%;\n  width: 100vw;\n  padding: 20px 30px 20px;\n  top: 40px;\n  transition: 0.3s ease-in-out;\n  background: rgba(38, 38, 45, 0.7);\n  backdrop-filter: blur(25px);\n  z-index: 1;\n  &.open {\n    right: 0%;\n    pointer-events: all;\n  }\n  //background-color: ", ";\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n    z-index: 3;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.grey;
-}, function (_a) {
+var Nav = styled__default['default'].div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100vh;\n  right: -100%;\n  width: 100vw;\n  padding: 20px 30px 20px;\n  top: 40px;\n  transition: 0.3s ease-in-out;\n  background: rgba(38, 38, 45, 0.7);\n  backdrop-filter: blur(25px);\n  z-index: 1;\n  &.open {\n    right: 0%;\n    pointer-events: all;\n  }\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n    z-index: 3;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100vh;\n  right: -100%;\n  width: 100vw;\n  padding: 20px 30px 20px;\n  top: 40px;\n  transition: 0.3s ease-in-out;\n  background: rgba(38, 38, 45, 0.7);\n  backdrop-filter: blur(25px);\n  z-index: 1;\n  &.open {\n    right: 0%;\n    pointer-events: all;\n  }\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n    z-index: 3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var RightContent = styled__default['default'].div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var RightContent = styled__default['default'].div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  position: relative;\n  z-index: 4;\n  display: flex;\n  align-items: center;\n"], ["\n  position: relative;\n  z-index: 4;\n  display: flex;\n  align-items: center;\n"])));
 var LanguageBlockMob = styled__default['default'].div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  margin-top: 37px;\n  ", " {\n    display: none;\n  }\n"], ["\n  margin-top: 37px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;

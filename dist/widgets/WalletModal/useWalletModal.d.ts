@@ -1,5 +1,4 @@
 import { Login } from "./types";
-import { Variant } from "../../components/Button/types";
 interface ReturnType {
     onPresentConnectModal: () => void;
     onPresentAccountModal: () => void;
@@ -22,5 +21,5 @@ export interface TextsConnect {
     title: string;
     link: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, handleAddToken?: any, marginContent?: string | undefined, minHeight?: string | undefined, buttonLogoutType?: Variant | undefined, linkExternalWalletModal?: string | undefined) => ReturnType;
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined, hrefLearnHow?: string | undefined) => ReturnType;
 export default useWalletModal;
