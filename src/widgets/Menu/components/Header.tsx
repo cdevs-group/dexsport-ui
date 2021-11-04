@@ -8,6 +8,7 @@ import Languages from "../../../components/DropDown/Languages";
 import Network from "./Network";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
 import { LOGO_HEADER } from "../../../constants/images";
+import { CloseIcon } from "../../../components/Svg";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -76,6 +77,32 @@ const Header: React.FC<NavProps> = ({
             <img src={LOGO_HEADER} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
+            <AccountMob>
+              {" "}
+              <Account
+                text={textConnect || "Connect"}
+                account={account}
+                login={login}
+                logout={logout}
+                textsAccount={textsAccount}
+                textsConnect={textsConnect}
+                hrefLearnHow={hrefLearnHow}
+                network={network}
+                vesting={vesting}
+                desuBalance={desuBalance}
+                dataTransactions={dataTransactions}
+                handleClaimed={handleClaimed}
+                handleAddToken={handleAddToken}
+                marginContent={marginContent}
+                minHeight={minHeight}
+                buttonLogoutType={buttonLogoutType}
+                linkExternalWalletModal={linkExternalWalletModal}
+                textDropdown={textDropdown}
+              />
+              <CloseButton onClick={() => setOpenMenu(!openMenu)}>
+                <CloseLine />
+              </CloseButton>
+            </AccountMob>
             {links.map((item, i) => (
               <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
             ))}
@@ -95,30 +122,33 @@ const Header: React.FC<NavProps> = ({
             {/*    listNetwork={listNetwork}*/}
             {/*  />*/}
             {/*) : null}*/}
-            <Account
-              text={textConnect || "Connect"}
-              account={account}
-              login={login}
-              logout={logout}
-              textsAccount={textsAccount}
-              textsConnect={textsConnect}
-              hrefLearnHow={hrefLearnHow}
-              network={network}
-              vesting={vesting}
-              desuBalance={desuBalance}
-              dataTransactions={dataTransactions}
-              handleClaimed={handleClaimed}
-              handleAddToken={handleAddToken}
-              marginContent={marginContent}
-              minHeight={minHeight}
-              buttonLogoutType={buttonLogoutType}
-              linkExternalWalletModal={linkExternalWalletModal}
-              textDropdown={textDropdown}
-            />
+            <AccountDesk>
+              {" "}
+              <Account
+                text={textConnect || "Connect"}
+                account={account}
+                login={login}
+                logout={logout}
+                textsAccount={textsAccount}
+                textsConnect={textsConnect}
+                hrefLearnHow={hrefLearnHow}
+                network={network}
+                vesting={vesting}
+                desuBalance={desuBalance}
+                dataTransactions={dataTransactions}
+                handleClaimed={handleClaimed}
+                handleAddToken={handleAddToken}
+                marginContent={marginContent}
+                minHeight={minHeight}
+                buttonLogoutType={buttonLogoutType}
+                linkExternalWalletModal={linkExternalWalletModal}
+                textDropdown={textDropdown}
+              />
+            </AccountDesk>
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
             </LanguageBlockDesk>
-            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            <Burger onClick={() => setOpenMenu(!openMenu)} />
           </RightContent>
         </Line>
       </Content>
@@ -148,28 +178,45 @@ const Line = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.md} {
     padding: 21px 15px 15px;
   }
 `;
-
+const AccountDesk = styled.div`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: block;
+  }
+`;
+const AccountMob = styled.div`
+  display: block;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: none;
+  }
+`;
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: flex-start;
   position: fixed;
   min-height: 100vh;
-  height: 100%;
-  left: -100%;
+  height: 100vh;
+  right: -100%;
+  width: 100vw;
   padding: 20px 30px 20px;
-  top: 59px;
+  top: 40px;
   transition: 0.3s ease-in-out;
+  background: rgba(38, 38, 45, 0.7);
+  backdrop-filter: blur(25px);
+  pointer-events: none;
+  z-index: 1;
   &.open {
-    left: 0;
+    right: 0%;
+    pointer-events: all;
   }
-  background-color: ${({ theme }) => theme.colors.grey};
-  ${({ theme }) => theme.mediaQueries.lg} {
+  //background-color: ${({ theme }) => theme.colors.grey};
+  ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
     position: relative;
     background: transparent;
@@ -187,14 +234,15 @@ const RightContent = styled.div`
 `;
 
 const LanguageBlockMob = styled.div`
-  ${({ theme }) => theme.mediaQueries.lg} {
+  margin-top: 37px;
+  ${({ theme }) => theme.mediaQueries.md} {
     display: none;
   }
 `;
 
 const LanguageBlockDesk = styled.div`
   display: none;
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.md} {
     display: block;
     margin-left: 11px;
   }
@@ -203,22 +251,47 @@ const LanguageBlockDesk = styled.div`
 const LogoWrap = styled.a`
   display: flex;
   align-items: center;
-  & img {
-    width: 79px;
-    height: 34px;
-  }
-  & svg {
-    width: 133px;
-    ${({ theme }) => theme.mediaQueries.lg} {
-      width: 153px;
-    }
-  }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  // & img {
+  //   width: 79px;
+  //   height: 34px;
+  // }
+  // & svg {
+  //   width: 133px;
+  //   ${({ theme }) => theme.mediaQueries.md} {
+  //     width: 153px;
+  //   }
+  // }
+  ${({ theme }) => theme.mediaQueries.md} {
     & img {
       width: auto;
       height: auto;
     }
   }
 `;
-
+const CloseButton = styled.button`
+  height: 50px;
+  width: 50px;
+  top: 15px;
+  right: -10px;
+  position: absolute;
+  border: none;
+  background: none;
+  outline: none;
+`;
+const CloseLine = styled.div`
+  width: 20px;
+  height: 2px;
+  transform: rotate(45deg);
+  position: relative;
+  background: ${({ theme }) => theme.colors.white};
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    transform: rotate(-90deg);
+    background: ${({ theme }) => theme.colors.white};
+  }
+`;
 export default Header;

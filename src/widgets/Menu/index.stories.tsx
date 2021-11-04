@@ -45,7 +45,7 @@ export const HeaderDefault: React.FC = () => {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
-  
+
   return (
     <BrowserRouter>
       <div style={{ marginTop: "50px" }}>

@@ -59,12 +59,7 @@ export const WithHandler: React.FC = () => {
         </Alert>
       </Row>
       <Row>
-        <Alert
-          icon={<></>}
-          onClick={closeAlert}
-          variant="winning"
-          title="Winnings collected!"
-        >
+        <Alert icon={<></>} onClick={closeAlert} variant="winning" title="Winnings collected!">
           Your prizes have been sent to your wallet
         </Alert>
       </Row>
@@ -74,7 +69,7 @@ export const WithHandler: React.FC = () => {
             You have{" "}
             <Text fontSize="14px" as="span" color="green">
               9.000
-            </Text>            
+            </Text>
             <br />
             Do you want stake it?
           </Text>
