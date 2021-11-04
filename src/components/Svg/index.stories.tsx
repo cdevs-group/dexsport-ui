@@ -3,7 +3,6 @@ import {
   ArrowRight,
   EyeOpen,
   ArrowTopRight,
-  AddIcon,
   StrikeIcon,
   ArrowDownIcon,
   CloseIcon,
@@ -56,7 +55,6 @@ export default {
     ArrowRight,
     EyeOpen,
     ArrowTopRight,
-    AddIcon,
     StrikeIcon,
     ArrowDownIcon,
     CloseIcon,
@@ -116,9 +114,6 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <ArrowTopRight />
-        </div>
-        <div style={{ marginRight: 20 }}>
-          <AddIcon />
         </div>
         <div style={{ marginRight: 20 }}>
           <CompleteIcon />

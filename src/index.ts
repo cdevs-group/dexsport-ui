@@ -10,7 +10,6 @@ export * from "./components/Link";
 export * from "./components/Alert";
 export * from "./components/Loader";
 export * from "./components/Skeleton";
-export * from "./components/ButtonMenu";
 export * from "./components/Heading";
 export * from "./components/Input";
 
