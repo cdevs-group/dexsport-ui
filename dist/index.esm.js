@@ -2569,7 +2569,7 @@ var CardIndicator = function (_a) {
         " ",
         React.createElement(Claimed$2, { canClaim: canClaim, disabledTopCards: !!disabledTopCards, id: id })));
 };
-var Card$2 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  overflow: hidden;\n"], ["\n  position: relative;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  overflow: hidden;\n"])), function (_a) {
+var Card$2 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  overflow: hidden;\n  height: 100%;\n"], ["\n  position: relative;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  overflow: hidden;\n  height: 100%;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 }, function (_a) {
@@ -2785,7 +2785,7 @@ var BG = "39970d524fe99c4a.png";
 var TakeGift = function (_a) {
     var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift, images = _a.images, giftLoader = _a.giftLoader;
     return (React.createElement("div", { style: { position: "relative" } },
-        React.createElement(Card, { id: "TakeGift", src: (images === null || images === void 0 ? void 0 : images.bg) || BG },
+        React.createElement(Card, { id: "TakeGift", src: images || BG },
             React.createElement(StyledTitle, null, texts.title),
             React.createElement(StyledButton$1, { variant: "violet", onClick: handleTakeGift }, texts.button)),
         React.createElement(BlurWrapper, { claimedGift: claimedGift, giftLoader: giftLoader }),
@@ -2831,8 +2831,8 @@ var templateObject_1$4, templateObject_2$2, templateObject_3$2, templateObject_4
 var TokenOnPoolz = function (_a) {
     var images = _a.images, texts = _a.texts, linkClaimTokens = _a.linkClaimTokens, disabledCardClaimTokens = _a.disabledCardClaimTokens;
     return (React.createElement(Wrap$1, { style: { position: "relative" } },
-        React.createElement(Wrapper$1, { disabledCard: disabledCardClaimTokens, id: "TokenOnPoolz" },
-            React.createElement(CardStyle, { src: (images === null || images === void 0 ? void 0 : images.bg) || BG },
+        React.createElement(Wrapper$1, { id: "TokenOnPoolz", src: images || BG },
+            React.createElement(CardStyle, null,
                 React.createElement(StyledTitle$1, { size: "xl" }, texts.title),
                 React.createElement(Text, { margin: "42px 0" }, texts.description),
                 React.createElement(StyledButton, { as: "a", margin: "0 auto", minWidth: "204px", variant: "violet", href: linkClaimTokens || "#" }, texts.button))),
@@ -2852,16 +2852,13 @@ var Blur = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplate
     var disabledCard = _a.disabledCard;
     return (disabledCard ? "auto" : "none");
 }, "-moz-element(#TokenOnPoolz)");
-var CardStyle = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"], ["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
-    var src = _a.src;
-    return "url(" + src + ") no-repeat left center /cover";
-});
+var CardStyle = styled.div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n"], ["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n"])));
 var Wrapper$1 = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  position: relative;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 20px;\n  min-height: 250px;\n"], ["\n  position: relative;\n  box-shadow: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 20px;\n  min-height: 250px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.dark;
+    var src = _a.src;
+    return "url(" + src + ") no-repeat left center /cover";
 });
 var StyledButton = styled(Button$6)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"], ["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"])), function (_a) {
     var theme = _a.theme;
@@ -2873,14 +2870,14 @@ var StyledButton = styled(Button$6)(templateObject_5$1 || (templateObject_5$1 = 
 var templateObject_1$3, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5$1;
 
 var VestingWidget = function (_a) {
-    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens, isLoadingButtonClaimTokens = _a.isLoadingButtonClaimTokens, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, giftLoader = _a.giftLoader;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesBg = _a.imagesBg, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens, isLoadingButtonClaimTokens = _a.isLoadingButtonClaimTokens, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, giftLoader = _a.giftLoader;
     return (React.createElement(Wrapper, null,
         React.createElement(CardIndicator, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[0], id: "CardIndicator-1" }),
         React.createElement(CardIndicator, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[1], id: "CardIndicator-2" }),
         React.createElement(CardTimer, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataTimer }),
         React.createElement(CardIndicator, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[2], id: "CardIndicator-3" }),
-        !canClaim ? (React.createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens })) : (React.createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens, isLoading: isLoadingButtonClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens })),
-        React.createElement(TakeGift, { giftLoader: giftLoader, texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
+        !canClaim ? (React.createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesBg, linkClaimTokens: linkClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens })) : (React.createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens, isLoading: isLoadingButtonClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens })),
+        React.createElement(TakeGift, { giftLoader: giftLoader, texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesBg })));
 };
 var Wrapper = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;

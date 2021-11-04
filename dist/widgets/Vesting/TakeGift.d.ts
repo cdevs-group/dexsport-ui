@@ -7,9 +7,7 @@ interface IProps {
         claimed: string;
     };
     claimedGift: boolean;
-    images?: {
-        bg: string;
-    };
+    images?: string;
     giftLoader?: boolean;
 }
 declare const TakeGift: ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => JSX.Element;

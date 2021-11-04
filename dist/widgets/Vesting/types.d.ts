@@ -17,10 +17,7 @@ export interface VestingWidgetProps {
         text: string;
         value: string;
     }[];
-    imagesMarketplace?: {
-        bg: string;
-        mp: string;
-    };
+    imagesBg?: string;
     handleTakeGift: () => void;
     textsTakeGift: {
         title: string;
@@ -29,9 +26,6 @@ export interface VestingWidgetProps {
     };
     canClaim: boolean;
     claimedGift: boolean;
-    imagesGift?: {
-        bg: string;
-    };
     dataTimer: {
         textFront: string;
         textBack: string;

@@ -1,8 +1,6 @@
 /// <reference types="react" />
 interface Iprops {
-    images?: {
-        bg: string;
-    };
+    images?: string;
     texts: {
         title: string;
         button: string;
