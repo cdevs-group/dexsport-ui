@@ -11,6 +11,7 @@ export * from "./components/Loader";
 export * from "./components/Skeleton";
 export * from "./components/ButtonMenu";
 export * from "./components/Heading";
+export * from "./components/Input";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
