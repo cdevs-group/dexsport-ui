@@ -1,9 +1,9 @@
 import React from "react";
-import { WalletIcon, CopyIcon, CloseIcon, DisconnectIcon } from ".";
+import { WalletIcon, CopyIcon2, CloseIcon, DisconnectIcon } from ".";
 
 export default {
   title: "Components/Svg",
-  component: [CloseIcon, WalletIcon, DisconnectIcon, CopyIcon],
+  component: [CloseIcon, WalletIcon, DisconnectIcon, CopyIcon2],
   argTypes: {},
 };
 
@@ -15,7 +15,7 @@ export const Default: React.FC = () => {
           <CloseIcon />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CopyIcon />
+          <CopyIcon2 />
         </div>
         <div style={{ marginRight: 20 }}>
           <WalletIcon />
