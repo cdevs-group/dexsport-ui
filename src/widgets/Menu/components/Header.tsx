@@ -5,10 +5,8 @@ import Account from "./Account";
 import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
-import Network from "./Network";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
 import { LOGO_HEADER } from "../../../constants/images";
-import { CloseIcon } from "../../../components/Svg";
 
 const Header: React.FC<NavProps> = ({
   account,

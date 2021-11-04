@@ -1,7 +1,6 @@
 import React from "react";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork } from "../types";
 import { Variant } from "../../../components/Button/types";
 interface ITextDropdown {
     connected: string;
@@ -18,7 +17,6 @@ interface Props {
     textsConnect: TextsConnect;
     textsAccount: TextsAccount;
     hrefLearnHow?: string;
-    network?: BlockChainNetwork;
     vesting?: boolean;
     desuBalance?: string | number;
     dataTransactions?: Array<any>;
