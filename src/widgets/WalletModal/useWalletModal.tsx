@@ -4,7 +4,6 @@ import ConnectModal from "./ConnectModal";
 import AccountModal from "./AccountModal";
 import { Login } from "./types";
 import AccountVestingModal from "./AccountVestingModal";
-import { BlockChainNetwork } from "../Menu/types";
 import { Variant } from "../../components/Button/types";
 
 interface ReturnType {
@@ -37,7 +36,6 @@ const useWalletModal = (
   logout: () => void,
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
-  network?: BlockChainNetwork,
   account?: string,
   hrefLearnHow?: string,
   vesting?: boolean,
@@ -73,7 +71,7 @@ const useWalletModal = (
   };
 
   const [onPresentConnectModal] = useModal(
-    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
+    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} />
   );
   const [onPresentAccountModal] = useModal(pageModal());
 

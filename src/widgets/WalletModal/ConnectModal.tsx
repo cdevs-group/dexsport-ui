@@ -5,8 +5,7 @@ import { Link } from "../../components/Link";
 import { Modal } from "../Modal";
 import { Login } from "./types";
 import { Text } from "../../components/Text";
-import { connectorLocalStorageKey, getNetwork } from "./config";
-import { BlockChainNetwork } from "../Menu/types";
+import { connectorLocalStorageKey, connectors } from "./config";
 
 interface Props {
   login: Login;
@@ -16,7 +15,6 @@ interface Props {
     link: string;
   };
   hrefLearnHow?: string;
-  network?: BlockChainNetwork;
 }
 
 const HelpLink = styled(Link)`
@@ -71,9 +69,9 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.white)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
-    {getNetwork(network?.chainId)?.map((entry, index) => (
+    {connectors?.map((entry, index) => (
       <Wrap key={index}>
         <Button
           onClick={() => {

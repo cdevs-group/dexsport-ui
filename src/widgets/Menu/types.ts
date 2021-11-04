@@ -92,13 +92,11 @@ export interface NavProps extends PanelProps {
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
   linkLogo: string;
-  network?: BlockChainNetwork;
   titleNetwork?: string;
   linkTextNetwork?: string;
   linkHrefNetwork?: string;
   handleToggleNetwork?: (e: any) => void;
   valuesNetworks?: string[];
-  listNetwork?: BlockChainNetwork[];
   vesting?: boolean;
   desuBalance?: string | number;
   dataTransactions?: Array<any>;
@@ -112,17 +110,3 @@ export interface NavProps extends PanelProps {
   linkExternalWalletModal?: string;
   textDropdown: ITextDropdown;
 }
-
-export type BlockChainNetwork = {
-  name: string;
-  icon?: string;
-  chainId: string;
-  chainName: string;
-  nativeCurrency: {
-    name: string;
-    symbol: string;
-    decimals: number;
-  };
-  rpcUrls: string[];
-  blockExplorerUrls: string[];
-};

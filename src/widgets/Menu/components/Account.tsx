@@ -6,7 +6,6 @@ import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
 import { AccountIcon, AVATAR_HEADER } from "../../../constants/images";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork } from "../types";
 import { Variant } from "../../../components/Button/types";
 import { Flex } from "../../../components/Box";
 import { WalletIcon } from "../../../components/Svg";
@@ -28,7 +27,6 @@ interface Props {
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
-  network?: BlockChainNetwork;
   vesting?: boolean;
   desuBalance?: string | number;
   dataTransactions?: Array<any>;
@@ -49,7 +47,6 @@ const Account: React.FC<Props> = ({
   textsAccount,
   textsConnect,
   hrefLearnHow,
-  network,
   vesting,
   desuBalance,
   dataTransactions,
@@ -66,7 +63,6 @@ const Account: React.FC<Props> = ({
     logout,
     textsAccount,
     textsConnect,
-    network,
     account,
     hrefLearnHow,
     vesting,

@@ -10,7 +10,7 @@ import {
 } from "../../constants/images";
 import { Config, ConnectorNames } from "./types";
 
-export const connectorsDefault: Config[] = [
+export const connectors: Config[] = [
   {
     title: "Metamask",
     icon: Metamask,
@@ -53,28 +53,4 @@ export const connectorsDefault: Config[] = [
   },
 ];
 
-export const connectorsAvalanche: Config[] = [
-  {
-    title: "Metamask",
-    icon: Metamask,
-    connectorId: ConnectorNames.Injected,
-  },
-  {
-    title: "Coin98",
-    icon: Coin98,
-    connectorId: ConnectorNames.Injected,
-  },
-];
-
 export const connectorLocalStorageKey = "connectorId";
-
-export const getNetwork = (network?: string) => {
-  switch (network) {
-    case "56":
-      return connectorsDefault;
-    case "43114":
-      return connectorsAvalanche;
-    default:
-      return connectorsDefault;
-  }
-};

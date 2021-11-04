@@ -23,13 +23,11 @@ const Header: React.FC<NavProps> = ({
   textsConnect,
   hrefLearnHow,
   linkLogo,
-  network,
   handleToggleNetwork,
   linkTextNetwork,
   linkHrefNetwork,
   titleNetwork,
   valuesNetworks,
-  listNetwork,
   vesting,
   desuBalance,
   dataTransactions,
@@ -87,7 +85,6 @@ const Header: React.FC<NavProps> = ({
                 textsAccount={textsAccount}
                 textsConnect={textsConnect}
                 hrefLearnHow={hrefLearnHow}
-                network={network}
                 vesting={vesting}
                 desuBalance={desuBalance}
                 dataTransactions={dataTransactions}
@@ -132,7 +129,6 @@ const Header: React.FC<NavProps> = ({
                 textsAccount={textsAccount}
                 textsConnect={textsConnect}
                 hrefLearnHow={hrefLearnHow}
-                network={network}
                 vesting={vesting}
                 desuBalance={desuBalance}
                 dataTransactions={dataTransactions}
