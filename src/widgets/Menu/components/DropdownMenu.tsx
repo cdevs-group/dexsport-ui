@@ -42,7 +42,7 @@ const DropdownMenu = ({
           <img src={AVATAR} alt="avatar" />
           {ellipsis(account, 5)}
           <Buttons>
-            <ActionButton as="a" href={linkExternalWalletModal}>
+            <ActionButton as="a" href={linkExternalWalletModal} target="_blank">
               <OpenNewIcon />
             </ActionButton>
             <ActionButton

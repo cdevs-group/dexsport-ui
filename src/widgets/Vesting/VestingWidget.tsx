@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardIndicator from "./CardIndicator";
 import CardTimer from "./CardTimer";
 import ClaimTokens from "./ClaimTokens";
-import TakeGift from "./TakeGift";
+import Platform from "./Platform";
 import { VestingWidgetProps } from "./types";
 import TokenOnPoolz from "./TokenOnPoolz";
 
@@ -12,9 +12,8 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   textsClaimTokens,
   handleClaimTokens,
   dataCardsIndicators,
-  textsTakeGift,
-  handleTakeGift,
-  claimedGift,
+  textsPlatform,
+  linkPlatform,
   imagesBg,
   dataTimer,
   canClaim,
@@ -24,7 +23,6 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   isLoadingButtonClaimTokens,
   disabledTopCards,
   disabledCardClaimTokens,
-  giftLoader,
 }) => {
   return (
     <Wrapper>
@@ -64,11 +62,9 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
           disabledCardClaimTokens={disabledCardClaimTokens}
         />
       )}
-      <TakeGift
-        giftLoader={giftLoader}
-        texts={textsTakeGift}
-        handleTakeGift={handleTakeGift}
-        claimedGift={claimedGift}
+      <Platform
+        texts={textsPlatform}
+        link={linkPlatform}
         images={imagesBg}
       />
     </Wrapper>

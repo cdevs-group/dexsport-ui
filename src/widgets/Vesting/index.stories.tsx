@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CercleIcon } from "../../components/Svg";
 import VestingWidget from "./VestingWidget";
 
@@ -39,10 +39,9 @@ export const VestingWidgetComponent: React.FC = () => {
     },
   ];
 
-  const textsTakeGift = {
+  const textsPlatform = {
     title: "Try demo",
     button: "Try demo",
-    claimed: "Claimed",
   };
 
   const textsPoolz = {
@@ -52,12 +51,6 @@ export const VestingWidgetComponent: React.FC = () => {
     button: "Claim tokens",
   };
 
-  const [claimedGift, setClaimedGift] = useState(false);
-
-  const handleTakeGift = () => {
-    setClaimedGift(true);
-  };
-
   return (
     <VestingWidget
       canClaim
@@ -65,11 +58,10 @@ export const VestingWidgetComponent: React.FC = () => {
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
       dataCardsIndicators={dataCardsIndicators}
-      handleTakeGift={handleTakeGift}
-      textsTakeGift={textsTakeGift}
+      linkPlatform="http"
+      textsPlatform={textsPlatform}
       textsPoolz={textsPoolz}
       linkClaimTokens="sdfsdf"
-      claimedGift={claimedGift}
       dataTimer={{
         textFront: "Next stage after",
         textBack: "Your vesting stage",
@@ -85,7 +77,6 @@ export const VestingWidgetComponent: React.FC = () => {
       }}
       // disabledButtonClaimTokens
       // isLoadingButtonClaimTokens
-      endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
       // disabledTopCards
       // giftLoader
       // disabledCardClaimTokens

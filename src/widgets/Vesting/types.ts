@@ -17,14 +17,12 @@ export interface VestingWidgetProps {
     value: string;
   }[];
   imagesBg?: string;
-  handleTakeGift: () => void;
-  textsTakeGift: {
+  textsPlatform: {
     title: string;
     button: string;
-    claimed: string;
   };
   canClaim: boolean;
-  claimedGift: boolean;
+  linkPlatform?: string;
   dataTimer: {
     textFront: string;
     textBack: string;
@@ -46,8 +44,6 @@ export interface VestingWidgetProps {
   linkClaimTokens?: string;
   disabledButtonClaimTokens?: boolean;
   isLoadingButtonClaimTokens?: boolean;
-  endIconButtonClaimTokens?: React.ReactNode | null;
   disabledTopCards?: boolean;
   disabledCardClaimTokens?: boolean;
-  giftLoader?: boolean;
 }
