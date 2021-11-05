@@ -6,13 +6,21 @@ import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
-  const Link: any = isHttpLink ? "a" : StyledLink;
-  const props = isHttpLink ? { href: url } : { to: url };
-
+  const Item = () => <LinkItem size={size}>{name}</LinkItem>;
+  
   return (
-    <Link {...props} exact onClick={onClick}>
-      <LinkItem size={size}>{name}</LinkItem>
-    </Link>
+    <>
+      {isHttpLink && (
+        <a href={url} target="_blank">
+          <Item />
+        </a>
+      )}
+      {!isHttpLink && (
+        <StyledLink exact onClick={onClick} to={url}>
+          <Item />
+        </StyledLink>
+      )}
+    </>
   );
 };
 
