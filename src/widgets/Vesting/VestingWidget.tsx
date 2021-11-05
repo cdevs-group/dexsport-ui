@@ -62,11 +62,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
           disabledCardClaimTokens={disabledCardClaimTokens}
         />
       )}
-      <Platform
-        texts={textsPlatform}
-        link={linkPlatform}
-        images={imagesBg}
-      />
+      <Platform texts={textsPlatform} link={linkPlatform} images={imagesBg} />
     </Wrapper>
   );
 };
