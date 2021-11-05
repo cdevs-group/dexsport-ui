@@ -84,71 +84,38 @@ function __makeTemplateObject(cooked, raw) {
     return cooked;
 }
 
-var Box = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
-var templateObject_1$E;
+var Box = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
+var templateObject_1$C;
 
-var Flex = styled__default['default'](Box)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
-var templateObject_1$D;
+var Flex = styled__default['default'](Box)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
+var templateObject_1$B;
 
 var LoaderSmall = function () {
     return (React__default['default'].createElement(LoaderBlock$1, null,
         React__default['default'].createElement("svg", { width: "50", height: "50", viewBox: "0 0 50 50", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
             React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M42.5818 7.25455C38.7515 3.08485 33.0788 1 25.5636 1H2V49H25.5636C33.0788 49 38.7515 46.9152 42.5818 42.7455C46.4121 38.5273 48.3273 32.6121 48.3273 25C48.3273 17.3394 46.4121 11.4242 42.5818 7.25455ZM35.3338 26.837L16.6011 40.3936L21.0088 28.4319L11.0914 23.6472L29.8242 10.0906L25.4165 22.0523L35.3338 26.837Z", fill: "white" }))));
 };
-var flip$1 = styled.keyframes(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "], ["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "])));
+var flip$1 = styled.keyframes(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "], ["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "])));
 var LoaderBlock$1 = styled__default['default'].div(templateObject_2$n || (templateObject_2$n = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  & svg {\n    max-width: 30px;\n    max-height: 30px;\n    transition: 0.6s;\n    transform-style: preserve-3d;\n    animation: ", " 3s linear infinite;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  & svg {\n    max-width: 30px;\n    max-height: 30px;\n    transition: 0.6s;\n    transform-style: preserve-3d;\n    animation: ", " 3s linear infinite;\n  }\n"])), flip$1);
-var templateObject_1$C, templateObject_2$n;
+var templateObject_1$A, templateObject_2$n;
 
-var getThemeValue = function (path, fallback) {
-    return function (theme) {
-        return get__default['default'](theme, path, fallback);
-    };
-};
-
-var rotate = styled.keyframes(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var spinStyle = styled.css(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"], ["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"])), rotate);
-var Svg = styled__default['default'].svg(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
-    var theme = _a.theme, color = _a.color;
-    return getThemeValue("colors." + color, color)(theme);
-}, function (_a) {
-    var spin = _a.spin;
-    return spin && spinStyle;
-}, styledSystem.space);
-Svg.defaultProps = {
-    color: "text",
-    width: "20px",
-    xmlns: "http://www.w3.org/2000/svg",
-    spin: false,
-};
-var templateObject_1$B, templateObject_2$m, templateObject_3$g;
-
-var Icon$X = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
-        React__default['default'].createElement("g", { filter: props.fill || "url(#filter0_dAddIcon)" },
-            React__default['default'].createElement("path", { d: "M21 16V26", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-            React__default['default'].createElement("path", { d: "M26 21L16 21", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
+var Icon$h = function (props) {
+    return (React__default['default'].createElement("svg", __assign({ width: 42, height: 42, viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
+        React__default['default'].createElement("rect", { x: 6, y: 6, width: 30, height: 30, rx: 7, fill: props.fill || "rgb(58,58,64)" }),
+        React__default['default'].createElement("g", { filter: "url(#prefix__filter0_dCloseIcon)", stroke: "#fff", strokeWidth: 2, strokeLinecap: "round" },
+            React__default['default'].createElement("path", { d: "M17.465 17.465l7.07 7.07M24.537 17.465l-7.071 7.07" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_dAddIcon", x: "11", y: "13", width: "20", height: "20", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" }))),
-        " "));
+            React__default['default'].createElement("filter", { id: "prefix__filter0_dCloseIcon", x: 12.465, y: 14.464, width: 17.073, height: 17.071, filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: 0, result: "BackgroundImageFix" }),
+                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
+                React__default['default'].createElement("feOffset", { dy: 2 }),
+                React__default['default'].createElement("feGaussianBlur", { stdDeviation: 2 }),
+                React__default['default'].createElement("feColorMatrix", { values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
+                React__default['default'].createElement("feBlend", { in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
+                React__default['default'].createElement("feBlend", { in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$W = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "32", height: "32", viewBox: "0 0 32 32", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M17.2533 16L23.7333 9.52C23.8789 9.34995 23.955 9.13122 23.9464 8.90751C23.9377 8.68379 23.845 8.47158 23.6867 8.31328C23.5284 8.15497 23.3162 8.06223 23.0924 8.05359C22.8687 8.04495 22.65 8.12104 22.4799 8.26667L15.9999 14.7467L9.51995 8.25778C9.3499 8.11215 9.13117 8.03606 8.90746 8.0447C8.68375 8.05334 8.47153 8.14608 8.31323 8.30439C8.15492 8.46269 8.06218 8.67491 8.05354 8.89862C8.0449 9.12233 8.12099 9.34106 8.26662 9.51111L14.7466 16L8.25773 22.48C8.16468 22.5597 8.0891 22.6577 8.03575 22.768C7.9824 22.8783 7.95241 22.9984 7.94768 23.1208C7.94296 23.2433 7.96358 23.3653 8.00827 23.4794C8.05296 23.5935 8.12075 23.6971 8.20737 23.7837C8.294 23.8703 8.3976 23.9381 8.51166 23.9828C8.62573 24.0275 8.7478 24.0481 8.87022 24.0434C8.99264 24.0386 9.11275 24.0087 9.22303 23.9553C9.33331 23.902 9.43137 23.8264 9.51106 23.7333L15.9999 17.2533L22.4799 23.7333C22.65 23.879 22.8687 23.955 23.0924 23.9464C23.3162 23.9378 23.5284 23.845 23.6867 23.6867C23.845 23.5284 23.9377 23.3162 23.9464 23.0925C23.955 22.8688 23.8789 22.65 23.7333 22.48L17.2533 16Z", fill: "white" })));
-};
-
-var Icon$V = function (props) {
+var Icon$g = function (props) {
     return (React__default['default'].createElement("svg", { width: "42", height: "38", viewBox: "0 0 42 38", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
             React__default['default'].createElement("path", { d: "M17.5352 15.4644L24.6062 22.5354", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
@@ -164,19 +131,36 @@ var Icon$V = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$U = function () {
-    return (React__default['default'].createElement("svg", { width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("path", { d: "M4.46484 4.46484L11.5359 11.5359", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-        React__default['default'].createElement("path", { d: "M11.5371 4.46484L4.46604 11.5359", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })));
+var getThemeValue = function (path, fallback) {
+    return function (theme) {
+        return get__default['default'](theme, path, fallback);
+    };
 };
 
-var Icon$T = function (props) {
+var rotate = styled.keyframes(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
+var spinStyle = styled.css(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"], ["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"])), rotate);
+var Svg = styled__default['default'].svg(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
+    var theme = _a.theme, color = _a.color;
+    return getThemeValue("colors." + color, color)(theme);
+}, function (_a) {
+    var spin = _a.spin;
+    return spin && spinStyle;
+}, styledSystem.space);
+Svg.defaultProps = {
+    color: "text",
+    width: "20px",
+    xmlns: "http://www.w3.org/2000/svg",
+    spin: false,
+};
+var templateObject_1$z, templateObject_2$m, templateObject_3$g;
+
+var Icon$f = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "22", height: "22", viewBox: "0 0 22 22", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M11 11L19.25 2.75V9.16667V2.75H12.8333", stroke: "white", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }),
         React__default['default'].createElement("path", { d: "M8.25 2.75H4.58333C3.57042 2.75 2.75 3.57042 2.75 4.58333V17.4167C2.75 18.4296 3.57042 19.25 4.58333 19.25H17.4167C18.4296 19.25 19.25 18.4296 19.25 17.4167V13.75", stroke: "white", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })));
 };
 
-var Icon$S = function (props) {
+var Icon$e = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default['default'].createElement("g", { filter: "url(#filter7837483784)" },
             React__default['default'].createElement("path", { d: "M11.5858 14.6568L5.92893 8.99998M5.92893 8.99998L11.5858 3.34312M5.92893 8.99998H20.0711", stroke: props.fill || "white", strokeWidth: "2", strokeLinecap: "round" })),
@@ -191,61 +175,7 @@ var Icon$S = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$R = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "29", height: "29", viewBox: "0 0 29 29" }, props),
-        React__default['default'].createElement("rect", { width: "28.0333", height: "29", rx: "7", fill: props.fill || "url(#paint7447834)" }),
-        React__default['default'].createElement("path", { d: "M14.1042 6.76672L8.94336 11.6768L10.8579 13.4983L14.1042 10.4097L17.3506 13.4983L19.2651 11.6768L14.1042 6.76672Z", fill: "white" }),
-        React__default['default'].createElement("path", { d: "M14.1028 23.3718L19.2637 18.4617L17.3492 16.6402L14.1028 19.7289L10.8564 16.6402L8.94192 18.4617L14.1028 23.3718Z", fill: "white" }),
-        React__default['default'].createElement("rect", { x: "12.1797", y: "15.0173", width: "2.71084", height: "2.71084", transform: "rotate(-45 12.1797 15.0173)", fill: "white" }),
-        React__default['default'].createElement("rect", { x: "18.5605", y: "15.0173", width: "2.71084", height: "2.71084", transform: "rotate(-45 18.5605 15.0173)", fill: "white" }),
-        React__default['default'].createElement("rect", { x: "5.80078", y: "15.0173", width: "2.71084", height: "2.71084", transform: "rotate(-45 5.80078 15.0173)", fill: "white" }),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("linearGradient", { id: "paint7447834", x1: "14.0167", y1: "-6.76667", x2: "14.0167", y2: "34.3167", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#FFC700" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#FF8A00" })))));
-};
-
-var Icon$Q = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "50", height: "50", viewBox: "0 0 50 50" }, props),
-        React__default['default'].createElement("rect", { width: "50", height: "50", rx: "12", fill: props.fill || "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("mask", { id: "path-2-inside-1", fill: "white" },
-            React__default['default'].createElement("rect", { x: "14", y: "24", width: "6", height: "12", rx: "1" })),
-        React__default['default'].createElement("rect", { x: "14", y: "24", width: "6", height: "12", rx: "1", stroke: "#F3F3F3", strokeWidth: "4", mask: "url(#path-2-inside-1)" }),
-        React__default['default'].createElement("mask", { id: "path-3-inside-2", fill: "white" },
-            React__default['default'].createElement("rect", { x: "22", y: "14", width: "6", height: "22", rx: "1" })),
-        React__default['default'].createElement("rect", { x: "22", y: "14", width: "6", height: "22", rx: "1", stroke: "#F3F3F3", strokeWidth: "4", mask: "url(#path-3-inside-2)" }),
-        React__default['default'].createElement("mask", { id: "path-4-inside-3", fill: "white" },
-            React__default['default'].createElement("rect", { x: "30", y: "19", width: "6", height: "17", rx: "1" })),
-        React__default['default'].createElement("rect", { x: "30", y: "19", width: "6", height: "17", rx: "1", stroke: "#F3F3F3", strokeWidth: "4", mask: "url(#path-4-inside-3)" })));
-};
-
-var Icon$P = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "50", height: "50", viewBox: "0 0 50 50" }, props),
-        React__default['default'].createElement("rect", { width: "50", height: "50", rx: "12", fill: props.fill || "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("g", { filter: "url(#fil44444)" },
-            React__default['default'].createElement("path", { d: "M16 25.5C16 30.7467 20.2533 35 25.5 35C30.7467 35 35 30.7467 35 25.5C35 20.2533 30.7467 16 25.5 16C23.4503 16 21.5521 16.6492 20 17.7531", stroke: "#F3F3F3", fill: "none", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter1_d)" },
-            React__default['default'].createElement("path", { d: "M23 27.5L25 24.5H29", stroke: "#F3F3F3", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "fil44444", x: "3", y: "4", width: "37", height: "37", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dx: "-4", dy: "-3" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "4" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter1_d", x: "10", y: "12.5", width: "24.0001", height: "21.0001", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dx: "-4", dy: "-3" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "4" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$O = function (props) {
+var Icon$d = function (props) {
     return (React__default['default'].createElement(Svg, { width: "18", height: "18", viewBox: "0 0 18 18" },
         React__default['default'].createElement("path", __assign({ d: "M7.58579 14.6571L1.92893 9.00022M1.92893 9.00022L7.58579 3.34337M1.92893 9.00022L16.0711 9.00022", stroke: "url(#paint0_linearzaq)", strokeWidth: "2", strokeLinecap: "round" }, props)),
         React__default['default'].createElement("defs", null,
@@ -254,156 +184,12 @@ var Icon$O = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$N = function (props) {
+var Icon$c = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default['default'].createElement("path", { d: "M15 1H4C2.9 1 2 1.9 2 3V16C2 16.55 2.45 17 3 17C3.55 17 4 16.55 4 16V4C4 3.45 4.45 3 5 3H15C15.55 3 16 2.55 16 2C16 1.45 15.55 1 15 1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM18 21H9C8.45 21 8 20.55 8 20V8C8 7.45 8.45 7 9 7H18C18.55 7 19 7.45 19 8V20C19 20.55 18.55 21 18 21Z" })));
 };
 
-var Icon$M = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
-        React__default['default'].createElement("g", { filter: "url(#filter0_d111SearchIcon)" },
-            React__default['default'].createElement("circle", { fill: props.fill || "rgba(0,0,0,0)", cx: "20.5", cy: "20.5", r: "4.6", stroke: props.color || "white", strokeWidth: "1.8" }),
-            React__default['default'].createElement("path", { d: "M24 24L26 26", stroke: props.color || "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d111SearchIcon", x: "11", y: "13", width: "19.8996", height: "19.9001", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear111", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
-};
-
-var Icon$L = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "12", height: "12", viewBox: "0 0 12 12", fill: "none" }, props),
-        React__default['default'].createElement("path", { opacity: "0.78", fillRule: "evenodd", clipRule: "evenodd", d: "M9.2 5.5C9.2 7.54345 7.54345 9.2 5.5 9.2C3.45655 9.2 1.8 7.54345 1.8 5.5C1.8 3.45655 3.45655 1.8 5.5 1.8C7.54345 1.8 9.2 3.45655 9.2 5.5ZM8.70057 9.97336C7.79896 10.6196 6.69391 11 5.5 11C2.46243 11 0 8.53757 0 5.5C0 2.46243 2.46243 0 5.5 0C8.53757 0 11 2.46243 11 5.5C11 6.69391 10.6196 7.79896 9.97336 8.70057L11.6364 10.3636C11.9879 10.7151 11.9879 11.2849 11.6364 11.6364C11.2849 11.9879 10.7151 11.9879 10.3636 11.6364L8.70057 9.97336Z" })));
-};
-
-var Icon$K = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
-        React__default['default'].createElement("g", null,
-            React__default['default'].createElement("path", { d: "M16 18H27", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter1_d)" },
-            React__default['default'].createElement("path", { d: "M18 22L25 22", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter2_d)" },
-            React__default['default'].createElement("path", { d: "M19 26H24", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "11.0996", y: "15.1", width: "20.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter1_d", x: "13.0996", y: "19.1001", width: "16.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter2_d", x: "14.0996", y: "23.1001", width: "14.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
-};
-
-var Icon$J = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { fill: props.fill || "#4BE43E", x: "6", y: "6", width: "30", height: "30", rx: "7" }),
-        React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
-            React__default['default'].createElement("mask", { id: "path-2-inside-1234", fill: "white" },
-                React__default['default'].createElement("rect", { x: "15", y: "15", width: "6", height: "6", rx: "1" })),
-            React__default['default'].createElement("rect", { fill: props.fill || "rgba(0,0,0,0)", x: "15", y: "15", width: "6", height: "6", rx: "1", stroke: "white", strokeWidth: "3.2", mask: "url(#path-2-inside-1234)" })),
-        React__default['default'].createElement("g", { filter: "url(#filter12121_d)" },
-            React__default['default'].createElement("mask", { id: "path-3-inside-23562", fill: "white" },
-                React__default['default'].createElement("rect", { x: "22", y: "15", width: "6", height: "6", rx: "1" })),
-            React__default['default'].createElement("rect", { fill: props.fill || "rgba(0,0,0,0)", x: "22", y: "15", width: "6", height: "6", rx: "1", stroke: "white", strokeWidth: "3.2", mask: "url(#path-3-inside-23562)" })),
-        React__default['default'].createElement("g", { filter: "url(#filter2_d)" },
-            React__default['default'].createElement("rect", { fill: props.fill || "rgba(0,0,0,0)", x: "22.8", y: "22.8", width: "4.4", height: "4.4", rx: "2.2", stroke: "white", strokeWidth: "1.6" })),
-        React__default['default'].createElement("g", { filter: "url(#filter333_d)" },
-            React__default['default'].createElement("mask", { id: "path-5-inside-32", fill: "white" },
-                React__default['default'].createElement("rect", { x: "15", y: "22", width: "6", height: "6", rx: "1" })),
-            React__default['default'].createElement("rect", { fill: props.fill || "rgba(0,0,0,0)", x: "15", y: "22", width: "6", height: "6", rx: "1", stroke: "white", strokeWidth: "3.2", mask: "url(#path-5-inside-32)" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "11", y: "13", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter12121_d", x: "18", y: "13", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter2_d", x: "18", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter333_d", x: "11", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
-};
-
-var Icon$I = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
-        React__default['default'].createElement("g", { filter: props.fill || "url(#filter0_dEyeOpen)" },
-            React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M25.1163 23.9792C23.3638 23.7881 22 22.3033 22 20.5C22 18.6969 23.3634 17.2123 25.1155 17.0209C23.9439 16.3642 22.6032 16 21.205 16L20.7955 16C17.7282 16 14.9377 17.7528 13.6016 20.5002C14.9377 23.2476 17.7282 25.0005 20.7955 25.0005H21.205C22.6035 25.0005 23.9445 24.6361 25.1163 23.9792ZM11.5899 20.0862C11.5288 20.2206 11.4999 20.3615 11.5 20.5001C11.4999 20.6388 11.5287 20.7798 11.5899 20.9143L11.6918 21.1385C13.3145 24.7085 16.874 27.0005 20.7955 27.0005H21.205C25.1265 27.0005 28.686 24.7085 30.3087 21.1385L30.4106 20.9143C30.4717 20.7798 30.5006 20.6389 30.5005 20.5002C30.5006 20.3616 30.4717 20.2207 30.4106 20.0862L30.3087 19.862C28.686 16.292 25.1265 14 21.205 14H20.7955C16.874 14 13.3145 16.292 11.6918 19.862L11.5899 20.0862Z", fill: "white" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_dEyeOpen", x: "7.5", y: "12", width: "27.0005", height: "21.0005", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
-};
-
-var Icon$H = function (props) {
-    return (React__default['default'].createElement("svg", { width: "30", height: "30", viewBox: "0 0 30 30", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M19.1163 17.9792C17.3638 17.7881 16 16.3033 16 14.5C16 12.6969 17.3634 11.2123 19.1155 11.0209C17.9439 10.3642 16.6032 10 15.205 10L14.7955 10C11.7282 10 8.93771 11.7528 7.60158 14.5002C8.93771 17.2476 11.7282 19.0005 14.7955 19.0005H15.205C16.6035 19.0005 17.9445 18.6361 19.1163 17.9792ZM5.58988 14.0862C5.52878 14.2206 5.49991 14.3615 5.5 14.5001C5.49986 14.6388 5.52873 14.7798 5.58988 14.9143L5.6918 15.1385C7.3145 18.7085 10.874 21.0005 14.7955 21.0005H15.205C19.1265 21.0005 22.686 18.7085 24.3087 15.1385L24.4106 14.9143C24.4717 14.7798 24.5006 14.6389 24.5005 14.5002C24.5006 14.3616 24.4717 14.2207 24.4106 14.0862L24.3087 13.862C22.686 10.292 19.1265 8 15.205 8H14.7955C10.874 8 7.3145 10.292 5.6918 13.862L5.58988 14.0862Z", fill: "white" })));
-};
-
-var Icon$G = function (props) {
+var Icon$b = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
         React__default['default'].createElement("g", { filter: "url(#filter110_d112EyeClose)" },
@@ -422,98 +208,7 @@ var Icon$G = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$F = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "30", height: "30", viewBox: "0 0 30 30", color: "none" }, props),
-        React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { d: "M6 12.4706L7.00285 13.5324C11.3437 18.1286 18.6563 18.1286 22.9971 13.5324L24 12.4706", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-        React__default['default'].createElement("path", { d: "M8.64683 15.647L7.05859 17.2353", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-        React__default['default'].createElement("path", { d: "M21.8825 15.647L23.4707 17.2353", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-        React__default['default'].createElement("path", { d: "M15 16.9999L15 19.9999", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })));
-};
-
-var Icon$E = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
-        React__default['default'].createElement("g", { filter: "url(#filter0_dArrowIcon)" },
-            React__default['default'].createElement("path", { d: "M19 16H27M27 16V24M27 16L17 26", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_dArrowIcon", x: "12", y: "13", width: "20", height: "20", filterUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" }))),
-        " "));
-};
-
-var Icon$D = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "7", height: "10", viewBox: "0 0 7 10", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M1 9L5 5L1 1", stroke: "#A3A3A3", strokeWidth: "1.8" })));
-};
-
-var Icon$C = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "29", height: "82", viewBox: "0 0 20 82", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M3.33975 75.2265L12.9199 81.6133C13.809 82.206 15 81.5686 15 80.5V2.33333C15 0.823494 13.391 -0.141886 12.0588 0.568627L4.76471 4.45882C1.83193 6.02297 0 9.07619 0 12.4V68.9861C0 71.4938 1.25326 73.8355 3.33975 75.2265Z", fill: props.fill || "#2E2E35" })));
-};
-
-var Icon$B = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42  42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
-        React__default['default'].createElement("g", { filter: "url(#filter0_d65345)" },
-            React__default['default'].createElement("path", { fill: props.fill || "rgba(0,0,0,0)", d: "M26.3958 17.9206L26.3959 17.9204C26.5706 17.7463 26.6685 17.5097 26.6679 17.2631L26.3958 17.9206ZM26.3958 17.9206L18.7389 25.5774M26.3958 17.9206L18.7389 25.5774M18.7389 25.5774L16.7621 26.2376L17.42 24.2638L25.0797 16.6071C25.0797 16.6071 25.0797 16.6071 25.0797 16.607C25.4436 16.244 26.0329 16.2446 26.396 16.6084C26.5694 16.7822 26.6672 17.0175 26.6679 17.263L18.7389 25.5774ZM15.5906 28.0001C15.6541 28 15.7171 27.9898 15.7774 27.9699L15.0304 27.2224C14.9273 27.532 15.0947 27.8667 15.4043 27.9698C15.4644 27.9898 15.5273 28 15.5906 28.0001ZM25.7382 14.85C25.0978 14.8482 24.4834 15.1028 24.032 15.5571C24.0319 15.5571 24.0319 15.5572 24.0318 15.5573L16.2486 23.3398L16.2482 23.3402C16.1674 23.4216 16.1065 23.5206 16.07 23.6293L16.07 23.6295L14.8881 27.175L14.8881 27.175C14.7588 27.5632 14.9687 27.9828 15.357 28.1121L25.7382 14.85Z", stroke: "white", strokeWidth: "0.3" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d65345", x: "10.7002", y: "12.7", width: "21.6001", height: "21.6001", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$A = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
-        React__default['default'].createElement("g", { filter: "url(#filter134231)" },
-            React__default['default'].createElement("path", { d: "M16 17H27", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter1_d)" },
-            React__default['default'].createElement("path", { d: "M16 21L27 21", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter56543)" },
-            React__default['default'].createElement("path", { d: "M16 25L27 25", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter134231", x: "11.0996", y: "14.1", width: "20.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter1_d", x: "11.0996", y: "18.1", width: "20.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter56543", x: "11.0996", y: "22.1001", width: "20.8", height: "9.8", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$z = function (props) {
+var Icon$a = function (props) {
     return (React__default['default'].createElement("svg", { width: "42", height: "42", viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
         React__default['default'].createElement("g", null,
@@ -532,7 +227,7 @@ var Icon$z = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#FFB72C" })))));
 };
 
-var Icon$y = function (props) {
+var Icon$9 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "30", height: "30", viewBox: "0 0 30 30", color: "none" }, props),
         React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: props.fill || "white", fillOpacity: "0.15" }),
         React__default['default'].createElement("path", { d: "M13.3102 8.0011C13.4534 8.0011 13.5934 8.04357 13.7125 8.12313C13.8316 8.20269 13.9244 8.31578 13.9792 8.44808C14.034 8.58039 14.0483 8.72598 14.0204 8.86644C13.9925 9.0069 13.9235 9.13591 13.8222 9.23718C13.7209 9.33844 13.5919 9.4074 13.4514 9.43534C13.311 9.46328 13.1654 9.44894 13.0331 9.39414C12.9007 9.33933 12.7876 9.24653 12.7081 9.12745C12.6285 9.00838 12.586 8.86839 12.586 8.72518C12.586 8.53314 12.6623 8.34897 12.7981 8.21318C12.9339 8.07739 13.1181 8.0011 13.3102 8.0011ZM8.24121 13.0696C8.24121 13.2129 8.28368 13.3529 8.36325 13.4719C8.44282 13.591 8.55591 13.6838 8.68823 13.7386C8.82055 13.7934 8.96615 13.8078 9.10662 13.7798C9.24709 13.7519 9.37612 13.6829 9.47739 13.5816C9.57866 13.4804 9.64763 13.3514 9.67557 13.2109C9.70351 13.0705 9.68917 12.9249 9.63436 12.7926C9.57956 12.6602 9.48674 12.5472 9.36766 12.4676C9.24857 12.388 9.10857 12.3456 8.96535 12.3456C8.7733 12.3456 8.58911 12.4219 8.45331 12.5576C8.3175 12.6934 8.24121 12.8776 8.24121 13.0696ZM9.84035 10.3242C9.84035 10.4674 9.88282 10.6074 9.96239 10.7265C10.042 10.8455 10.1551 10.9383 10.2874 10.9931C10.4197 11.0479 10.5653 11.0623 10.7058 11.0343C10.8462 11.0064 10.9753 10.9374 11.0765 10.8362C11.1778 10.7349 11.2468 10.6059 11.2747 10.4654C11.3026 10.325 11.2883 10.1794 11.2335 10.0471C11.1787 9.91478 11.0859 9.8017 10.9668 9.72213C10.8477 9.64257 10.7077 9.60011 10.5645 9.60011C10.3724 9.60011 10.1882 9.67639 10.0524 9.81218C9.91664 9.94797 9.84035 10.1321 9.84035 10.3242Z", fill: "white" }),
@@ -549,81 +244,12 @@ var Icon$y = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$x = function (props) {
-    return (React__default['default'].createElement("svg", { viewBox: "0 0 26 24", width: "26", height: "24", fill: "none" },
-        React__default['default'].createElement("g", { filter: "url(#filter989823)" },
-            React__default['default'].createElement("path", { d: "M13 15.5L15 12.5H19", stroke: props.stroke || "#F3F3F3", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("circle", { cx: "15.5", cy: "13.5", r: "9.5", stroke: props.stroke || "#F3F3F3", strokeWidth: "2" }),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter989823", x: "0", y: "0.5", width: "24.0001", height: "21.0001", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dx: "-4", dy: "-3" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "4" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$w = function (props) {
-    return (React__default['default'].createElement("svg", { width: "22", height: "22", viewBox: "0 0 20 22", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("path", { d: "M8 13.1683V7.83167C8 7.0405 8.87525 6.56266 9.54076 6.99049L13.6915 9.65882C14.3038 10.0525 14.3038 10.9475 13.6915 11.3412L9.54076 14.0095C8.87525 14.4373 8 13.9595 8 13.1683Z", fill: props.fill || "#4BE43E" }),
-        React__default['default'].createElement("circle", { cx: "10.5", cy: "10.5", r: "9.5", stroke: props.stroke || "#4BE43E", strokeWidth: "2" })));
-};
-
-var Icon$v = function (props) {
-    return (React__default['default'].createElement("svg", { width: "55", height: "55", viewBox: "0 0 55 55", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("circle", { cx: "27.5", cy: "27.5", r: "25", fill: props.fill || "#1C1C22", stroke: props.fill || "#26262D", strokeWidth: "5" }),
-        React__default['default'].createElement("g", null,
-            React__default['default'].createElement("path", { d: "M32.7284 28.4855L27.0715 34.1424M27.0715 34.1424L21.4147 28.4855M27.0715 34.1424V20.0002", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "14.5859", y: "16.5859", width: "24.9706", height: "24.9706", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$u = function (props) {
-    return (React__default['default'].createElement("svg", { width: "19", height: "22", viewBox: "0 0 19 19", fill: "#fff", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("g", { filter: "url(#filter0_d12ArrowCardDown)" },
-            React__default['default'].createElement("path", { d: "M14.1601 9.77351L9.64417 14.2894M9.64417 14.2894L5.12825 9.77351M9.64417 14.2894L9.64417 2.99964", stroke: props.color, strokeWidth: "1.5", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d12ArrowCardDown", x: "0.378906", y: "0.25", width: "18.5318", height: "21.1004", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "13.3698", y1: "12.3702", x2: "6.82172", y2: "5.82208", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
-};
-
-var Icon$t = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "36", y: "36", width: "30", height: "30", rx: "7", transform: "rotate(180 36 36)", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { d: "M22 25L18 21L22 17", stroke: "white", strokeWidth: "2" })));
-};
-
-var Icon$s = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "36", y: "36", width: "30", height: "30", rx: "7", transform: "rotate(180 36 36)", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { d: "M20 25L16 21L20 17", stroke: "white", strokeWidth: "2" }),
-        React__default['default'].createElement("path", { d: "M26 25L22 21L26 17", stroke: "white", strokeWidth: "2" })));
-};
-
-var Icon$r = function (props) {
+var Icon$8 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "14", height: "12", viewBox: "0 0 14 12", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M12.611 2.5H2.1875C1.94578 2.5 1.75 2.31355 1.75 2.08333C1.75 1.85312 1.94578 1.66667 2.1875 1.66667H12.6875C12.9292 1.66667 13.125 1.48021 13.125 1.25C13.125 0.559636 12.5373 0 11.8125 0H1.75C0.783398 0 0 0.746094 0 1.66667V10C0 10.9206 0.783398 11.6667 1.75 11.6667H12.611C13.3771 11.6667 14 11.106 14 10.4167V3.75001C14 3.06068 13.3771 2.5 12.611 2.5ZM11.375 7.91666C10.8918 7.91666 10.5 7.54349 10.5 7.08334C10.5 6.62318 10.8918 6.25 11.375 6.25C11.8581 6.25 12.25 6.62318 12.25 7.08334C12.25 7.54349 11.8581 7.91666 11.375 7.91666Z", fill: "white" })));
 };
 
-var Icon$q = function (props) {
+var Icon$7 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "46", height: "46", viewBox: "0 0 46 46", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("rect", { x: "0.5", y: "0.5", width: "45", height: "45", rx: "9.5", fill: props.fill || "#4BE43E", stroke: props.fill || "url(#paint0_linearArrowRight)" }),
         React__default['default'].createElement("g", { filter: props.fill || "url(#filter0_dArrowRight)" },
@@ -642,111 +268,7 @@ var Icon$q = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#A5FF9D" })))));
 };
 
-var Icon$p = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
-        React__default['default'].createElement("g", { filter: props.fill || "url(#filter0_dArrowTopRight)" },
-            React__default['default'].createElement("path", { d: "M19 16H27M27 16V24M27 16L17 26", stroke: props.stroke || "white", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_dArrowTopRight", x: "12", y: "13", width: "20", height: "20", filterUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "1.2", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" }))),
-        " "));
-};
-
-var Icon$o = function (props) {
-    return (React__default['default'].createElement("svg", { width: "42", height: "42", viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("g", { filter: "url(#filter00)" },
-            React__default['default'].createElement("rect", { x: "14", y: "14", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
-        React__default['default'].createElement("g", { filter: "url(#filter11)" },
-            React__default['default'].createElement("rect", { x: "22", y: "14", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
-        React__default['default'].createElement("g", { filter: "url(#filter22)" },
-            React__default['default'].createElement("rect", { x: "14", y: "22", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
-        React__default['default'].createElement("g", { filter: "url(#filter3_d)" },
-            React__default['default'].createElement("rect", { x: "22", y: "22", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter00", x: "10", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter11", x: "18", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter22", x: "10", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter3_d", x: "18", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$n = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "10", height: "7", viewBox: "0 0 10 7", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M1 1L5 5L9 1", stroke: props.stroke || "#fff", strokeWidth: "1.8" })));
-};
-
-var Icon$m = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z" })));
-};
-
-var Icon$l = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "88", height: "78", viewBox: "0 0 88 78", fill: "none" }, props),
-        React__default['default'].createElement("g", { filter: "url(#filter0_dplaying)" },
-            React__default['default'].createElement("path", { d: "M65 61.2967L37.473 72.3874L37.1864 72.5032C33.866 73.8751 30.0576 72.3087 28.6802 69.0002L12.4995 30.1851C11.1205 26.8781 12.6948 23.0851 16.0152 21.7132L40.7207 11.4975C44.0426 10.1241 47.8511 11.692 49.2285 14.9974L51.1854 19.1762L62.676 43.7046L65 61.2967Z", fill: "#C0C0C0" })),
-        React__default['default'].createElement("path", { d: "M65 60.9621L37.6792 72L36.5966 71.6745C33.1811 70.6455 31.2465 67.0471 32.2769 63.6345L44.3733 23.5899C45.2899 20.5552 48.2425 18.6907 51.2889 19.0424L62.6934 43.4539L65 60.9621Z", fill: "black", fillOpacity: "0.12" }),
-        React__default['default'].createElement("path", { d: "M87.7203 32.0767L75.4893 72.38C74.4475 75.8129 70.8027 77.7574 67.3492 76.7217L45.913 70.2932L41.6478 69.0134C38.1929 67.9779 36.2382 64.3564 37.2801 60.9218L49.5111 20.62C50.5529 17.1871 54.1961 15.2426 57.6496 16.2783L83.3524 23.9866C83.5872 24.0577 83.8158 24.1397 84.0366 24.2354C87.0578 25.5154 88.6906 28.8772 87.7203 32.0767Z", fill: "white" }),
-        React__default['default'].createElement("g", { filter: "url(#filter1_iplaying)" },
-            React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M72.6292 43.2513L65.1785 46.802L69.8907 53.9568C67.3913 56.2529 63.7967 57.2413 60.2886 56.2579C54.8978 54.7468 51.7527 49.1517 53.2638 43.7609C54.775 38.3701 60.3701 35.225 65.7609 36.7362C69.1093 37.6748 71.5913 40.1891 72.6292 43.2513Z", fill: "#EFEFEF" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_dplaying", x: "0", y: "0", width: "69", height: "78", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
-                React__default['default'].createElement("feOffset", { dx: "-4", dy: "-3" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "4" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter1_iplaying", x: "50.5273", y: "34", width: "23.5377", height: "26.5859", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "BackgroundImageFix", result: "shape" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feComposite", { in2: "hardAlpha", operator: "arithmetic", k2: "-1", k3: "1" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "shape", result: "effect1_innerShadow" })))));
-};
-
-var Icon$k = function (props) {
+var Icon$6 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", height: "42", viewBox: "0 0 42 42", fill: "#F45555" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: "url(#paint0_linearErrorIcon)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_dErrorIcon)" },
@@ -766,13 +288,7 @@ var Icon$k = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#F45555" })))));
 };
 
-var Icon$j = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "30", height: "30", viewBox: "0 0 30 30" }, props),
-        React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { d: "M9.74707 7.00047H13.2111C13.4011 7.00053 13.584 7.07271 13.7229 7.20244C13.8617 7.33217 13.9461 7.50977 13.9591 7.69935C13.972 7.88893 13.9126 8.07636 13.7926 8.22377C13.6727 8.37117 13.5013 8.46757 13.3131 8.49347L13.2111 8.50047H9.74707C9.17694 8.5004 8.62805 8.71676 8.21132 9.10584C7.79458 9.49491 7.54109 10.0277 7.50207 10.5965L7.49707 10.7505V20.2505C7.497 20.8206 7.71337 21.3695 8.10244 21.7862C8.49151 22.203 9.02428 22.4564 9.59307 22.4955L9.74707 22.5005H19.2471C19.8172 22.5005 20.3661 22.2842 20.7828 21.8951C21.1996 21.506 21.453 20.9733 21.4921 20.4045L21.4971 20.2505V19.7525C21.4954 19.5612 21.5669 19.3765 21.6969 19.2362C21.8269 19.0959 22.0056 19.0105 22.1965 18.9976C22.3873 18.9847 22.5759 19.0452 22.7236 19.1668C22.8713 19.2883 22.967 19.4617 22.9911 19.6515L22.9971 19.7525V20.2505C22.9972 21.2105 22.6291 22.1339 21.9686 22.8307C21.3082 23.5274 20.4057 23.9443 19.4471 23.9955L19.2471 24.0005H9.74707C8.78707 24.0006 7.8636 23.6325 7.16688 22.972C6.47017 22.3116 6.05327 21.4091 6.00207 20.4505L5.99707 20.2505V10.7505C5.99698 9.79047 6.36507 8.867 7.02551 8.17028C7.68595 7.47356 8.58844 7.05667 9.54707 7.00547L9.74707 7.00047H13.2111H9.74707ZM17.5001 9.52047V6.75047C17.5 6.61251 17.538 6.47721 17.6098 6.35943C17.6816 6.24166 17.7846 6.14599 17.9073 6.08293C18.03 6.01987 18.1677 5.99188 18.3053 6.00203C18.4428 6.01218 18.575 6.06009 18.6871 6.14047L18.7691 6.20947L24.7631 11.9595C25.0431 12.2275 25.0691 12.6595 24.8401 12.9565L24.7631 13.0415L18.7691 18.7935C18.6696 18.889 18.5457 18.9553 18.411 18.9851C18.2763 19.0148 18.136 19.0068 18.0055 18.9619C17.8751 18.917 17.7595 18.8371 17.6716 18.7308C17.5836 18.6245 17.5267 18.496 17.5071 18.3595L17.5001 18.2525V15.5275L17.1561 15.5575C14.7561 15.8075 12.4561 16.8875 10.2421 18.8175C9.72207 19.2705 8.91907 18.8425 9.00507 18.1595C9.66907 12.8395 12.4511 9.90747 17.2001 9.53947L17.5001 9.51947V6.75047V9.52047ZM19.0001 8.50947V10.2505C19.0001 10.4494 18.9211 10.6401 18.7804 10.7808C18.6397 10.9214 18.449 11.0005 18.2501 11.0005C14.3761 11.0005 11.9761 12.6765 10.9381 16.1575L10.8591 16.4365L11.2111 16.1995C13.4501 14.7375 15.7981 14.0005 18.2511 14.0005C18.4323 14.0005 18.6074 14.0661 18.744 14.1852C18.8806 14.3044 18.9694 14.4689 18.9941 14.6485L19.0011 14.7505V16.4935L23.1601 12.5005L19.0001 8.50947Z", fill: "white" })));
-};
-
-var Icon$i = function (props) {
+var Icon$5 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "15", height: "12", viewBox: "0 0 15 12", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M1.375 4.5L5.96875 9.09375L13.625 1.4375", stroke: "url(#paint0_linear_1:648)", "stroke-width": "2.8" }),
         React__default['default'].createElement("defs", null,
@@ -782,103 +298,18 @@ var Icon$i = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", "stop-color": "#6112B0" })))));
 };
 
-var Icon$h = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "18", height: "15", viewBox: "0 0 18 15", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M6.75342 9.4124L6.46872 13.3997C6.87605 13.3997 7.05247 13.2255 7.26403 13.0163L9.17377 11.199L13.1309 14.0845C13.8567 14.4873 14.368 14.2752 14.5638 13.4197L17.1613 1.3006L17.162 1.29989C17.3922 0.231647 16.774 -0.186082 16.0669 0.0759806L0.79902 5.89634C-0.242982 6.29907 -0.227205 6.87746 0.621887 7.13952L4.52527 8.34844L13.5921 2.69946C14.0188 2.41812 14.4067 2.57378 14.0876 2.85513L6.75342 9.4124Z", fill: "#F9F8F8" })));
-};
-
-var Icon$g = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "19", height: "19", viewBox: "0 0 19 19", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M16.6627 5.94446C16.627 5.13488 16.4961 4.5783 16.3085 4.09602C16.115 3.58408 15.8173 3.12575 15.4273 2.74473C15.0462 2.35779 14.5847 2.05712 14.0786 1.86667C13.5935 1.67913 13.0397 1.54821 12.2299 1.51251C11.4142 1.4738 11.1552 1.46484 9.08611 1.46484C7.01706 1.46484 6.75808 1.4738 5.94532 1.50949C5.13558 1.54519 4.57889 1.67622 4.09663 1.86365C3.58449 2.05712 3.12607 2.35477 2.74498 2.74473C2.35796 3.12575 2.05735 3.58711 1.86675 4.09311C1.67917 4.5783 1.54822 5.13186 1.51252 5.94144C1.4738 6.75707 1.46484 7.016 1.46484 9.08466C1.46484 11.1533 1.4738 11.4123 1.5095 12.2249C1.5452 13.0344 1.67626 13.591 1.86384 14.0733C2.05735 14.5852 2.35796 15.0436 2.74498 15.4246C3.12607 15.8115 3.58751 16.1122 4.09361 16.3027C4.57889 16.4902 5.13256 16.6211 5.94241 16.6568C6.75505 16.6926 7.01415 16.7015 9.08321 16.7015C11.1523 16.7015 11.4112 16.6926 12.224 16.6568C13.0337 16.6211 13.5904 16.4902 14.0727 16.3027C15.0969 15.9068 15.9066 15.0972 16.3026 14.0733C16.49 13.5881 16.6211 13.0344 16.6568 12.2249C16.6925 11.4123 16.7015 11.1533 16.7015 9.08466C16.7015 7.016 16.6984 6.75707 16.6627 5.94446ZM15.2904 12.1653C15.2576 12.9095 15.1326 13.3113 15.0284 13.5792C14.7723 14.2429 14.2454 14.7698 13.5815 15.0258C13.3135 15.13 12.9087 15.255 12.1674 15.2876C11.3636 15.3234 11.1225 15.3323 9.08914 15.3323C7.05578 15.3323 6.81169 15.3234 6.01079 15.2876C5.26652 15.255 4.86462 15.13 4.59669 15.0258C4.2663 14.9037 3.96557 14.7102 3.72148 14.4572C3.46843 14.2102 3.27492 13.9125 3.15281 13.5822C3.04862 13.3143 2.9236 12.9095 2.89092 12.1684C2.85511 11.3647 2.84627 11.1236 2.84627 9.09059C2.84627 7.05762 2.85511 6.81358 2.89092 6.01295C2.9236 5.26882 3.04862 4.867 3.15281 4.59911C3.27492 4.26868 3.46843 3.96812 3.7245 3.72395C3.9715 3.47095 4.26921 3.27748 4.59971 3.15551C4.86765 3.05134 5.27257 2.92635 6.01381 2.89356C6.81762 2.85786 7.05881 2.84891 9.09205 2.84891C11.1284 2.84891 11.3695 2.85786 12.1704 2.89356C12.9147 2.92635 13.3166 3.05134 13.5845 3.15551C13.9149 3.27748 14.2156 3.47095 14.4597 3.72395C14.7128 3.97103 14.9063 4.26868 15.0284 4.59911C15.1326 4.867 15.2576 5.27173 15.2904 6.01295C15.3261 6.8166 15.335 7.05762 15.335 9.09059C15.335 11.1236 15.3261 11.3617 15.2904 12.1653Z", fill: "#F9F8F8" }),
-        React__default['default'].createElement("path", { d: "M9.0831 5.24023C6.96155 5.24023 5.24023 6.96144 5.24023 9.0831C5.24023 11.2048 6.96155 12.926 9.0831 12.926C11.2048 12.926 12.926 11.2048 12.926 9.0831C12.926 6.96144 11.2048 5.24023 9.0831 5.24023ZM9.0831 11.5759C7.70675 11.5759 6.59033 10.4596 6.59033 9.0831C6.59033 7.70663 7.70675 6.59033 9.0831 6.59033C10.4596 6.59033 11.5759 7.70663 11.5759 9.0831C11.5759 10.4596 10.4596 11.5759 9.0831 11.5759Z", fill: "#F9F8F8" }),
-        React__default['default'].createElement("path", { d: "M14.0048 5.03855C14.0048 5.52255 13.6124 5.91499 13.1283 5.91499C12.6444 5.91499 12.252 5.52255 12.252 5.03855C12.252 4.55444 12.6444 4.16211 13.1283 4.16211C13.6124 4.16211 14.0048 4.55444 14.0048 5.03855Z", fill: "#F9F8F8" })));
-};
-
-var Icon$f = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "22", height: "23", viewBox: "0 0 18 18", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { d: "M16.5 5.18025C15.9378 5.42578 15.3423 5.58678 14.733 5.658C15.3726 5.28243 15.8535 4.68683 16.086 3.9825C15.48 4.33525 14.8191 4.5837 14.1307 4.7175C13.8409 4.41391 13.4923 4.17254 13.1061 4.00813C12.7199 3.84373 12.3042 3.75972 11.8845 3.76125C10.185 3.76125 8.80725 5.11875 8.80725 6.79125C8.80725 7.02825 8.83425 7.26 8.88675 7.48125C7.66768 7.42327 6.47409 7.11181 5.38213 6.56673C4.29016 6.02165 3.32382 5.25494 2.54475 4.3155C2.27162 4.7763 2.12806 5.30234 2.12925 5.838C2.12925 6.89025 2.67225 7.818 3.49725 8.36025C3.00936 8.3445 2.53202 8.21424 2.10375 7.98V8.0175C2.10375 9.486 3.165 10.7108 4.57125 10.9898C4.30696 11.0599 4.03469 11.0954 3.76125 11.0955C3.5625 11.0955 3.36975 11.0768 3.1815 11.0393C3.38256 11.6452 3.76733 12.1735 4.28236 12.5508C4.7974 12.928 5.41713 13.1355 6.0555 13.1445C4.96055 13.9879 3.61636 14.4435 2.23425 14.4398C1.98525 14.4398 1.74075 14.4248 1.5 14.3978C2.91094 15.2908 4.54694 15.7637 6.21675 15.7613C11.877 15.7613 14.9715 11.1435 14.9715 7.13925L14.961 6.747C15.5646 6.32225 16.0861 5.79139 16.5 5.18025Z", fill: "white" })));
-};
-
-var Icon$e = function (props) {
+var Icon$4 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "10", height: "10", viewBox: "0 0 10 10", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", __assign({ d: "M1 9H9M9 9V1M9 9L1 1", stroke: "#4BE43E", strokeWidth: "1.8", strokeLinecap: "round" }, props))));
 };
 
-var Icon$d = function (props) {
+var Icon$3 = function (props) {
     return (React__default['default'].createElement("svg", { width: "22", height: "22", viewBox: "0 0 22 22", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("path", { d: "M6.41667 15.5833H4.58333C4.0971 15.5833 3.63079 15.3902 3.28697 15.0464C2.94315 14.7025 2.75 14.2362 2.75 13.75V4.58333C2.75 4.0971 2.94315 3.63079 3.28697 3.28697C3.63079 2.94315 4.0971 2.75 4.58333 2.75H13.75C14.2362 2.75 14.7025 2.94315 15.0464 3.28697C15.3902 3.63079 15.5833 4.0971 15.5833 4.58333V6.41667", stroke: "white", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }),
         React__default['default'].createElement("path", { d: "M18.2374 6.41663H7.42991C6.87049 6.41663 6.41699 6.87012 6.41699 7.42954V18.237C6.41699 18.7965 6.87049 19.25 7.42991 19.25H18.2374C18.7968 19.25 19.2503 18.7965 19.2503 18.237V7.42954C19.2503 6.87012 18.7968 6.41663 18.2374 6.41663Z", stroke: "white", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })));
 };
 
-var Icon$c = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "29", height: "34", viewBox: "0 0 29 34" }, props),
-        React__default['default'].createElement("path", { d: "M14.2619 31.264C22.1385 31.264 28.5238 24.8788 28.5238 17.0021C28.5238 9.1255 22.1385 2.74023 14.2619 2.74023C6.38527 2.74023 0 9.1255 0 17.0021C0 24.8788 6.38527 31.264 14.2619 31.264Z", fill: "white" }),
-        React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M6.60636 23.4634H9.95204C10.5458 23.4634 10.8427 23.4634 11.1101 23.3839C11.4012 23.2973 11.6675 23.1428 11.8871 22.9332C12.0888 22.7407 12.2361 22.4831 12.5305 21.9679L16.9109 14.3049C17.2011 13.7972 17.3463 13.5432 17.41 13.2755C17.4792 12.984 17.4791 12.6804 17.4096 12.3889C17.3457 12.1212 17.2003 11.8675 16.9097 11.3601V11.36H16.9096L15.2202 8.41028C14.8205 7.71237 14.6206 7.36341 14.3668 7.23379C14.0926 7.09372 13.7676 7.09396 13.4936 7.23443C13.24 7.36443 13.0406 7.71367 12.6419 8.41216L5.31668 21.2451L5.31654 21.2454H5.31653C4.92364 21.9337 4.72719 22.2778 4.74308 22.5601C4.76026 22.8652 4.92219 23.1437 5.17891 23.3097C5.41645 23.4634 5.81309 23.4634 6.60636 23.4634ZM18.0094 23.4632H21.8884C22.69 23.4632 23.0909 23.4632 23.3292 23.308C23.5868 23.1404 23.7481 22.8594 23.7631 22.5526C23.7769 22.2688 23.5747 21.923 23.1703 21.2314L21.2276 17.9095L21.2275 17.9093C20.8289 17.2276 20.6295 16.8867 20.3775 16.7593C20.1052 16.6216 19.7834 16.6218 19.5112 16.7599C19.2594 16.8877 19.0605 17.229 18.6628 17.9113L16.7265 21.2333C16.3236 21.9244 16.1222 22.27 16.1363 22.5536C16.1515 22.8602 16.313 23.1408 16.5705 23.3082C16.8087 23.4632 17.209 23.4632 18.0094 23.4632Z", fill: "#181B1D" })));
-};
-
-var Icon$b = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "47", height: "26", viewBox: "0 0 37 26" }, props),
-        React__default['default'].createElement("g", { filter: "url(#filter0_d11122211)" },
-            React__default['default'].createElement("path", { d: "M16.7284 9.65805L11.0715 4.0012M11.0715 4.0012L5.41466 9.65805M11.0715 4.0012V18.1433", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("g", { filter: "url(#filter1_d9090909090)" },
-            React__default['default'].createElement("path", { d: "M20.4142 12.4884L26.0711 18.1453M26.0711 18.1453L31.7279 12.4884M26.0711 18.1453V4.00315", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
-        React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d11122211", x: "0.414062", y: "0.587891", width: "21.3137", height: "24.5563", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default['default'].createElement("filter", { id: "filter1_d9090909090", x: "15.4141", y: "1.00391", width: "21.3137", height: "24.5563", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
-                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
-                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0", result: "hardAlpha" }),
-                React__default['default'].createElement("feOffset", { dy: "2" }),
-                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
-                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
-                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
-};
-
-var Icon$a = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "22px", viewBox: "0 0 22 22" }, props),
-        React__default['default'].createElement("path", { d: "M12.4703 5.25911C12.1859 5.55367 11.7248 5.55367 11.4404 5.25911C11.156 4.96454 11.156 4.48695 11.4404 4.19238L12.4835 3.11212C14.1188 1.41836 16.7702 1.41836 18.4056 3.11212C20.0409 4.80588 20.0409 7.552 18.4056 9.24577L14.2859 13.5127C12.6505 15.2064 9.99905 15.2064 8.3637 13.5127C8.07929 13.2181 8.07929 12.7405 8.3637 12.4459C8.6481 12.1513 9.10919 12.1513 9.3936 12.4459C10.4601 13.5505 12.1893 13.5505 13.2559 12.4459L17.3757 8.17901C18.4422 7.07441 18.4422 5.28346 17.3757 4.17884C16.3091 3.07422 14.5799 3.07422 13.5134 4.17884L12.4703 5.25911Z", fill: "white" }),
-        React__default['default'].createElement("path", { d: "M9.20078 16.6489C9.48519 16.3543 9.94635 16.3543 10.2308 16.6489C10.5152 16.9434 10.5152 17.421 10.2308 17.7156L9.18773 18.7958C7.55236 20.4896 4.90093 20.4896 3.26558 18.7958C1.63022 17.1021 1.63022 14.3559 3.26558 12.6622L7.38533 8.39534C9.02068 6.70155 11.6721 6.70156 13.3075 8.39534C13.5919 8.6899 13.5919 9.16746 13.3075 9.46202C13.0231 9.75659 12.5619 9.75659 12.2775 9.46202C11.211 8.35739 9.48177 8.35739 8.41523 9.46202L4.29551 13.7289C3.22898 14.8336 3.22898 16.6245 4.29551 17.7292C5.36205 18.8337 7.09125 18.8337 8.15775 17.7292L9.20078 16.6489Z", fill: "white" })));
-};
-
-var Icon$9 = function (props) {
-    return (React__default['default'].createElement("svg", { width: "24", height: "25", viewBox: "0 0 24 25", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("path", { d: "M16.0005 17.0096V10.9996C16.0005 10.4496 15.5505 9.99956 15.0005 9.99956C14.4505 9.99956 14.0005 10.4496 14.0005 10.9996V17.0096H12.2105C11.7605 17.0096 11.5405 17.5496 11.8605 17.8596L14.6505 20.6396C14.8505 20.8296 15.1605 20.8296 15.3605 20.6396L18.1505 17.8596C18.4705 17.5496 18.2405 17.0096 17.8005 17.0096H16.0005ZM8.65052 3.34956L5.86052 6.13956C5.54052 6.44956 5.76052 6.98956 6.21052 6.98956H8.00052V12.9996C8.00052 13.5496 8.45052 13.9996 9.00052 13.9996C9.55052 13.9996 10.0005 13.5496 10.0005 12.9996V6.98956H11.7905C12.2405 6.98956 12.4605 6.44956 12.1405 6.13956L9.35052 3.34956C9.25693 3.25818 9.13132 3.20703 9.00052 3.20703C8.86972 3.20703 8.74411 3.25818 8.65052 3.34956Z", fill: "white" })));
-};
-
-var Icon$8 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ width: "24", height: "24", viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z", fill: "#4BE43E" }),
-        React__default['default'].createElement("path", { d: "M6.25 7.72H11.25V9.22H6.25V7.72ZM13 15.75H18V17.25H13V15.75ZM13 13.25H18V14.75H13V13.25ZM8 18H9.5V16H11.5V14.5H9.5V12.5H8V14.5H6V16H8V18ZM14.09 10.95L15.5 9.54L16.91 10.95L17.97 9.89L16.56 8.47L17.97 7.06L16.91 6L15.5 7.41L14.09 6L13.03 7.06L14.44 8.47L13.03 9.89L14.09 10.95Z", fill: "#4BE43E" })));
-};
-
-var Icon$7 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M18 13H13V18C13 18.55 12.55 19 12 19C11.45 19 11 18.55 11 18V13H6C5.45 13 5 12.55 5 12C5 11.45 5.45 11 6 11H11V6C11 5.45 11.45 5 12 5C12.55 5 13 5.45 13 6V11H18C18.55 11 19 11.45 19 12C19 12.55 18.55 13 18 13Z" })));
-};
-
-var Icon$6 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M18 13H6C5.45 13 5 12.55 5 12C5 11.45 5.45 11 6 11H18C18.55 11 19 11.45 19 12C19 12.55 18.55 13 18 13Z" })));
-};
-
-var Icon$5 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M23 12L20.56 9.21L20.9 5.52L17.29 4.7L15.4 1.5L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5L3.44 9.2L1 12L3.44 14.79L3.1 18.49L6.71 19.31L8.6 22.5L12 21.03L15.4 22.49L17.29 19.3L20.9 18.48L20.56 14.79L23 12ZM9.38 16.01L7 13.61C6.61 13.22 6.61 12.59 7 12.2L7.07 12.13C7.46 11.74 8.1 11.74 8.49 12.13L10.1 13.75L15.25 8.59C15.64 8.2 16.28 8.2 16.67 8.59L16.74 8.66C17.13 9.05 17.13 9.68 16.74 10.07L10.82 16.01C10.41 16.4 9.78 16.4 9.38 16.01Z" })));
-};
-
-var Icon$4 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
-        React__default['default'].createElement("path", { d: "M4 13C5.1 13 6 12.1 6 11C6 9.9 5.1 9 4 9C2.9 9 2 9.9 2 11C2 12.1 2.9 13 4 13ZM5.13 14.1C4.76 14.04 4.39 14 4 14C3.01 14 2.07 14.21 1.22 14.58C0.48 14.9 0 15.62 0 16.43V17C0 17.5523 0.447715 18 1 18H4.5V16.39C4.5 15.56 4.73 14.78 5.13 14.1ZM20 13C21.1 13 22 12.1 22 11C22 9.9 21.1 9 20 9C18.9 9 18 9.9 18 11C18 12.1 18.9 13 20 13ZM24 16.43C24 15.62 23.52 14.9 22.78 14.58C21.93 14.21 20.99 14 20 14C19.61 14 19.24 14.04 18.87 14.1C19.27 14.78 19.5 15.56 19.5 16.39V18H23C23.5523 18 24 17.5523 24 17V16.43ZM16.24 13.65C15.07 13.13 13.63 12.75 12 12.75C10.37 12.75 8.93 13.14 7.76 13.65C6.68 14.13 6 15.21 6 16.39V17C6 17.5523 6.44772 18 7 18H17C17.5523 18 18 17.5523 18 17V16.39C18 15.21 17.32 14.13 16.24 13.65ZM8.07 16C8.16 15.77 8.2 15.61 8.98 15.31C9.95 14.93 10.97 14.75 12 14.75C13.03 14.75 14.05 14.93 15.02 15.31C15.79 15.61 15.83 15.77 15.93 16H8.07ZM12 8C12.55 8 13 8.45 13 9C13 9.55 12.55 10 12 10C11.45 10 11 9.55 11 9C11 8.45 11.45 8 12 8ZM12 6C10.34 6 9 7.34 9 9C9 10.66 10.34 12 12 12C13.66 12 15 10.66 15 9C15 7.34 13.66 6 12 6Z" })));
-};
-
-var Icon$3 = function (props) {
+var Icon$2 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: "url(#paint0_linearCloseRedIcon)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_dCloseRedIcon)" },
@@ -896,12 +327,6 @@ var Icon$3 = function (props) {
             React__default['default'].createElement("linearGradient", { id: "paint0_linearCloseRedIcon", x1: "21", y1: "6", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
                 React__default['default'].createElement("stop", { stopColor: "#FF6161" }),
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#F45555" })))));
-};
-
-var Icon$2 = function (props) {
-    return (React__default['default'].createElement("svg", __assign({ width: "20", height: "23", viewBox: "0 0 20 23", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("g", { opacity: "0.5" },
-            React__default['default'].createElement("path", __assign({ d: "M20 8.93C19.96 4.54 16.4 1 12 1C7.6 1 4.04 4.54 4 8.93V14.93C4 19.35 7.58 22.93 12 22.93C16.42 22.93 20 19.35 20 14.93V8.93ZM18 8.93H13V3.09C15.81 3.56 17.96 5.99 18 8.93ZM11 3.09V8.93H6C6.01881 7.52547 6.52939 6.17198 7.44292 5.10497C8.35646 4.03796 9.61514 3.32496 11 3.09ZM18 14.93C18 18.24 15.31 20.93 12 20.93C8.69 20.93 6 18.24 6 14.93V10.93H18V14.93Z", fill: "white" }, props)))));
 };
 
 var Icon$1 = function (props) {
@@ -1051,7 +476,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$3 = styled__default['default'].button(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(132, 173, 128, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(132, 173, 128, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$3 = styled__default['default'].button(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(132, 173, 128, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(132, 173, 128, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
 }, function (_a) {
@@ -1079,7 +504,7 @@ var StyledButton$3 = styled__default['default'].button(templateObject_1$A || (te
 }), styledSystem.variant({
     variants: styleVariants,
 }), styledSystem.layout, styledSystem.space, styledSystem.typography);
-var templateObject_1$A;
+var templateObject_1$y;
 
 var Button$5 = function (props) {
     var startIcon = props.startIcon, endIcon = props.endIcon; props.external; var className = props.className, isLoading = props.isLoading, disabled = props.disabled, children = props.children, variant = props.variant, rest = __rest(props, ["startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children", "variant"]);
@@ -1098,7 +523,7 @@ var Button$5 = function (props) {
                     mr: "0.5rem",
                 }),
             props.spinColor || variant === variants$1.LOAD_COLOR ? React__default['default'].createElement(LoaderSmall, null) : children,
-            props.spin ? React__default['default'].createElement(Icon$y, { spin: true, fill: "rgba(0,0,0,0)" }) : null,
+            props.spin ? React__default['default'].createElement(Icon$9, { spin: true, fill: "rgba(0,0,0,0)" }) : null,
             React.isValidElement(endIcon) &&
                 React.cloneElement(endIcon, {
                     ml: "0.5rem",
@@ -1112,11 +537,11 @@ Button$5.defaultProps = {
     disabled: false,
 };
 
-var IconButton = styled__default['default'](Button$5)(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
+var IconButton = styled__default['default'](Button$5)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return (scale === "sm" ? "32px" : "48px");
 });
-var templateObject_1$z;
+var templateObject_1$x;
 
 var sizes = {
     XS: "xs",
@@ -1158,7 +583,7 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  /* color:", "; */\n  color: ", ";\n  /* font-size: ", "; */\n  ", "\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  /* color:", "; */\n  color: ", ";\n  /* font-size: ", "; */\n  ", "\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"])), function (_a) {
+var Text = styled__default['default'].div(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  font-size: ", ";\n  line-height: ", ";\n  /* color:", "; */\n  color: ", ";\n  /* font-size: ", "; */\n  ", "\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"], ["\n  font-size: ", ";\n  line-height: ", ";\n  /* color:", "; */\n  color: ", ";\n  /* font-size: ", "; */\n  ", "\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n"])), function (_a) {
     var size = _a.size;
     return style$1[size || sizes.MD].fontSize;
 }, function (_a) {
@@ -1178,7 +603,7 @@ Text.defaultProps = {
     color: "white",
     small: false,
 };
-var templateObject_1$y;
+var templateObject_1$w;
 
 var variants = {
     COLLECTION: "collection",
@@ -1188,7 +613,7 @@ var variants = {
     ERROR: "error",
 };
 
-var StyledAlert$1 = styled__default['default'].div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
+var StyledAlert$1 = styled__default['default'].div(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.75, theme.colors.black);
 }, function (_a) {
@@ -1202,15 +627,15 @@ var getIcon = function (variant) {
     if (variant === void 0) { variant = variants.COLLECTION; }
     switch (variant) {
         case variants.COLLECTION:
-            return React__default['default'].createElement(Icon$y, { spin: true });
+            return React__default['default'].createElement(Icon$9, { spin: true });
         case variants.WINNING:
-            return React__default['default'].createElement(Icon$W, null);
+            return React__default['default'].createElement(Icon$h, null);
         case variants.SUCCESS:
-            return React__default['default'].createElement(Icon$z, { fill: "#47DA3B" });
+            return React__default['default'].createElement(Icon$a, { fill: "#47DA3B" });
         case variants.INFO:
             return React__default['default'].createElement(React__default['default'].Fragment, null);
         case variants.ERROR:
-            return React__default['default'].createElement(Icon$k, null);
+            return React__default['default'].createElement(Icon$6, null);
         default:
             return React__default['default'].createElement(React__default['default'].Fragment, null);
     }
@@ -1230,9 +655,9 @@ var Alert = function (_a) {
             React__default['default'].createElement("div", null, children)),
         React__default['default'].createElement(SetButton, { icon: icon, variant: variant, onClick: onClick })));
 };
-var templateObject_1$x, templateObject_2$l, templateObject_3$f;
+var templateObject_1$v, templateObject_2$l, templateObject_3$f;
 
-var StyledAlert = styled__default['default'].div(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
+var StyledAlert = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, function (_a) {
@@ -1247,12 +672,12 @@ var AlertBlurCustom = function (_a) {
             React__default['default'].createElement(Flex, { justifyContent: "space-between" },
                 React__default['default'].createElement(Text, { fontWeight: 600, mb: "7px" }, title),
                 React__default['default'].createElement(ButtonClose, { onClick: handleClose },
-                    React__default['default'].createElement(Icon$W, { fill: "none" }))),
+                    React__default['default'].createElement(Icon$h, { fill: "none" }))),
             React__default['default'].createElement("div", null, children))));
 };
-var templateObject_1$w, templateObject_2$k;
+var templateObject_1$u, templateObject_2$k;
 
-var BaseLayoutBlock = styled__default['default'].div(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"], ["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"])), function (_a) {
+var BaseLayoutBlock = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"], ["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"])), function (_a) {
     var src = _a.src;
     return "url(" + src + ") no-repeat center top / cover";
 }, function (_a) {
@@ -1266,7 +691,7 @@ var BaseLayout = function (_a) {
     var src = _a.src, children = _a.children;
     return React__default['default'].createElement(BaseLayoutBlock, { src: src }, children);
 };
-var templateObject_1$v;
+var templateObject_1$t;
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
@@ -1296,15 +721,15 @@ var TimerSimple = function (_a) {
     return (React__default['default'].createElement("div", null,
         React__default['default'].createElement(MyTimer, { expiryTimestamp: time || 0, color: color || "white", texts: texts })));
 };
-var Wrap$4 = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"], ["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"])), getColor);
-var templateObject_1$u;
+var Wrap$4 = styled__default['default'].div(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"], ["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"])), getColor);
+var templateObject_1$s;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
     rel: "noreferrer noopener",
 }); };
 
-var StyledLink$1 = styled__default['default'](Text)(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
+var StyledLink$1 = styled__default['default'](Text)(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.success;
 });
@@ -1316,13 +741,13 @@ var Link = function (_a) {
 Link.defaultProps = {
     color: "green",
 };
-var templateObject_1$t;
+var templateObject_1$r;
 
 var LinkExternal = function (_a) {
     var children = _a.children, icon = _a.icon, props = __rest(_a, ["children", "icon"]);
     return (React__default['default'].createElement(Link, __assign({ external: true }, props),
         children,
-        icon || React__default['default'].createElement(Icon$T, { ml: "4px" })));
+        icon || React__default['default'].createElement(Icon$f, { ml: "4px" })));
 };
 
 var Loader = function () {
@@ -1330,9 +755,9 @@ var Loader = function () {
         React__default['default'].createElement("svg", { width: "50", height: "50", viewBox: "0 0 50 50", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
             React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M42.5818 7.25455C38.7515 3.08485 33.0788 1 25.5636 1H2V49H25.5636C33.0788 49 38.7515 46.9152 42.5818 42.7455C46.4121 38.5273 48.3273 32.6121 48.3273 25C48.3273 17.3394 46.4121 11.4242 42.5818 7.25455ZM35.3338 26.837L16.6011 40.3936L21.0088 28.4319L11.0914 23.6472L29.8242 10.0906L25.4165 22.0523L35.3338 26.837Z", fill: "white" }))));
 };
-var flip = styled.keyframes(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "], ["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "])));
+var flip = styled.keyframes(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "], ["\n    0%   { transform: rotateY(0deg); }\n    50%   { transform: rotateY(180deg); }\n    100% { transform: rotateY(0deg); }\n  "])));
 var LoaderBlock = styled__default['default'].div(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50px;\n  height: 50px;\n  & svg {\n    transition: 0.6s;\n    transform-style: preserve-3d;\n    animation: ", " 3s linear infinite;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50px;\n  height: 50px;\n  & svg {\n    transition: 0.6s;\n    transform-style: preserve-3d;\n    animation: ", " 3s linear infinite;\n  }\n"])), flip);
-var templateObject_1$s, templateObject_2$j;
+var templateObject_1$q, templateObject_2$j;
 
 var animation = {
     WAVES: "waves",
@@ -1343,7 +768,7 @@ var variant = {
     CIRCLE: "circle",
 };
 
-var waves = styled.keyframes(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  from {\n    left: -150px;\n  }\n  to {\n    left: 100%;\n  }\n"], ["\n  from {\n    left: -150px;\n  }\n  to {\n    left: 100%;\n  }\n"])));
+var waves = styled.keyframes(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  from {\n    left: -150px;\n  }\n  to {\n    left: 100%;\n  }\n"], ["\n  from {\n    left: -150px;\n  }\n  to {\n    left: 100%;\n  }\n"])));
 var pulse = styled.keyframes(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
 var Root = styled__default['default'].div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
@@ -1361,54 +786,7 @@ var Skeleton = function (_a) {
     }
     return React__default['default'].createElement(Pulse, __assign({ variant: variant$1 }, props));
 };
-var templateObject_1$r, templateObject_2$i, templateObject_3$e, templateObject_4$b, templateObject_5$9;
-
-var getBackgroundColor = function (_a) {
-    var color = _a.color, theme = _a.theme;
-    return getThemeValue("colors." + color, color)(theme);
-};
-var StyledButtonMenu = styled__default['default'].div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"])), getBackgroundColor, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "flex" : "inline-flex");
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? "100%" : "auto");
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.boxShadow4;
-}, function (_a) {
-    var fullWidth = _a.fullWidth;
-    return (fullWidth ? 1 : "auto");
-}, function (_a) {
-    var disabled = _a.disabled, theme = _a.theme, color = _a.color;
-    if (disabled) {
-        return "\n        opacity: 0.5;\n        & > button:disabled {\n          background-color: transparent;\n          color: " + (color ? theme.colors[color] : theme.colors.text) + ";\n        }\n    ";
-    }
-    return "";
-}, styledSystem.space);
-var ButtonMenu = function (_a) {
-    var _b = _a.activeIndex, activeIndex = _b === void 0 ? 0 : _b, _c = _a.scale, scale = _c === void 0 ? scales$2.MD : _c, color = _a.color, onItemClick = _a.onItemClick, disabled = _a.disabled, children = _a.children, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, props = __rest(_a, ["activeIndex", "scale", "color", "onItemClick", "disabled", "children", "fullWidth"]);
-    return (React__default['default'].createElement(StyledButtonMenu, __assign({ disabled: disabled, color: color, fullWidth: fullWidth }, props), React.Children.map(children, function (child, index) {
-        return React.cloneElement(child, {
-            isActive: activeIndex === index,
-            onClick: onItemClick ? function () { return onItemClick(index); } : undefined,
-            scale: scale,
-            color: color,
-            disabled: disabled,
-        });
-    })));
-};
-var templateObject_1$q;
-
-var InactiveButton = styled__default['default'](Button$5)(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  background: transparent;\n  opacity: 0.7;\n  &:hover:not(:disabled):not(:active) {\n    background: transparent;\n  }\n"], ["\n  background: transparent;\n  opacity: 0.7;\n  &:hover:not(:disabled):not(:active) {\n    background: transparent;\n  }\n"])));
-var ButtonMenuItem = function (_a) {
-    var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? variants$1.OPTION : _c, as = _a.as, props = __rest(_a, ["isActive", "variant", "as"]);
-    if (!isActive) {
-        return React__default['default'].createElement(InactiveButton, __assign({ forwardedAs: as, variant: variant }, props));
-    }
-    return React__default['default'].createElement(Button$5, __assign({ as: as, variant: variant }, props));
-};
-var templateObject_1$p;
+var templateObject_1$p, templateObject_2$i, templateObject_3$e, templateObject_4$b, templateObject_5$9;
 
 var tags = {
     H1: "h1",
@@ -1994,7 +1372,7 @@ var Modal = function (_a) {
                         React__default['default'].createElement(Heading, null, title)),
                     image ? React__default['default'].createElement(Image, null, image) : null,
                     !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                        React__default['default'].createElement(Icon$W, null)))),
+                        React__default['default'].createElement(Icon$h, null)))),
                 children))));
 };
 var templateObject_1$l, templateObject_2$g, templateObject_3$d, templateObject_4$a, templateObject_5$8, templateObject_6$4, templateObject_7$4;
@@ -2184,7 +1562,7 @@ var CopyToClipboard = function (_a) {
             }
         } }, props),
         children,
-        icon || React__default['default'].createElement(Icon$N, { width: "20px", color: "#47DA3B", ml: "4px" }),
+        icon || React__default['default'].createElement(Icon$c, { width: "20px", color: "#47DA3B", ml: "4px" }),
         React__default['default'].createElement(Tooltip$1, { isTooltipDisplayed: isTooltipDisplayed, left: left }, textCopied)));
 };
 var templateObject_1$i, templateObject_2$e;
@@ -2247,7 +1625,7 @@ var DropdownMenu = function (_a) {
                 ellipsis(account, 5),
                 React__default['default'].createElement(Buttons, null,
                     React__default['default'].createElement(ActionButton, { as: "a", href: linkExternalWalletModal },
-                        React__default['default'].createElement(Icon$T, null)),
+                        React__default['default'].createElement(Icon$f, null)),
                     React__default['default'].createElement(ActionButton, { onClick: function () {
                             if (navigator.clipboard) {
                                 navigator.clipboard.writeText(account);
@@ -2257,7 +1635,7 @@ var DropdownMenu = function (_a) {
                                 }, 1000);
                             }
                         } },
-                        React__default['default'].createElement(Icon$d, null))),
+                        React__default['default'].createElement(Icon$3, null))),
                 React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, texts.copied))),
         React__default['default'].createElement(BalanceLine, null,
             React__default['default'].createElement(TitleStyle, null, texts.balance),
@@ -2271,7 +1649,7 @@ var DropdownMenu = function (_a) {
                 React__default['default'].createElement(Icon, null),
                 texts.disconnect))));
 };
-var Wrapper$3 = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  position: absolute;\n  min-width: 264px;\n  top: 0;\n  right: -50px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  color: ", ";\n\n  &:after {\n    position: absolute;\n    content: \"\";\n    display: none;\n    height: 35px;\n    width: 35px;\n    background: ", ";\n    transform: rotate(45deg);\n    top: -8px;\n    right: 33px;\n  }\n  ", " {\n    min-width: 350px;\n    right: 30px;\n    top: ", ";\n    &:after {\n      display: block;\n    }\n  }\n"], ["\n  position: absolute;\n  min-width: 264px;\n  top: 0;\n  right: -50px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  color: ", ";\n\n  &:after {\n    position: absolute;\n    content: \"\";\n    display: none;\n    height: 35px;\n    width: 35px;\n    background: ", ";\n    transform: rotate(45deg);\n    top: -8px;\n    right: 33px;\n  }\n  ", " {\n    min-width: 350px;\n    right: 30px;\n    top: ", ";\n    &:after {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var Wrapper$3 = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  position: absolute;\n  min-width: 264px;\n  top: 0;\n  right: -25px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  color: ", ";\n\n  &:after {\n    position: absolute;\n    content: \"\";\n    display: none;\n    height: 35px;\n    width: 35px;\n    background: ", ";\n    transform: rotate(45deg);\n    top: -8px;\n    right: 33px;\n  }\n  ", " {\n    min-width: 350px;\n    right: 30px;\n    top: ", ";\n    &:after {\n      display: block;\n    }\n  }\n"], ["\n  position: absolute;\n  min-width: 264px;\n  top: 0;\n  right: -25px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  color: ", ";\n\n  &:after {\n    position: absolute;\n    content: \"\";\n    display: none;\n    height: 35px;\n    width: 35px;\n    background: ", ";\n    transform: rotate(45deg);\n    top: -8px;\n    right: 33px;\n  }\n  ", " {\n    min-width: 350px;\n    right: 30px;\n    top: ", ";\n    &:after {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 }, function (_a) {
@@ -2304,7 +1682,7 @@ var BalanceLine = styled__default['default'](ConnectLine)(templateObject_3$a || 
     var theme = _a.theme;
     return theme.colors.white;
 });
-var DisconnectLine = styled__default['default'](ConnectLine)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  padding-bottom: 24px;\n  text-align: center;\n  ", " {\n    text-align: left;\n  }\n"], ["\n  padding-bottom: 24px;\n  text-align: center;\n  ", " {\n    text-align: left;\n  }\n"])), function (_a) {
+var DisconnectLine = styled__default['default'](ConnectLine)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  padding-bottom: 24px;\n  text-align: center;\n\n  ", " {\n    text-align: left;\n  }\n"], ["\n  padding-bottom: 24px;\n  text-align: center;\n\n  ", " {\n    text-align: left;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -2313,7 +1691,7 @@ var ContentLine = styled__default['default'](Flex)(templateObject_6$3 || (templa
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var DisconnectButton = styled__default['default'](Button$5)(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: ", ";\n  border-radius: 12px;\n  font-size: 14px;\n  line-height: 16px;\n  text-align: center;\n  color: ", ";\n  box-shadow: ", ";\n\n  & svg {\n    margin-right: 8px;\n  }\n"], ["\n  background: ", ";\n  border-radius: 12px;\n  font-size: 14px;\n  line-height: 16px;\n  text-align: center;\n  color: ", ";\n  box-shadow: ", ";\n\n  & svg {\n    margin-right: 8px;\n  }\n"])), function (_a) {
+var DisconnectButton = styled__default['default'](Button$5)(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  background: ", ";\n  border-radius: 12px;\n  font-size: 14px;\n  line-height: 16px;\n  font-weight: 500;\n  text-align: center;\n  color: ", ";\n  box-shadow: ", ";\n\n  & svg {\n    margin-right: 8px;\n  }\n"], ["\n  background: ", ";\n  border-radius: 12px;\n  font-size: 14px;\n  line-height: 16px;\n  font-weight: 500;\n  text-align: center;\n  color: ", ";\n  box-shadow: ", ";\n\n  & svg {\n    margin-right: 8px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.white;
 }, function (_a) {
@@ -2382,9 +1760,9 @@ var Account = function (_a) {
     }, [refSelect, handleClickOutside]);
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(WrapperAccountBlock, { ref: refSelect },
         React__default['default'].createElement(AccountBlock, { as: "button", onClick: handleOpenDropdown },
-            ellipsis(account),
+            ellipsis(account, 5),
             React__default['default'].createElement(BalanceBlock, null,
-                React__default['default'].createElement(Icon$r, null),
+                React__default['default'].createElement(Icon$8, null),
                 React__default['default'].createElement(BalanceText, null, (balance || 0) + " DESU")),
             React__default['default'].createElement(Avatar, null,
                 React__default['default'].createElement("img", { src: AVATAR_HEADER }))),
@@ -2393,7 +1771,7 @@ var Account = function (_a) {
         }, className: "notAuth" },
         React__default['default'].createElement(Avatar, { className: "notAuth" }, text)))));
 };
-var AccountBlock = styled__default['default'](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  align-items: end;\n  justify-content: center;\n  font-weight: normal;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    align-items: center;\n    flex-direction: row;\n    background: ", ";\n    color: ", ";\n    box-shadow: ", ";\n  }\n  min-height: 40px;\n  min-width: 166px;\n  font-size: 15px;\n  line-height: 19px;\n  padding: 0 36px 0 20px;\n  border-radius: 12px;\n  order: 0;\n  ", " {\n    margin-right: 34px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  align-items: end;\n  justify-content: center;\n  font-weight: normal;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    align-items: center;\n    flex-direction: row;\n    background: ", ";\n    color: ", ";\n    box-shadow: ", ";\n  }\n  min-height: 40px;\n  min-width: 166px;\n  font-size: 15px;\n  line-height: 19px;\n  padding: 0 36px 0 20px;\n  border-radius: 12px;\n  order: 0;\n  ", " {\n    margin-right: 34px;\n  }\n"])), function (_a) {
+var AccountBlock = styled__default['default'](Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  align-items: end;\n  justify-content: center;\n  font-weight: normal;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    align-items: center;\n    flex-direction: row;\n    background: ", ";\n    color: ", ";\n    box-shadow: ", ";\n  }\n  min-height: 40px;\n  min-width: 220px;\n  font-size: 15px;\n  line-height: 19px;\n  padding: 0 36px 0 10px;\n  border-radius: 12px;\n  order: 0;\n  ", " {\n    margin-right: 34px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  align-items: end;\n  justify-content: center;\n  font-weight: normal;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    align-items: center;\n    flex-direction: row;\n    background: ", ";\n    color: ", ";\n    box-shadow: ", ";\n  }\n  min-height: 40px;\n  min-width: 220px;\n  font-size: 15px;\n  line-height: 19px;\n  padding: 0 36px 0 10px;\n  border-radius: 12px;\n  order: 0;\n  ", " {\n    margin-right: 34px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.black;
 }, function (_a) {
@@ -2422,7 +1800,7 @@ var Avatar = styled__default['default'].div(templateObject_2$b || (templateObjec
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var BalanceBlock = styled__default['default'](Flex)(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  align-items: center;\n  margin-top: 1px;\n  justify-content: space-between;\n  width: 100%;\n"], ["\n  align-items: center;\n  margin-top: 1px;\n  justify-content: space-between;\n  width: 100%;\n"])));
+var BalanceBlock = styled__default['default'](Flex)(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  align-items: center;\n  margin-top: 1px;\n  justify-content: flex-end;\n  width: 100%;\n"], ["\n  align-items: center;\n  margin-top: 1px;\n  justify-content: flex-end;\n  width: 100%;\n"])));
 var BalanceText = styled__default['default'](Text)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  margin-left: 10px;\n  font-weight: bold;\n  font-size: 14px;\n  line-height: 16px;\n"], ["\n  margin-left: 10px;\n  font-weight: bold;\n  font-size: 14px;\n  line-height: 16px;\n"])));
 var WrapperAccountBlock = styled__default['default'].div(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n"], ["\n  position: relative;\n  z-index: 2;\n"])));
 var templateObject_1$f, templateObject_2$b, templateObject_3$9, templateObject_4$7, templateObject_5$6;
@@ -2436,13 +1814,13 @@ var MenuLink = function (_a) {
         React__default['default'].createElement(LinkItem, { size: size }, name)));
 };
 var StyledLink = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$e || (templateObject_1$e = __makeTemplateObject([""], [""])));
-var LinkItem = styled__default['default'](Text)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: 0px;\n      left: 0;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #6112b0;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"], ["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n    &::after {\n      display: block;\n      bottom: 0px;\n      left: 0;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #6112b0;\n      transition: all.3s;\n      opacity: 0;\n    }\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n"])), function (_a) {
+var LinkItem = styled__default['default'](Text)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n  }\n"], ["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.lightGrey;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
-}, StyledLink);
+});
 var templateObject_1$e, templateObject_2$a;
 
 var Burger = function (_a) {
@@ -2534,7 +1912,7 @@ var Disclaimer = function (_a) {
     return (React__default['default'].createElement(Block, { open: open },
         React__default['default'].createElement(StyledText$1, null, text),
         React__default['default'].createElement(Button, { onClick: function () { return setOpen(false); } },
-            React__default['default'].createElement(Icon$V, { role: "button" }))));
+            React__default['default'].createElement(Icon$g, { role: "button" }))));
 };
 var Block = styled__default['default'].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.3s;\n  width: 100%;\n  padding: ", ";\n  background-color: ", ";\n  z-index: 1;\n  overflow: hidden;\n  max-height: ", ";\n  ", " {\n    padding: ", ";\n  }\n  & svg {\n    position: absolute;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n    background: none;\n    border: none;\n    flex-shrink: 0;\n    cursor: pointer;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: 0.3s;\n  width: 100%;\n  padding: ", ";\n  background-color: ", ";\n  z-index: 1;\n  overflow: hidden;\n  max-height: ", ";\n  ", " {\n    padding: ", ";\n  }\n  & svg {\n    position: absolute;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n    background: none;\n    border: none;\n    flex-shrink: 0;\n    cursor: pointer;\n  }\n"])), function (_a) {
     var open = _a.open;
@@ -2854,7 +2232,7 @@ var ClaimTokens = function (_a) {
                 React__default['default'].createElement(ProgressTrack, null,
                     React__default['default'].createElement(ProgressBar, { widthProgress: widthProgress || 0 },
                         React__default['default'].createElement(ProgressThumb, null,
-                            React__default['default'].createElement(Icon$i, null)),
+                            React__default['default'].createElement(Icon$5, null)),
                         React__default['default'].createElement(TextHoverBlock, { widthProgress: widthProgress || 0 },
                             React__default['default'].createElement(StyledText, null, texts.totalRaised),
                             React__default['default'].createElement(StyledText, { color: "grey3" }, data.totalRaised))))),
@@ -3066,91 +2444,47 @@ var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = 
 });
 var templateObject_1;
 
-exports.AddIcon = Icon$X;
 exports.Alert = Alert;
 exports.AlertBlurCustom = AlertBlurCustom;
-exports.ArrowBigDownIcon = Icon$v;
 exports.ArrowBorder = Icon$1;
-exports.ArrowCardDown = Icon$u;
-exports.ArrowDouble = Icon$s;
-exports.ArrowDownIcon = Icon$n;
-exports.ArrowDownRightIcon = Icon$e;
-exports.ArrowIcon = Icon$E;
-exports.ArrowLeft = Icon$S;
-exports.ArrowPanel = Icon$D;
-exports.ArrowRight = Icon$q;
-exports.ArrowSingl = Icon$t;
-exports.ArrowTopRight = Icon$p;
-exports.AvalancheIcon = Icon$c;
+exports.ArrowDownRightIcon = Icon$4;
+exports.ArrowLeft = Icon$e;
+exports.ArrowRight = Icon$7;
 exports.BaseLayout = BaseLayout;
-exports.BnbIcon = Icon$R;
 exports.Box = Box;
-exports.BtnPanel = Icon$C;
 exports.Button = Button$5;
-exports.ButtonMenu = ButtonMenu;
-exports.ButtonMenuItem = ButtonMenuItem;
-exports.CalculateIcon = Icon$8;
-exports.CercleIcon = Icon$y;
-exports.ChartIcon = Icon$Q;
-exports.CheckIcon = Icon$i;
-exports.ClipIcon = Icon$a;
-exports.CloseIcon = Icon$W;
-exports.CloseIcon2 = Icon$V;
-exports.CloseRed = Icon$3;
-exports.CloseSimpleIcon = Icon$U;
-exports.CompleteIcon = Icon$z;
-exports.ComunityIcon = Icon$4;
-exports.ControllerMouse = Icon$2;
-exports.CopyIcon = Icon$N;
-exports.CopyIcon2 = Icon$d;
+exports.CercleIcon = Icon$9;
+exports.CheckIcon = Icon$5;
+exports.CloseIcon = Icon$h;
+exports.CloseIcon2 = Icon$g;
+exports.CloseRed = Icon$2;
+exports.CompleteIcon = Icon$a;
+exports.CopyIcon = Icon$c;
+exports.CopyIcon2 = Icon$3;
 exports.DisconnectIcon = Icon;
-exports.ErrorIcon = Icon$k;
-exports.EyeClose = Icon$G;
-exports.EyeCloseIcon = Icon$F;
-exports.EyeOpen = Icon$I;
-exports.EyeOpenIcon = Icon$H;
+exports.ErrorIcon = Icon$6;
+exports.EyeClose = Icon$b;
 exports.Flex = Flex;
-exports.GreenArrow = Icon$O;
+exports.GreenArrow = Icon$d;
 exports.Header = Header;
 exports.Heading = Heading$1;
-exports.HelpIcon = Icon$m;
-exports.HistoryIcon = Icon$P;
 exports.IconButton = IconButton;
 exports.Input = Input;
-exports.InstagramIcon = Icon$g;
 exports.Link = Link;
 exports.LinkExternal = LinkExternal;
 exports.Loader = Loader;
 exports.LoaderSmall = LoaderSmall;
-exports.MenuIcon = Icon$o;
-exports.MinusIcon = Icon$6;
 exports.Modal = Modal;
 exports.ModalProvider = ModalProvider;
-exports.OpenNewIcon = Icon$T;
-exports.PenIcon = Icon$B;
-exports.PlayIcon = Icon$w;
-exports.PlayingCardsIcon = Icon$l;
-exports.PlusIcon = Icon$7;
+exports.OpenNewIcon = Icon$f;
 exports.ResetCSS = ResetCSS;
-exports.ReverseArrowsIcon = Icon$b;
-exports.SearchIcon = Icon$M;
-exports.SearchIcon2 = Icon$L;
-exports.ShareIcon = Icon$j;
 exports.Skeleton = Skeleton;
-exports.SquaresIcon = Icon$J;
-exports.StrikeIcon = Icon$K;
-exports.StrikesWideIcon = Icon$A;
 exports.Svg = Svg;
-exports.SwapVertIcon = Icon$9;
-exports.TelegramIcon = Icon$h;
 exports.Text = Text;
 exports.TimerSimple = TimerSimple;
 exports.ToastContainer = ToastContainer;
-exports.TwitterIcon = Icon$f;
-exports.VerifideIcon = Icon$5;
 exports.VestingWidget = VestingWidget;
-exports.WalletIcon = Icon$r;
-exports.WatchIcon = Icon$x;
+exports.WalletIcon = Icon$8;
 exports.alertVariants = variants;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;

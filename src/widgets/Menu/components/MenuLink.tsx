@@ -34,23 +34,5 @@ const LinkItem = styled(Text)`
   ${({ theme }) => theme.mediaQueries.md} {
     margin: 0;
     padding: 30px 25px;
-    &::after {
-      display: block;
-      bottom: 0px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      content: "";
-      position: absolute;
-      background: #6112b0;
-      transition: all.3s;
-      opacity: 0;
-    }
-    ${StyledLink}.active & {
-      &::after {
-        width: 100%;
-        opacity: 1;
-      }
-    }
   }
 `;
