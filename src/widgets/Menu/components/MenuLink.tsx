@@ -7,7 +7,7 @@ import { LinkHeaderProps } from "../types";
 const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
   const Item = () => <LinkItem size={size}>{name}</LinkItem>;
-  
+
   return (
     <>
       {isHttpLink && (
