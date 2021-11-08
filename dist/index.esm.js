@@ -1495,7 +1495,7 @@ var ConnectModal = function (_a) {
                 window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
                 onDismiss();
             } },
-            React__default.createElement(Text, { fontWeight: 500, color: "text", mr: "16px", fontSize: "15px" }, entry.title),
+            React__default.createElement(Text, { fontWeight: 500, color: "#fff", mr: "16px", fontSize: "15px" }, entry.title),
             React__default.createElement(ImgWrap, null,
                 React__default.createElement("img", { src: entry.icon }))))); })));
 };
@@ -1614,7 +1614,10 @@ var DropdownMenu = function (_a) {
                 React__default.createElement(Buttons, null,
                     React__default.createElement(AddTokenButton, { onClick: handleAddToken }, texts.addToken)))),
         React__default.createElement(DisconnectLine, null,
-            React__default.createElement(DisconnectButton, { onClick: logout },
+            React__default.createElement(DisconnectButton, { onClick: function () {
+                    logout();
+                    window.localStorage.removeItem(connectorLocalStorageKey);
+                } },
                 React__default.createElement(Icon, null),
                 texts.disconnect))));
 };
@@ -1799,7 +1802,7 @@ var Burger = function (_a) {
     return (React__default.createElement(BurgerWrap, { onClick: onClick },
         React__default.createElement(BurgerLine, null)));
 };
-var BurgerWrap = styled.button(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var BurgerWrap = styled.button(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  height: 20px;\n  cursor: pointer;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  height: 20px;\n  cursor: pointer;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });

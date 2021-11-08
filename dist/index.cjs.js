@@ -1526,7 +1526,7 @@ var ConnectModal = function (_a) {
                 window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
                 onDismiss();
             } },
-            React__default['default'].createElement(Text, { fontWeight: 500, color: "text", mr: "16px", fontSize: "15px" }, entry.title),
+            React__default['default'].createElement(Text, { fontWeight: 500, color: "#fff", mr: "16px", fontSize: "15px" }, entry.title),
             React__default['default'].createElement(ImgWrap, null,
                 React__default['default'].createElement("img", { src: entry.icon }))))); })));
 };
@@ -1645,7 +1645,10 @@ var DropdownMenu = function (_a) {
                 React__default['default'].createElement(Buttons, null,
                     React__default['default'].createElement(AddTokenButton, { onClick: handleAddToken }, texts.addToken)))),
         React__default['default'].createElement(DisconnectLine, null,
-            React__default['default'].createElement(DisconnectButton, { onClick: logout },
+            React__default['default'].createElement(DisconnectButton, { onClick: function () {
+                    logout();
+                    window.localStorage.removeItem(connectorLocalStorageKey);
+                } },
                 React__default['default'].createElement(Icon, null),
                 texts.disconnect))));
 };
@@ -1830,7 +1833,7 @@ var Burger = function (_a) {
     return (React__default['default'].createElement(BurgerWrap, { onClick: onClick },
         React__default['default'].createElement(BurgerLine, null)));
 };
-var BurgerWrap = styled__default['default'].button(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var BurgerWrap = styled__default['default'].button(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  height: 20px;\n  cursor: pointer;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: block;\n  border: none;\n  outline: none;\n  padding: 0;\n  background: none;\n  height: 20px;\n  cursor: pointer;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
