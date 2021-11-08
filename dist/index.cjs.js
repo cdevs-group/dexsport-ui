@@ -1808,10 +1808,12 @@ var templateObject_1$f, templateObject_2$b, templateObject_3$9, templateObject_4
 var MenuLink = function (_a) {
     var name = _a.name, url = _a.url, size = _a.size, onClick = _a.onClick;
     var isHttpLink = url === null || url === void 0 ? void 0 : url.startsWith("http");
-    var Link = isHttpLink ? "a" : StyledLink;
-    var props = isHttpLink ? { href: url } : { to: url };
-    return (React__default['default'].createElement(Link, __assign({}, props, { exact: true, onClick: onClick }),
-        React__default['default'].createElement(LinkItem, { size: size }, name)));
+    var Item = function () { return React__default['default'].createElement(LinkItem, { size: size }, name); };
+    return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        isHttpLink && (React__default['default'].createElement("a", { href: url, target: "_blank" },
+            React__default['default'].createElement(Item, null))),
+        !isHttpLink && (React__default['default'].createElement(StyledLink, { exact: true, onClick: onClick, to: url },
+            React__default['default'].createElement(Item, null)))));
 };
 var StyledLink = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$e || (templateObject_1$e = __makeTemplateObject([""], [""])));
 var LinkItem = styled__default['default'](Text)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n  }\n"], ["\n  position: relative;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 18px;\n  color: ", ";\n  margin: 37px 0 0;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    background: hsla(0, 0%, 100%, 0.1);\n  }\n  ", " {\n    margin: 0;\n    padding: 30px 25px;\n  }\n"])), function (_a) {

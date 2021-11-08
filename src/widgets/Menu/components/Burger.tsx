@@ -17,6 +17,8 @@ const BurgerWrap = styled.button`
   outline: none;
   padding: 0;
   background: none;
+  height: 20px;
+  cursor: pointer;
   ${({ theme }) => theme.mediaQueries.md} {
     display: none;
   }
