@@ -6,6 +6,7 @@ import { ellipsis } from "../../../helpers/ellipsis";
 import { Flex } from "../../../components/Box";
 import { CopyIcon2, DisconnectIcon, OpenNewIcon } from "../../../components/Svg";
 import { Button } from "../../../components/Button";
+import { connectorLocalStorageKey } from "../../WalletModal";
 
 interface DropdownMenuProps {
   isOpen: boolean;
@@ -73,7 +74,12 @@ const DropdownMenu = ({
         </ContentLine>
       </BalanceLine>
       <DisconnectLine>
-        <DisconnectButton onClick={logout}>
+        <DisconnectButton
+          onClick={() => {
+            logout();
+            window.localStorage.removeItem(connectorLocalStorageKey);
+          }}
+        >
           <DisconnectIcon />
           {texts.disconnect}
         </DisconnectButton>
