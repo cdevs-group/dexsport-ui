@@ -66,7 +66,7 @@ const ConnectModal: React.FC<Props> = ({ texts, login, onDismiss = () => null })
             onDismiss();
           }}
         >
-          <Text fontWeight={500} color="text" mr="16px" fontSize="15px">
+          <Text fontWeight={500} color="#fff" mr="16px" fontSize="15px">
             {entry.title}
           </Text>
           <ImgWrap>
