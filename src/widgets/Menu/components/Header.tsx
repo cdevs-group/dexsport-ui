@@ -153,7 +153,7 @@ const Nav = styled.div`
   right: -100%;
   width: 100vw;
   padding: 20px 30px 20px;
-  top: 40px;
+  top: 45px;
   transition: 0.3s ease-in-out;
   background: rgba(38, 38, 45, 0.7);
   backdrop-filter: blur(25px);
