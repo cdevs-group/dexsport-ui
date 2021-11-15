@@ -667,23 +667,40 @@ var getColor = function (_a) {
     return getThemeValue("colors." + color, color)(theme);
 };
 function MyTimer(_a) {
-    var expiryTimestamp = _a.expiryTimestamp, color = _a.color, texts = _a.texts;
-    var days = Math.floor(expiryTimestamp / 86400);
-    var hours = Math.floor(expiryTimestamp / 3600);
-    var minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-    var seconds = expiryTimestamp - hours * 3600 - minutes * 60;
-    var handleDigit = function (value) {
-        var leftDigit = value >= 10 ? value.toString()[0] : "0";
-        var rightDigit = value >= 10 ? value.toString()[1] : value.toString();
-        return { leftDigit: leftDigit, rightDigit: rightDigit };
-    };
-    var timeArray = [days, hours, minutes, seconds];
-    var timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
-    return (React__default.createElement(Wrap$4, { color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
-        handleDigit(item).leftDigit,
-        handleDigit(item).rightDigit,
-        timeTextArray[i],
-        " ")); })));
+    // const days = Math.floor(expiryTimestamp / 86400);
+    // const hours = Math.floor(expiryTimestamp / 3600);
+    // const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+    // const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
+    var expiryTimestamp = _a.expiryTimestamp, color = _a.color; _a.texts;
+    // const handleDigit = (value: number) => {
+    //   const leftDigit = value >= 10 ? value.toString()[0] : "0";
+    //   const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
+    //   return { leftDigit, rightDigit };
+    // };
+    // const timeArray = [days, hours, minutes, seconds];
+    function getTimeRemaining(expiryTimestamp) {
+        var seconds = Math.floor(expiryTimestamp % 60);
+        var minutes = Math.floor((expiryTimestamp / 60) % 60);
+        var hours = Math.floor((expiryTimestamp / (60 * 60)) % 24);
+        var days = Math.floor(expiryTimestamp / (60 * 60 * 24));
+        return {
+            expiryTimestamp: expiryTimestamp,
+            days: days,
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds,
+        };
+    }
+    var date = getTimeRemaining(expiryTimestamp);
+    // const timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
+    return (React__default.createElement(Wrap$4, { color: color },
+        date.days > 0 ? date.days + "d :" : "",
+        " ",
+        date.hours > 0 ? date.hours + "h :" : "",
+        " ",
+        date.minutes + "m",
+        " ",
+        ": " + date.seconds + "s"));
 }
 var TimerSimple = function (_a) {
     var time = _a.time, color = _a.color, texts = _a.texts;

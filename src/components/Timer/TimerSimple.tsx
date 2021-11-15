@@ -23,29 +23,47 @@ const getColor = ({ color, theme }: ThemedProps) => {
 };
 
 function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
-  const days = Math.floor(expiryTimestamp / 86400);
-  const hours = Math.floor(expiryTimestamp / 3600);
-  const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
+  // const days = Math.floor(expiryTimestamp / 86400);
+  // const hours = Math.floor(expiryTimestamp / 3600);
+  // const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+  // const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
 
-  const handleDigit = (value: number) => {
-    const leftDigit = value >= 10 ? value.toString()[0] : "0";
-    const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
-    return { leftDigit, rightDigit };
-  };
+  // const handleDigit = (value: number) => {
+  //   const leftDigit = value >= 10 ? value.toString()[0] : "0";
+  //   const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
+  //   return { leftDigit, rightDigit };
+  // };
 
-  const timeArray = [days, hours, minutes, seconds];
-  const timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
+  // const timeArray = [days, hours, minutes, seconds];
+  function getTimeRemaining(expiryTimestamp: number) {
+    const seconds = Math.floor(expiryTimestamp % 60);
+    const minutes = Math.floor((expiryTimestamp / 60) % 60);
+    const hours = Math.floor((expiryTimestamp / (60 * 60)) % 24);
+    const days = Math.floor(expiryTimestamp / (60 * 60 * 24));
+
+    return {
+      expiryTimestamp,
+      days,
+      hours,
+      minutes,
+      seconds,
+    };
+  }
+  const date = getTimeRemaining(expiryTimestamp);
+  // const timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
 
   return (
     <Wrap color={color}>
-      {timeArray.map((item, i) => (
-        <React.Fragment key={`item-${i}`}>
-          {handleDigit(item).leftDigit}
-          {handleDigit(item).rightDigit}
-          {timeTextArray[i]}{" "}
-        </React.Fragment>
-      ))}
+      {/*{timeArray.map((item, i) => (*/}
+      {/*  <React.Fragment key={`item-${i}`}>*/}
+      {/*    {handleDigit(item).leftDigit}*/}
+      {/*    {handleDigit(item).rightDigit}*/}
+      {/*    {timeTextArray[i]}{" "}*/}
+      {/*    */}
+      {/*  </React.Fragment>*/}
+      {/*))}*/}
+      {date.days > 0 ? date.days + "d :" : ""} {date.hours > 0 ? date.hours + "h :" : ""} {date.minutes + "m"}{" "}
+      {": " + date.seconds + "s"}
     </Wrap>
   );
 }
